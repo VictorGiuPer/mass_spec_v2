@@ -11,19 +11,29 @@ def grid_to_json(df, base_filename="gen_grid"):
     df.to_json(filename, index=False)
     print(f"File saved as: {filename}")
 
-def gaussians_grid_to_json(df, base_filename="gen_gaussians_grid"):
-    filename = f"{base_filename}.json"
+def gaussians_grid_to_json(df, base_filename="gaussians_grid"):
+    output_folder = "data/json"
+    os.makedirs(output_folder, exist_ok=True)
+
+    filename = os.path.join(output_folder, f"{base_filename}.json")
     counter = 1
     while os.path.exists(filename):
-        filename = f"{base_filename}_{counter}.json"
+        filename = os.path.join(output_folder, f"{base_filename}_{counter}.json")
         counter += 1
+
     df.to_json(filename, index=False)
     print(f"File saved as: {filename}")
 
 def gaussians_grid_to_mzml(df, output_path_base="output.mzML"):
+    output_folder = "data/mzML"
+    os.makedirs(output_folder, exist_ok=True)  # Ensure folder exists
+
     df_prepped = df.rename(columns={"rt": "RT", "mz": "mzarray", "intensities": "intarray"})
-    base, ext = os.path.splitext(output_path_base)
-    filepath = output_path_base
+
+    base = os.path.join(output_folder, os.path.splitext(output_path_base)[0])
+    ext = ".mzML"
+    filepath = f"{base}{ext}"
+    
     count = 1
     while os.path.exists(filepath):
         filepath = f"{base}_{count}{ext}"
@@ -38,6 +48,7 @@ def gaussians_grid_to_mzml(df, output_path_base="output.mzML"):
         spectrum.setMSLevel(1)
         spectrum.set_peaks([row["mzarray"], row["intarray"]])
         exp.addSpectrum(spectrum)
+
     MzMLFile().store(filepath, exp)
     print(f"File saved as: {filepath}")
 
