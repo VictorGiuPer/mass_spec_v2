@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.'))
 
 # Import classes and functions
 from src.data_generation import GridGenerator, GaussianGenerator
-from src.data_generation.export_utils import zoom_grid
+from src.data_generation.export_utils import zoom_grid, gaussians_grid_to_json, gaussians_grid_to_mzml
 from src.data_generation.plotting import plot_grid, plot_gaussians_grid
 
 # Initialize grid and gaussian generators separately
@@ -35,5 +35,11 @@ df_zoom = zoom_grid(df2)
 print(df_zoom.head())
 
 # Step 6: Plot results
-plot_grid(df_zoom)
-plot_gaussians_grid(df_zoom)
+# plot_grid(df_zoom)
+# plot_gaussians_grid(df_zoom)
+
+gaussians_grid_to_json(df_zoom)
+gaussians_grid_to_mzml(df_zoom)
+
+gaussians_grid_to_json(df2)
+gaussians_grid_to_mzml(df2)
