@@ -16,7 +16,7 @@ Ideal for testing algorithms and models in mass spectrometry workflows.
 | File | Purpose |
 |:-----|:--------|
 | `grid_generator.py` | Generate RT/mz sampling grid with irregular spacing |
-| `gaussian_generator.py` | Apply Gaussian peaks and noise to the grid |
+| `gaussian_generator.py`| Apply Gaussian peaks and noise to the grid |
 | `plotting.py` | Visualize RT/mz scatterplots and intensity heatmaps |
 | `export_utils.py` | Save and load grids as JSON or mzML files |
 
@@ -46,6 +46,8 @@ A DataFrame with:
 
 `mz`: List of m/z arrays per RT
 
+---
+
 ### `GaussianGenerator`
 Located in `gaussian_generator.py.`
 
@@ -71,6 +73,8 @@ Applies Gaussian peaks and optional noise to the grid.
 
 Original DataFrame with an added `intensities` column.
 
+---
+
 ### Plotting Functions
 Located in `plotting.py`.
 
@@ -92,6 +96,8 @@ intensities
 
 `mz_points`: Number of interpolated m/z bins
 
+---
+
 ### Export Functions
 Located in `export_utils.py`.
 
@@ -109,6 +115,7 @@ from src.data_generation.export_utils import grid_to_json, gaussians_grid_to_jso
 
 `zoom_grid(df)`: Crop RT and m/z ranges interactively
 
+---
 
 ### Splatting Functions
 
@@ -128,6 +135,7 @@ from src.data_generation.splatting import create_sampling_grid, splat_gaussians_
 
 `save_grid_to_npy(grid, base_filename, smoothed)`: Save the 2D NumPy intensity grid as a `.npy` file with auto-incrementing filenames if duplicates exist. Option to smooth before exporting
 
+---
 
 ### Example Peak Parameters
 ```python
@@ -136,6 +144,8 @@ peak_params = [
     {"rt_center": 13.35, "mz_center": 154.4, "rt_sigma": 0.2, "mz_sigma": 0.04, "amplitude": 45000}
 ]
 ```
+
+---
 
 ### Full Example Workflow
 
