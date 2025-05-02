@@ -109,6 +109,26 @@ from src.data_generation.export_utils import grid_to_json, gaussians_grid_to_jso
 
 `zoom_grid(df)`: Crop RT and m/z ranges interactively
 
+
+### Splatting Functions
+
+Located in `splatting.py`.
+
+```python
+from src.data_generation.splatting import create_sampling_grid, splat_gaussians_to_grid, splatting_pipeline, plot_grid
+```
+
+`create_sampling_grid(rt_range, mz_range, rt_points, mz_points)`: Create a regular RT × m/z grid initialized with zeros
+
+`splat_gaussians_to_grid(gaussians_df, rt_axis, mz_axis, grid)`: Hard-bin Gaussian peak intensities into the grid
+
+`splatting_pipeline(gaussians_df, rt_range, mz_range, rt_points, mz_points, plot)`: Full wrapper to generate and populate the grid
+
+`plot_grid(grid, rt_axis, mz_axis, title)`: Visualize the 2D intensity grid as a heatmap
+
+`save_grid_to_npy(grid, base_filename="splatted_grid")`: Save the 2D NumPy intensity grid as a `.npy` file with auto-incrementing filenames if duplicates exist.
+
+
 ### Example Peak Parameters
 ```python
 peak_params = [
