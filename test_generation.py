@@ -57,4 +57,4 @@ grid, rt_axis, mz_axis = splatting_pipeline(
     plot=True
 )
 
-splatted_grid_to_npy(grid=grid)
+splatted_grid_to_npy(grid=grid, mz_axis=mz_axis, rt_axis=rt_axis, smoothed=True)

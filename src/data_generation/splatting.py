@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
+from scipy.ndimage import gaussian_filter
+
 
 def create_sampling_grid(rt_range=(10, 15), mz_range=(150, 160), rt_points=100, mz_points=1000):
     """
@@ -82,15 +84,30 @@ def splatting_pipeline(gaussians_df,
     return grid, rt_axis, mz_axis
 
 
-def splatted_grid_to_npy(grid, base_filename="splatted_grid"):
+def splatted_grid_to_npy(grid, mz_axis, rt_axis, base_filename="splatted_grid", smoothed=False):
+    """
+    Save grid and its axes to a .npz file (optionally smoothed).
+
+    Parameters:
+        grid (2D np.array): The splatted intensity grid
+        mz_axis (1D np.array): m/z axis corresponding to grid rows
+        rt_axis (1D np.array): RT axis corresponding to grid columns
+        base_filename (str): Base name for the output file
+        smoothed (bool): Whether to apply Gaussian smoothing
+    """
+    if smoothed:
+        grid = gaussian_filter(grid, sigma=1)  # small smoothing
+        base_filename = "smoothed_" + base_filename
+
     output_folder = "data/splatted"
     os.makedirs(output_folder, exist_ok=True)
 
-    filename = os.path.join(output_folder, f"{base_filename}.npy")
+    filename = os.path.join(output_folder, f"{base_filename}.npz")
     counter = 1
     while os.path.exists(filename):
-        filename = os.path.join(output_folder, f"{base_filename}_{counter}.npy")
+        filename = os.path.join(output_folder, f"{base_filename}_{counter}.npz")
         counter += 1
 
-    np.save(filename, grid)
-    print(f"Grid saved as: {filename}")
+    np.savez(filename, grid=grid, mz_axis=mz_axis, rt_axis=rt_axis)
+
+    print(f"{'Smoothed ' if smoothed else ''}Grid with axes saved as: {filename}")
