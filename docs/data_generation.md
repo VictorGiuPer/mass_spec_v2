@@ -126,7 +126,7 @@ from src.data_generation.splatting import create_sampling_grid, splat_gaussians_
 
 `plot_grid(grid, rt_axis, mz_axis, title)`: Visualize the 2D intensity grid as a heatmap
 
-`save_grid_to_npy(grid, base_filename="splatted_grid")`: Save the 2D NumPy intensity grid as a `.npy` file with auto-incrementing filenames if duplicates exist.
+`save_grid_to_npy(grid, base_filename, smoothed)`: Save the 2D NumPy intensity grid as a `.npy` file with auto-incrementing filenames if duplicates exist. Option to smooth before exporting
 
 
 ### Example Peak Parameters
