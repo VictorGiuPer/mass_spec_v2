@@ -196,6 +196,17 @@ Displays four subplots for diagnostic inspection of anomaly sources:
 
 - Combined suspicious points
 
+
+**Overview**
+| What is Tested | What It Catches | When It Triggers |
+|:-------------|:----------------|:----------------|
+| Sudden width expansion | Early peak growth | If width grows too fast between neighboring RT points. |
+| Slope anomalies | Top of peak | If slope behavior becomes too sharp or irregular. |
+| Curvature flattening | Top and sides of peak | If the peak top becomes too flat (less pointy). |
+| Combination | Everything flagged | If any of the three features say "suspicious". |
+
+---
+
 `plot_zones_over_width(zones, title="Suspicious Zones over Width Curve")`
 
 Plots peak width across RT with highlighted suspicious zones in red.

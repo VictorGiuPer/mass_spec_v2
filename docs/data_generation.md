@@ -17,7 +17,7 @@ Ideal for testing algorithms and models in mass spectrometry workflows.
 |:-----|:--------|
 | `grid_generator.py` | Generate RT/mz sampling grid with irregular spacing |
 | `gaussian_generator.py`| Apply Gaussian peaks and noise to the grid |
-| `plotting.py` | Visualize RT/mz scatterplots and intensity heatmaps |
+| `visualization.py` | Visualize RT/mz scatterplots and intensity heatmaps |
 | `export_utils.py` | Save and load grids as JSON or mzML files |
 
 ---
@@ -75,11 +75,11 @@ Original DataFrame with an added `intensities` column.
 
 ---
 
-### Plotting Functions
-Located in `plotting.py`.
+### Visualization Functions
+Located in `visualization.py`.
 
 ```python
-from src.data_generation.plotting import plot_grid, plot_gaussians_grid
+from src.data_generation.visualization import plot_grid, plot_gaussians_grid
 plot_grid(df): Scatterplot of RT vs m/z points
 ```
 
