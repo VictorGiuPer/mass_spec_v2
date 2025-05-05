@@ -1,7 +1,7 @@
 # Expose functions
 from .grid_generator import GridGenerator
 from .gaussian_generator import GaussianGenerator
-from .plotting import plot_grid, plot_gaussians_grid
+from .visualization import plot_grid, plot_gaussians_grid
 from .export_utils import (
     grid_to_json,
     gaussians_grid_to_json,
