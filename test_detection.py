@@ -6,8 +6,8 @@ import numpy as np
 # Add parent folder (mass_spec_project) to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
-from src.peak_detection.localization import Localizer
-from src.peak_detection.detect_suspicious import SuspicionDetector
+from src.detection.localization import Localizer
+from src.detection.suspicion import SuspicionDetector
 
 # Import classes and functions
 
@@ -59,6 +59,6 @@ while 'unprocessed' in processed_mask:
         all_cropped_mz_axes.append(cropped_mz_axis)
         all_cropped_rt_axes.append(cropped_rt_axis)
 
-print("Succ")
+print("Success")
 
 # suspicious_regions_to_npz(all_cropped_grids, all_cropped_mz_axes, all_cropped_rt_axes)

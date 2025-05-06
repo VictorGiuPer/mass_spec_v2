@@ -6,10 +6,10 @@ import pandas as pd
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
 # === Imports ===
-from src.data_generation import GridGenerator, GaussianGenerator
-from src.data_generation.export_utils import zoom_grid, gaussians_grid_to_json, gaussians_grid_to_mzml
-from src.data_generation.visualization import plot_grid, plot_gaussians_grid
-from src.data_generation.splatting import splatting_pipeline, splatted_grid_to_npy
+from src.generation import GridGenerator, GaussianGenerator
+from src.generation.export_utils import zoom_grid, gaussians_grid_to_json, gaussians_grid_to_mzml
+from src.generation.visualization import plot_grid, plot_gaussians_grid
+from src.generation.splatting import splatting_pipeline, splatted_grid_to_npy
 
 # === Step 1: Generate Empty Grid Structure ===
 grid_gen = GridGenerator()
