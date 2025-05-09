@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 
 class SuspicionDetector:
-    def __init__(self, cropped_grid, cropped_mz_axis):
+    def __init__(self, cropped_grid, cropped_mz_axis, cropped_rt_axis):
         """
         Initialize the detector with a cropped intensity region.
 
@@ -13,6 +13,7 @@ class SuspicionDetector:
         """
         self.grid = cropped_grid
         self.mz_axis = cropped_mz_axis
+        self.rt_axis = cropped_rt_axis
         self.peak_widths = self.estimate_peak_widths()
         _, self.d_grid_rt, _, self.dd_grid_rt = self.compute_derivatives()
 
@@ -75,8 +76,12 @@ class SuspicionDetector:
                     current_start, current_end = next_start, next_end
             merged_zones.append((current_start, current_end))
             zones = merged_zones
+        rt_zones = [(self.rt_axis[start], self.rt_axis[end]) for (start, end) in zones]
+        print(rt_zones)
 
+        # Convert indices to RT values
         return zones
+
 
     def detect_suspicious(self, plot=True, min_zone_size=3, merge_gap=2):
         width_growth = self.check_width_growth()
@@ -84,13 +89,15 @@ class SuspicionDetector:
         curvature_flat = self.check_curvature_flatness()
         suspicious_mask = width_growth | slope_anomaly | curvature_flat
         suspicious = np.any(suspicious_mask)
+        zones = self.group_suspicious_zones(suspicious_mask, min_zone_size, merge_gap)
+        rt_zones = [(self.rt_axis[start], self.rt_axis[end]) for (start, end) in zones]
+
 
         if plot:
             self.plot_suspicious_signals(width_growth, slope_anomaly, curvature_flat, suspicious_mask)
-            zones = self.group_suspicious_zones(suspicious_mask, min_zone_size, merge_gap)
             self.plot_zones_over_width(zones)
 
-        return suspicious
+        return suspicious, rt_zones
 
     def compute_derivatives(self):
         d_grid_mz = np.diff(self.grid, axis=0)
@@ -135,26 +142,3 @@ class SuspicionDetector:
 
         plt.tight_layout()
         plt.show()
-
-    @staticmethod
-    def mark_box(processed_mask, box, label):
-        mz_slice = slice(box['mz_min_idx'], box['mz_max_idx'] + 1)
-        rt_slice = slice(box['rt_min_idx'], box['rt_max_idx'] + 1)
-        processed_mask[mz_slice, rt_slice] = label
-
-    @staticmethod
-    def save_to_npz(cropped_grids, mz_axes, rt_axes, base_filename="suspicious_peaks"):
-        output_folder = "data/suspicious_regions"
-        os.makedirs(output_folder, exist_ok=True)
-
-        filename = os.path.join(output_folder, f"{base_filename}.npz")
-        counter = 1
-        while os.path.exists(filename):
-            filename = os.path.join(output_folder, f"{base_filename}_{counter}.npz")
-            counter += 1
-
-        np.savez(filename,
-                 grids=np.array(cropped_grids, dtype=object),
-                 mz_axes=np.array(mz_axes, dtype=object),
-                 rt_axes=np.array(rt_axes, dtype=object))
-        print(f"Suspicious regions saved to: {filename}")

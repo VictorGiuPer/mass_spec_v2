@@ -54,6 +54,8 @@ class Localizer:
             'rt_max_idx': rt_max_idx
         }
 
+        print(f"Returning box from seed {start_mz_idx}, {start_rt_idx}")
+
         return box
 
     def _grow_box_from_start(self, active_mask, start_mz_idx, start_rt_idx):
