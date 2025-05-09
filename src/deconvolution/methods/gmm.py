@@ -1,7 +1,6 @@
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
 import numpy as np
-from ..utils import delta_bic_to_confidence_score
 
 class GMMDeconvolver:
     def __init__(self, min_intensity=3e4, max_components=2):
@@ -45,7 +44,7 @@ class GMMDeconvolver:
         best_k = np.argmin(bics) + 1
         best_gmm = gmms[best_k - 1]
         confidence = bics[0] - bics[1] if best_k == 2 else 0
-        confidence_pct = delta_bic_to_confidence_score(confidence)
+        confidence_pct = self._delta_bic_to_confidence_score(confidence)
 
         result_dict = {
             "region_index": region_index,
@@ -69,3 +68,7 @@ class GMMDeconvolver:
             plot_func(grid, mz_axis, rt_axis, best_gmm, scaler, region_index, mz_boost)
 
         return result_dict
+    
+
+    def _delta_bic_to_confidence_score(self, delta_bic, saturation=20):
+        return min(1.0, delta_bic / saturation) * 100
