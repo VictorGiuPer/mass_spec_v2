@@ -39,10 +39,10 @@ plot_grid(df_zoom)
 plot_gaussians_grid(df_zoom)
 
 # === Step 7: Optional Export to JSON or mzML Formats ===
-gaussians_grid_to_json(df_zoom)
+""" gaussians_grid_to_json(df_zoom)
 gaussians_grid_to_mzml(df_zoom)
 gaussians_grid_to_json(df2)
-gaussians_grid_to_mzml(df2)
+gaussians_grid_to_mzml(df2) """
 
 # === Step 8: Load JSON Version for Splatting ===
 gaussians_grid = pd.read_json(r"C:\Users\\victo\VSCode Folder\mass_spec_project\data\json\gaussians_grid.json")
@@ -57,4 +57,4 @@ grid, rt_axis, mz_axis = splatting_pipeline(
     plot=True
 )
 
-splatted_grid_to_npy(grid=grid, mz_axis=mz_axis, rt_axis=rt_axis, smoothed=True)
+# splatted_grid_to_npy(grid=grid, mz_axis=mz_axis, rt_axis=rt_axis, smoothed=True)
