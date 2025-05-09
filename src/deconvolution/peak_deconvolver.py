@@ -6,6 +6,8 @@ class PeakDeconvolver:
     def __init__(self, method="gmm", **kwargs):
         if method == "gmm":
             self.model = GMMDeconvolver(**kwargs)
+        elif method =="ridge_walk":
+            self.model = RidgeWalker(**kwargs)
         else:
             raise ValueError(f"Unknown method: {method}")
 

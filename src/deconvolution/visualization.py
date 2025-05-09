@@ -1,3 +1,6 @@
+"""
+Visualization tools for GMM and Ridge-based deconvolution methods.
+"""
 from scipy.stats import multivariate_normal
 from matplotlib import pyplot as plt
 import numpy as np
@@ -90,4 +93,22 @@ def plot_residual_heatmap(grid, mz_axis, rt_axis, gmm, scaler, region_idx):
     plt.ylabel("m/z")
     plt.colorbar(label='Residual (Actual - GMM)')
     plt.tight_layout()
+    plt.show()
+
+
+def plot_ridges_on_grid(grid, mz_axis, rt_axis, ridges):
+    plt.figure(figsize=(8, 6))
+    extent = [rt_axis[0], rt_axis[-1], mz_axis[0], mz_axis[-1]]
+    plt.imshow(grid, extent=extent, origin='lower', aspect='auto', cmap='viridis')
+    plt.title("Ridge Overlay")
+    plt.xlabel("RT")
+    plt.ylabel("m/z")
+    plt.colorbar(label='Intensity')
+
+    for ridge in ridges:
+        mz_indices, rt_indices = zip(*ridge)
+        mz_values = mz_axis[list(mz_indices)]
+        rt_values = rt_axis[list(rt_indices)]
+        plt.plot(rt_values, mz_values, color='red', linewidth=1)
+
     plt.show()
