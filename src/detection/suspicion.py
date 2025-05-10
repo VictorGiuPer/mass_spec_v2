@@ -77,7 +77,7 @@ class SuspicionDetector:
             merged_zones.append((current_start, current_end))
             zones = merged_zones
         rt_zones = [(self.rt_axis[start], self.rt_axis[end]) for (start, end) in zones]
-        print(rt_zones)
+        # print(rt_zones)
 
         # Convert indices to RT values
         return zones

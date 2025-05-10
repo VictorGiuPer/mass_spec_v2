@@ -1,7 +1,7 @@
 import numpy as np
 
 class RidgeWalker:
-    def __init__(self, min_intensity=3e4, min_slope=0.1, fusion_threshold=0.5,
+    def __init__(self, min_intensity=3e4, min_slope=0.1, fusion_threshold=0.3,
                  fork_sep=2, fork_width=3, weights=None):
         self.min_intensity = min_intensity
         self.min_slope = min_slope
@@ -61,10 +61,22 @@ class RidgeWalker:
                 if visited[mz, rt]:
                     continue
                 path = self._track_single_ridge(mz, rt)
+                # Filter short or jumpy ridges
+                if len(path) < 3:
+                    continue
+                mz_jump = [abs(path[i+1][0] - path[i][0]) for i in range(len(path)-1)]
+                if max(mz_jump) > 2:  # Too jumpy
+                    continue
+
                 if len(path) > 1:
                     ridge_paths.append(path)
                     for m, r in path:
-                        visited[m, r] = True
+                        for dm in range(-1, 2):
+                            for dr in range(-1, 2):
+                                mm, rr = m + dm, r + dr
+                                if 0 <= mm < self.grid.shape[0] and 0 <= rr < self.grid.shape[1]:
+                                    visited[mm, rr] = True
+
         return ridge_paths
 
     def _ridge_width(self, ridge):
@@ -86,14 +98,22 @@ class RidgeWalker:
 
     def _fork_sharpness(self, ridge1, ridge2):
         overlap = set(rt for _, rt in ridge1) & set(rt for _, rt in ridge2)
-        values = []
+        sharp_diffs = []
+        consistent_signs = 0
         for rt in overlap:
             mz1 = next(mz for mz, r in ridge1 if r == rt)
             mz2 = next(mz for mz, r in ridge2 if r == rt)
             dd1 = self.dd_rt[mz1, rt] if 0 <= mz1 < self.dd_rt.shape[0] else 0
             dd2 = self.dd_rt[mz2, rt] if 0 <= mz2 < self.dd_rt.shape[0] else 0
-            values.append(abs(dd1 - dd2))
-        return np.mean(values) if values else 0
+            sharp_diffs.append(abs(dd1 - dd2))
+            if np.sign(dd1) != np.sign(dd2):
+                consistent_signs += 1
+        if not sharp_diffs:
+            return 0
+        sharp_score = np.mean(sharp_diffs)
+        direction_bonus = consistent_signs / len(overlap) if overlap else 0
+        return sharp_score * (1 + direction_bonus)
+
 
     def _valley_score_between_ridges(self, ridge1, ridge2):
         r1, r2 = {rt: mz for mz, rt in ridge1}, {rt: mz for mz, rt in ridge2}
@@ -117,7 +137,7 @@ class RidgeWalker:
         score = min(max1, max2) - valley
         norm_score = score / max(max1, max2)
         asymmetry = abs(max1 - max2) / (max1 + max2 + 1e-9)
-        confidence = norm_score * (1 - asymmetry)
+        confidence = norm_score * np.exp(-asymmetry * 2)
         return {
             "overlap_rt": overlap_rts,
             "ridge1_max": max1,
@@ -131,9 +151,13 @@ class RidgeWalker:
 
     def _fusion_score(self, width_diff, smooth_diff, fork_sharp):
         w = self.weights
-        return (w["width"] * (1 - np.tanh(width_diff)) +
-                w["smoothness"] * (1 - np.tanh(smooth_diff)) +
-                w["fork"] * np.tanh(fork_sharp))
+        norm_width = 1 / (1 + width_diff)
+        norm_smooth = 1 / (1 + smooth_diff)
+        norm_fork = np.tanh(fork_sharp)  # still fine as-is
+        return (w["width"] * norm_width +
+                w["smoothness"] * norm_smooth +
+                w["fork"] * norm_fork)
+
 
     def _analyze_ridge_pairs(self):
         labels = []

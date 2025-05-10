@@ -18,26 +18,46 @@ def create_sampling_grid(rt_range=(10, 15), mz_range=(150, 160), rt_points=100, 
     return rt_axis, mz_axis, grid
 
 
-def splat_gaussians_to_grid(gaussians_df, rt_axis, mz_axis, grid):
-    """
-    Populate the grid with intensities from Gaussian peak definitions.
-
-    Parameters:
-        gaussians_df (pd.DataFrame): Must contain 'rt', 'mz', 'intensities'
-        rt_axis (np.array): RT sampling axis
-        mz_axis (np.array): m/z sampling axis
-        grid (np.array): Output grid to populate (modified in-place)
-    """
+def splat_gaussians_to_grid(gaussians_df, rt_axis, mz_axis, grid, kernel_sigma_mz=1, kernel_sigma_rt=1, plot=False):
     for _, row in gaussians_df.iterrows():
         rt = row['rt']
         mz_values = row['mz']
         intensities = row['intensities']
 
+        # Find the closest RT index
         rt_idx = np.abs(rt_axis - rt).argmin()
 
         for mz, intensity in zip(mz_values, intensities):
             mz_idx = np.abs(mz_axis - mz).argmin()
-            grid[mz_idx, rt_idx] += intensity  # hard binning
+
+            # Define small patch size (±3σ around center)
+            mz_start = max(mz_idx - 3 * kernel_sigma_mz, 0)
+            mz_end = min(mz_idx + 3 * kernel_sigma_mz + 1, len(mz_axis))
+
+            rt_start = max(rt_idx - 3 * kernel_sigma_rt, 0)
+            rt_end = min(rt_idx + 3 * kernel_sigma_rt + 1, len(rt_axis))
+
+            # Create local grid for Gaussian
+            mz_patch = np.arange(mz_start, mz_end)
+            rt_patch = np.arange(rt_start, rt_end)
+            mz_mesh, rt_mesh = np.meshgrid(mz_patch, rt_patch, indexing='ij')
+
+            # Apply Gaussian kernel centered at (mz_idx, rt_idx)
+            kernel = np.exp(
+                -(((mz_mesh - mz_idx) ** 2) / (2 * kernel_sigma_mz ** 2) +
+                  ((rt_mesh - rt_idx) ** 2) / (2 * kernel_sigma_rt ** 2))
+            )
+
+            kernel *= intensity / kernel.sum()  # Normalize total intensity
+
+            grid[mz_start:mz_end, rt_start:rt_end] += kernel
+
+            if plot:
+                plt.imshow(kernel, cmap='viridis')
+                plt.title("Gaussian Kernel Patch")
+                plt.colorbar()
+                plt.show()
+
 
 
 def plot_grid(grid, rt_axis, mz_axis, title='Grid Visualization'):
@@ -76,7 +96,7 @@ def splatting_pipeline(gaussians_df,
         mz_axis (np.array): m/z axis
     """
     rt_axis, mz_axis, grid = create_sampling_grid(rt_range, mz_range, rt_points, mz_points)
-    splat_gaussians_to_grid(gaussians_df, rt_axis, mz_axis, grid)
+    splat_gaussians_to_grid(gaussians_df, rt_axis, mz_axis, grid, kernel_sigma_mz=1, kernel_sigma_rt=1, plot=plot)
     
     if plot:
         plot_grid(grid, rt_axis, mz_axis, title='Splatting Grid (Pipeline Output)')
