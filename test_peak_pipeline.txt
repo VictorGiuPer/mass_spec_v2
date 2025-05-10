@@ -1,0 +1,139 @@
+2025-05-10 20:04:37,324 - INFO - 
+
+=== Running Test: Two clearly separated peaks ===
+2025-05-10 20:04:37,324 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 158.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-10 20:04:37,344 - INFO - Detected boxes: 2
+2025-05-10 20:04:37,344 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:37,344 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:37,563 - INFO - GMM: Detected single peak
+2025-05-10 20:04:37,563 - INFO - Ridge: No ridges found
+2025-05-10 20:04:37,563 - INFO - 
+--- Region 2 ---
+2025-05-10 20:04:37,605 - INFO - GMM: Detected single peak
+2025-05-10 20:04:37,605 - INFO - Ridge: No ridges found
+2025-05-10 20:04:37,605 - INFO - 
+Confirmed overlaps (GMM): 0
+2025-05-10 20:04:37,605 - INFO - Confirmed overlaps (Ridge): 0
+2025-05-10 20:04:37,605 - INFO - \u2705 GMM overlap test passed.
+2025-05-10 20:04:37,605 - INFO - \u2705 Ridge overlap test passed.
+2025-05-10 20:04:37,606 - INFO - 
+
+=== Running Test: Strong overlap between two peaks ===
+2025-05-10 20:04:37,606 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.1, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 45000}]
+2025-05-10 20:04:37,643 - INFO - Detected boxes: 1
+2025-05-10 20:04:37,643 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:37,643 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:37,695 - INFO - GMM: Detected 3 peaks (\u0394BIC=26.55, support=very strong)
+2025-05-10 20:04:37,697 - INFO - Ridge: Detected overlap (confidence=0.62, score=0.49)
+2025-05-10 20:04:37,697 - INFO - 
+Confirmed overlaps (GMM): 1
+2025-05-10 20:04:37,697 - INFO - Confirmed overlaps (Ridge): 1
+2025-05-10 20:04:37,697 - INFO - \u2705 GMM overlap test passed.
+2025-05-10 20:04:37,697 - INFO - \u2705 Ridge overlap test passed.
+2025-05-10 20:04:37,698 - INFO - 
+
+=== Running Test: Four peaks: 2 overlap, 2 isolated ===
+2025-05-10 20:04:37,698 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18000}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.5, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 159.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-10 20:04:37,741 - INFO - Detected boxes: 3
+2025-05-10 20:04:37,741 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:37,741 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:37,788 - INFO - GMM: Detected 2 peaks (\u0394BIC=15.10, support=very strong)
+2025-05-10 20:04:37,798 - INFO - Ridge: Detected overlap (confidence=0.57, score=0.50)
+2025-05-10 20:04:37,798 - INFO - 
+--- Region 2 ---
+2025-05-10 20:04:37,844 - INFO - GMM: Detected single peak
+2025-05-10 20:04:37,844 - INFO - Ridge: No ridges found
+2025-05-10 20:04:37,845 - INFO - 
+--- Region 3 ---
+2025-05-10 20:04:37,879 - INFO - GMM: Detected single peak
+2025-05-10 20:04:37,881 - INFO - Ridge: No ridges found
+2025-05-10 20:04:37,881 - INFO - 
+Confirmed overlaps (GMM): 1
+2025-05-10 20:04:37,881 - INFO - Confirmed overlaps (Ridge): 1
+2025-05-10 20:04:37,881 - INFO - \u2705 GMM overlap test passed.
+2025-05-10 20:04:37,881 - INFO - \u2705 Ridge overlap test passed.
+2025-05-10 20:04:37,882 - INFO - 
+
+=== Running Test: Cluster of 3 overlapping peaks ===
+2025-05-10 20:04:37,882 - INFO - Input peak parameters: [{'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}]
+2025-05-10 20:04:37,916 - INFO - Detected boxes: 1
+2025-05-10 20:04:37,916 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:37,916 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:37,991 - INFO - GMM: Detected 3 peaks (\u0394BIC=86.49, support=very strong)
+2025-05-10 20:04:38,058 - INFO - Ridge: Detected overlap (confidence=0.61, score=0.45)
+2025-05-10 20:04:38,059 - INFO - 
+Confirmed overlaps (GMM): 1
+2025-05-10 20:04:38,059 - INFO - Confirmed overlaps (Ridge): 1
+2025-05-10 20:04:38,059 - INFO - \u2705 GMM overlap test passed.
+2025-05-10 20:04:38,059 - INFO - \u2705 Ridge overlap test passed.
+2025-05-10 20:04:38,061 - INFO - 
+
+=== Running Test: Close but not overlapping peaks ===
+2025-05-10 20:04:38,061 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10000}, {'rt_center': 13.4, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9500}]
+2025-05-10 20:04:38,099 - INFO - Detected boxes: 2
+2025-05-10 20:04:38,099 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:38,099 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:38,130 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,132 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,132 - INFO - 
+--- Region 2 ---
+2025-05-10 20:04:38,162 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,162 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,162 - INFO - 
+Confirmed overlaps (GMM): 0
+2025-05-10 20:04:38,163 - INFO - Confirmed overlaps (Ridge): 0
+2025-05-10 20:04:38,163 - INFO - \u2705 GMM overlap test passed.
+2025-05-10 20:04:38,163 - INFO - \u2705 Ridge overlap test passed.
+2025-05-10 20:04:38,163 - INFO - 
+
+=== Running Test: Intense + weak overlap ===
+2025-05-10 20:04:38,163 - INFO - Input peak parameters: [{'rt_center': 12.5, 'mz_center': 152.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 30000}, {'rt_center': 12.6, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6000}, {'rt_center': 14.5, 'mz_center': 158.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32000}]
+2025-05-10 20:04:38,195 - INFO - Detected boxes: 2
+2025-05-10 20:04:38,195 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:38,196 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:38,236 - INFO - GMM: Detected 3 peaks (\u0394BIC=13.60, support=very strong)
+2025-05-10 20:04:38,238 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,238 - INFO - 
+--- Region 2 ---
+2025-05-10 20:04:38,288 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,289 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,289 - INFO - 
+Confirmed overlaps (GMM): 1
+2025-05-10 20:04:38,289 - INFO - Confirmed overlaps (Ridge): 0
+2025-05-10 20:04:38,289 - INFO - \u2705 GMM overlap test passed.
+2025-05-10 20:04:38,289 - ERROR - \u274c Ridge overlap test failed: expected 1, got 0
+2025-05-10 20:04:38,291 - INFO - 
+
+=== Running Test: Five peaks: 3 spaced, 2 overlapping ===
+2025-05-10 20:04:38,291 - INFO - Input peak parameters: [{'rt_center': 10.5, 'mz_center': 150.5, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.5, 'mz_center': 151.5, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 13.0, 'mz_center': 154.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.05, 'mz_center': 154.05, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}]
+2025-05-10 20:04:38,346 - INFO - Detected boxes: 4
+2025-05-10 20:04:38,346 - INFO - \u2705 Box test passed.
+2025-05-10 20:04:38,346 - INFO - 
+--- Region 1 ---
+2025-05-10 20:04:38,381 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,382 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,382 - INFO - 
+--- Region 2 ---
+2025-05-10 20:04:38,422 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,422 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,422 - INFO - 
+--- Region 3 ---
+2025-05-10 20:04:38,457 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,457 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,457 - INFO - 
+--- Region 4 ---
+2025-05-10 20:04:38,501 - INFO - GMM: Detected single peak
+2025-05-10 20:04:38,504 - INFO - Ridge: No ridges found
+2025-05-10 20:04:38,504 - INFO - 
+Confirmed overlaps (GMM): 0
+2025-05-10 20:04:38,504 - INFO - Confirmed overlaps (Ridge): 0
+2025-05-10 20:04:38,504 - ERROR - \u274c GMM overlap test failed: expected 1, got 0
+2025-05-10 20:04:38,504 - ERROR - \u274c Ridge overlap test failed: expected 1, got 0
+2025-05-10 20:04:38,504 - INFO - 
+=== All tests completed successfully ===
