@@ -1,105 +1,113 @@
 import numpy as np
 from scipy.signal import cwt, morlet2
 from sklearn.cluster import DBSCAN
+import matplotlib.pyplot as plt
 
 class WaveletDeconvolver:
-    def __init__(self, min_intensity=5e4, scale_range=(1, 10), overlap_threshold=2, wavelet_func=None):
-        self.min_intensity = min_intensity  # Increased minimum intensity threshold
+    def __init__(self, min_intensity=5e4, scale_range=(1, 5), overlap_threshold=2, wavelet_func=None, pad_grid=False):
+        self.min_intensity = min_intensity
         self.scale_range = scale_range
-        self.overlap_threshold = overlap_threshold  # Increased to require at least 2 peaks
-        # Use morlet2 instead of morlet (which is deprecated)
+        self.overlap_threshold = overlap_threshold
         self.wavelet_func = wavelet_func if wavelet_func else morlet2
+        self.pad_grid = pad_grid
 
     def fit(self, grid, mz_axis=None, rt_axis=None):
-        """
-        Apply the CWT (Continuous Wavelet Transform) to the intensity grid.
-        """
-        # Get grid dimensions
         mz_len, rt_len = grid.shape
-        
-        # Create default axes if not provided
+
         if mz_axis is None:
             mz_axis = np.arange(mz_len)
         if rt_axis is None:
             rt_axis = np.arange(rt_len)
-            
-        # Apply 1D CWT along the RT axis for each m/z value
+
+        pad_size = int(3 * max(self.scale_range)) if self.pad_grid else 0
+
+        if self.pad_grid:
+            grid, rt_axis, rt_offset = self._pad_rt_axis_and_grid(grid, rt_axis, pad=pad_size)
+        else:
+            rt_offset = 0
+
         scales = np.arange(*self.scale_range)
-        transformed_grid = np.zeros((len(scales), mz_len, rt_len))
-        
+        transformed_grid = np.zeros((len(scales), mz_len, grid.shape[1]))
+
         for i in range(mz_len):
-            # Apply CWT to each m/z slice (along RT)
-            # Take absolute value to handle complex output
             cwt_result = cwt(grid[i, :], self.wavelet_func, scales)
             transformed_grid[:, i, :] = np.abs(cwt_result)
-        
-        # Collapse scales by taking maximum response at each point
+
         max_response = np.max(transformed_grid, axis=0)
-        
-        # Detect peaks in the transformed grid
+
+        if self.pad_grid:
+            max_response = max_response[:, rt_offset:-rt_offset]
+
         peaks = self._detect_peaks(max_response)
-        
-        # Cluster peaks to handle overlapping peaks
         clusters = self._cluster_peaks(peaks)
-        
-        # Count unique clusters (excluding noise cluster -1)
-        if len(peaks) > 0 and len(clusters) > 0:
-            num_clusters = len(set(clusters[clusters >= 0]))
-        else:
-            num_clusters = 0
-            
-        # Determine if there's an overlap based on number of clusters
-        max_intensity = np.max(grid)
-        
-        # Higher intensity threshold to avoid detecting overlaps in low-intensity regions
+
+        num_clusters = len(set(clusters[clusters >= 0])) if len(peaks) > 0 and len(clusters) > 0 else 0
+
+        cropped_grid = grid if not self.pad_grid else grid[:, rt_offset:-rt_offset]
+        max_intensity = np.max(cropped_grid)
         min_required_intensity = 1e5
-        
-        # Only detect overlap if intensity is high enough and we have multiple clusters
-        # Require at least 2 clusters to consider it an overlap
-        overlap_detected = (num_clusters >= 2 and 
-                           max_intensity >= min_required_intensity)
-        
-        # Build result similar to other deconvolvers
-        result = {
+
+        overlap_detected = (num_clusters >= 2 and max_intensity >= min_required_intensity)
+
+        return {
             "overlap_detected": overlap_detected,
             "num_peaks_in_overlap": num_clusters if overlap_detected else None,
             "transformed_grid": max_response,
             "peaks": peaks,
             "clusters": clusters
         }
-        
-        return result
+
+    def _pad_rt_axis_and_grid(self, grid, rt_axis, pad=10):
+        padded_grid = np.pad(grid, pad_width=((0, 0), (pad, pad)), mode='reflect')
+
+        rt_step = rt_axis[1] - rt_axis[0]
+        left_pad = rt_axis[0] - np.arange(pad, 0, -1) * rt_step
+        right_pad = rt_axis[-1] + np.arange(1, pad + 1) * rt_step
+        padded_rt_axis = np.concatenate([left_pad, rt_axis, right_pad])
+
+        return padded_grid, padded_rt_axis, pad
 
     def _detect_peaks(self, transformed_grid):
-        """
-        Identify local maxima (peaks) from the wavelet-transformed grid.
-        """
         peaks = []
         mz_len, rt_len = transformed_grid.shape
-        
-        # Find local maxima in 2D grid
-        for i in range(1, mz_len-1):
-            for j in range(1, rt_len-1):
-                # Check if point is greater than all 8 neighbors
-                neighborhood = transformed_grid[i-1:i+2, j-1:j+2]
+
+        for i in range(1, mz_len - 1):
+            for j in range(1, rt_len - 1):
+                neighborhood = transformed_grid[i - 1:i + 2, j - 1:j + 2]
                 if transformed_grid[i, j] > self.min_intensity and transformed_grid[i, j] == np.max(neighborhood):
                     peaks.append((i, j))
-        
+
         return peaks
 
     def _cluster_peaks(self, peaks):
-        """
-        Use DBSCAN to cluster close peaks, resolving overlaps.
-        """
         if not peaks:
             return np.array([])
-            
+
         peak_array = np.array(peaks)
         if len(peak_array) > 1:
-            # Increased eps to make clustering more aggressive (merge more peaks)
             db = DBSCAN(eps=3.0, min_samples=1).fit(peak_array)
-            labels = db.labels_
-            return labels
+            return db.labels_
         else:
-            # If only one peak, return a single cluster
             return np.array([0])
+        
+    @staticmethod
+    def plot_wavelet_result(grid, transformed, peaks, clusters, title=""):
+        fig, axs = plt.subplots(1, 2, figsize=(14, 5))
+
+        axs[0].imshow(grid, origin="lower", aspect="auto")
+        axs[0].set_title("Original Intensity Grid")
+        axs[0].set_xlabel("RT axis")
+        axs[0].set_ylabel("MZ axis")
+
+        axs[1].imshow(transformed, origin="lower", aspect="auto")
+        axs[1].set_title("Wavelet Transformed + Detected Peaks")
+        axs[1].set_xlabel("RT axis")
+        axs[1].set_ylabel("MZ axis")
+
+        for idx, (mz_idx, rt_idx) in enumerate(peaks):
+            color = "red" if clusters[idx] >= 0 else "gray"
+            axs[1].plot(rt_idx, mz_idx, "o", color=color, markersize=5)
+
+        plt.suptitle(title)
+        plt.tight_layout()
+        plt.show()
