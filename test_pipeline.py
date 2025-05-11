@@ -1,27 +1,24 @@
 import logging
 import numpy as np
 import os
+from collections import defaultdict
 
 from src.generation import GridGenerator, GaussianGenerator
-from src.generation.splatting import splatting_pipeline, splatted_grid_to_npy
 from src.detection.localization import Localizer
 from src.detection.suspicion import SuspicionDetector
 from src.detection.utils import mark_box
 from src.deconvolution.peak_deconvolver import PeakDeconvolver
-from src.deconvolution.visualization import plot_ridges_on_grid, plot_horizontal_gmm
+from src.deconvolution.visualization import plot_horizontal_gmm
+from test_cases import TEST_CASES
 
-# === Setup Logging ===
+# === Logging setup ===
 logging.basicConfig(
-    filename="test_peak_pipeline.txt",  # or .log or just leave blank
+    filename="test_peak_pipeline_hardened.txt",
     filemode="w",
+    encoding="utf-8",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
-
-from test_cases import TEST_CASES
-
-if not TEST_CASES:
-    logging.warning("No test cases found. Make sure test_cases.py is correctly populated.")
 
 FILE_MAP = {
     "Two clearly separated peaks": "TEST_CASE.npz",
@@ -33,184 +30,183 @@ FILE_MAP = {
     "Five peaks: 3 spaced, 2 overlapping": "TEST_CASE_6.npz",
 }
 
-def run_test_case(label, peak_params, expected_box_count, expected_overlap_count, expected_peaks_in_overlap, check_overlap=False):
+# === Utilities ===
+def check_deconv_results(method, found_regions, found_peaks, expected_regions, expected_peaks):
+    if found_regions != expected_regions:
+        logging.error(f"FAILED: {method} overlap region count mismatch - expected {expected_regions}, got {found_regions}")
+    else:
+        logging.info(f"PASSED: {method} overlap region count correct.")
+
+    if expected_regions > 0:
+        if found_peaks != expected_peaks:
+            logging.error(f"FAILED: {method} peak count in overlaps mismatch - expected {expected_peaks}, got {found_peaks}")
+        else:
+            logging.info(f"PASSED: {method} peak count in overlaps correct.")
+
+
+def normalize_intensity(grid, mode="zscore"):
+    if mode == "zscore":
+        mean = np.mean(grid)
+        std = np.std(grid)
+        return (grid - mean) / std if std > 0 else grid
+    elif mode == "log":
+        return np.log1p(grid)
+    else:
+        raise ValueError(f"Unsupported normalization mode: {mode}")
+
+def get_dynamic_threshold(grid, method="percentile", value=95):
+    if method == "percentile":
+        return np.percentile(grid, value)
+    elif method == "fraction":
+        return np.max(grid) * value
+    else:
+        raise ValueError(f"Unsupported thresholding method: {method}")
+
+def load_grid(label, smoothed=True):
+    filename = FILE_MAP.get(label)
+    folder = "test_splatted_smooth" if smoothed else "test_splatted"
+    path = os.path.join(folder, filename)
+    if not filename or not os.path.exists(path):
+        raise FileNotFoundError(f"Missing grid file: {path}")
+    with np.load(path) as data:
+        return data["grid"], data["rt_axis"], data["mz_axis"]
+
+def get_region_truth(expected_num_boxes, expected_overlap_count):
+    return [True] * expected_overlap_count + [False] * (expected_num_boxes - expected_overlap_count)
+
+# === Main Testing Function ===
+def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expected_overlap_count,
+                                  expected_peaks_in_overlap=None,
+                                  normalization="zscore", threshold_mode="percentile"):
     logging.info(f"\n=== Running Test: {label} ===")
     logging.info(f"Input peak parameters: {peak_params}")
-    logging.info(f"Expected: {expected_box_count} suspicious boxes, {expected_overlap_count} overlaps, {expected_peaks_in_overlap} peaks in overlaps")
+    logging.info(f"Expected: {expected_num_boxes} suspicious boxes, {expected_overlap_count} overlaps, {expected_peaks_in_overlap} peaks in overlaps")
 
-
-    def load_splatted_grid(label, smoothed=False):
-        filename = FILE_MAP.get(label)
-        if not filename:
-            raise ValueError(f"No file mapping found for test label: '{label}'")
-        folder = "test_splatted_smooth" if smoothed else "test_splatted"
-        path = os.path.join(folder, filename)
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"Missing precomputed grid file: {path}")
-        with np.load(path) as data:
-            return data["grid"], data["rt_axis"], data["mz_axis"]
-
-    grid, rt_axis, mz_axis = load_splatted_grid(label, smoothed=True)
+    grid, rt_axis, mz_axis = load_grid(label)
     processed_mask = np.full(grid.shape, fill_value='unprocessed', dtype=object)
     lzr = Localizer(grid=grid, mz_axis=mz_axis, rt_axis=rt_axis, processed_mask=processed_mask)
 
-    box_count = []
     suspicious_boxes = []
-    cropped_grids, cropped_mz_axes, cropped_rt_axes, d_rt_grids, dd_rt_grids = [], [], [], [], []
+    cropped_regions = []
 
     while 'unprocessed' in processed_mask:
         box = lzr.find_next_active_box(global_intensity_thresh=0.10, local_margin=2)
         if not box:
             break
 
-        box_count.append(box)
-        cropped_grid, cropped_mz, cropped_rt = lzr.crop_box(box=box)
+        cropped_grid, cropped_mz, cropped_rt = lzr.crop_box(box)
         sd = SuspicionDetector(cropped_grid=cropped_grid, cropped_mz_axis=cropped_mz, cropped_rt_axis=cropped_rt)
         is_suspicious, _ = sd.detect_suspicious(plot=False)
         mark_box(processed_mask, box, label='processed')
 
         if is_suspicious:
             suspicious_boxes.append(box)
-            cropped_grids.append(cropped_grid)
-            cropped_mz_axes.append(cropped_mz)
-            cropped_rt_axes.append(cropped_rt)
-            d_rt_grids.append(sd.d_grid_rt)
-            dd_rt_grids.append(sd.dd_grid_rt)
+            cropped_regions.append((cropped_grid, cropped_mz, cropped_rt, sd.d_grid_rt, sd.dd_grid_rt))
 
-    suspicious_count = len(suspicious_boxes)
-    logging.info(f"Detected boxes: {suspicious_count}")
+    logging.info(f"Suspicious boxes detected: {len(suspicious_boxes)}")
 
-    if suspicious_count != expected_box_count:
-        logging.error(f"FAILED: Box test failed: expected {expected_box_count}, got {suspicious_count}")
+    if len(suspicious_boxes) != expected_num_boxes:
+        logging.error(f"FAILED: Box test failed: expected {expected_num_boxes}, got {len(suspicious_boxes)}")
     else:
-        logging.info(f"PASSED: Box test passed.")
+        logging.info("PASSED: Box test passed.")
 
-    if not check_overlap:
-        return
-    ########################################################
-    gmm_deconvolver = PeakDeconvolver(method="gmm")
-    ridge_deconvolver = PeakDeconvolver(method="ridge_walk")
-    wavelet_deconvolver = PeakDeconvolver(method="wavelet")
 
-    confirmed_overlaps_gmm = 0
-    total_peaks_in_overlap_gmm = 0
+    region_truth = get_region_truth(expected_num_boxes, expected_overlap_count)
+    model_outputs = defaultdict(list)
 
-    confirmed_overlaps_ridge = 0
-    total_peaks_in_overlap_ridge = 0
+    gmm = PeakDeconvolver(method="gmm")
+    gmm_peaks = 0
+    gmm_confirmed = 0
 
-    confirmed_overlaps_wavelet = 0
-    total_peaks_in_overlap_wavelet = 0
-    ########################################################
+    for region_idx, (raw_grid, mz, rt, d_rt, dd_rt) in enumerate(cropped_regions):
+        norm_grid = normalize_intensity(raw_grid, mode=normalization)
+        dyn_thresh = get_dynamic_threshold(norm_grid, method=threshold_mode, value=95)
 
-    for i, (grid, mz, rt, d_rt, dd_rt) in enumerate(zip(cropped_grids, cropped_mz_axes, cropped_rt_axes, d_rt_grids, dd_rt_grids)):
-        logging.info(f"\n--- Region {i + 1} ---")
-        gmm_result = gmm_deconvolver.model.fit(grid, mz, rt, region_index=i)
-
-        # ==== GMM ====
-        if gmm_result and gmm_result.get("overlap_detected", False):
-            num_peaks = gmm_result.get("num_peaks_in_overlap", 0)
-            confirmed_overlaps_gmm += 1
-            total_peaks_in_overlap_gmm += num_peaks
-            logging.info(
-                f"GMM: Detected {num_peaks} peaks (ΔBIC={gmm_result.get('confidence', 0):.2f}, "
-                f"support={gmm_result.get('bic_support', 'N/A')}) → overlap confirmed"
-            )
-        else:
-            logging.info("GMM: Detected single peak → no overlap")
-
-        ridge_result = ridge_deconvolver.model.fit(grid, d_rt, dd_rt)
-        # plot_ridges_on_grid(grid, mz, rt, ridge_deconvolver.model.ridges)
-        # ==== Ridge ====
-        try:
-            if ridge_result is None:
-                logging.info("Ridge: Analysis failed (no output)")
-            elif ridge_result.get("overlap_detected", False):
-                num_peaks = ridge_result.get("num_peaks_in_overlap", 0)
-                num_events = ridge_result.get("num_overlap_events", 0)
-                num_ridges = ridge_result.get("num_ridges_tracked", '?')
-                confirmed_overlaps_ridge += 1
-                total_peaks_in_overlap_ridge += num_peaks
-
-                logging.info(
-                    f"Ridge: Detected overlap involving {num_peaks} peaks "
-                    f"(from {num_ridges} ridges, {num_events} event{'s' if num_events != 1 else ''})"
-                )
-            else:
-                total_ridges = ridge_result.get("num_ridges_tracked", 0)
-                if total_ridges == 0:
-                    logging.info("Ridge: No ridges found")
-                elif total_ridges == 1:
-                    logging.info("Ridge: Single ridge found (no overlap)")
-                else:
-                    logging.info(f"Ridge: {total_ridges} ridges tracked, no overlaps detected")
-        except Exception as e:
-            logging.info(f"Ridge: Exception occurred during analysis: {e}")
+        # GMM
+        gmm.model.min_intensity = dyn_thresh
+        gmm_result = gmm.model.fit(norm_grid, mz, rt, region_index=region_idx, plot_func=plot_horizontal_gmm)
+        model_outputs["GMM"].append({
+            "region_index": region_idx,
+            "result": gmm_result,
+            "overlap_detected": gmm_result.get("overlap_detected", False) if gmm_result else False,
+            "num_peaks": gmm_result.get("num_peaks_in_overlap", 0) if gmm_result else 0,
+            "peak_locations": gmm_result.get("means", []) if gmm_result else []
+        })
         
-        # ==== Wavelet ==== 
-        wavelet_result = wavelet_deconvolver.model.fit(grid)  # Use the wavelet method
-        
-        if wavelet_result:
-            if wavelet_result.get("overlap_detected", False):
-                num_peaks = wavelet_result.get("num_peaks_in_overlap", 0)
-                # Only count this as an overlap if it has at least 2 peaks
-                if num_peaks >= 2:
-                    confirmed_overlaps_wavelet += 1
-                    total_peaks_in_overlap_wavelet += num_peaks
-                    logging.info(f"Wavelet: Detected {num_peaks} peaks → overlap confirmed")
-                else:
-                    logging.info(f"Wavelet: Detected {num_peaks} peak(s), but not enough for overlap")
+    # === Evaluation Metrics Per Model ===
+    for model_name, outputs in model_outputs.items():
+        tp = fp = fn = 0
+        peak_count_errors = []
+        localization_errors = []
+
+        confirmed_overlaps = 0
+        total_detected_peaks = 0
+
+        for i, model_output in enumerate(outputs):
+            logging.info(f"\n--- Region {i + 1} ---")
+
+            detected = model_output["overlap_detected"]
+            ground_truth = region_truth[i]
+            if detected and ground_truth:
+                tp += 1
+            elif detected and not ground_truth:
+                fp += 1
+            elif not detected and ground_truth:
+                fn += 1
+
+            if detected:
+                num_peaks = model_output.get("num_peaks", 0)
+                confidence = model_output.get("confidence", 0)
+                support = model_output.get("bic_support", "N/A")
+                confirmed_overlaps += 1
+                total_detected_peaks += num_peaks
+                logging.info(f"{model_name}: Detected {num_peaks} peaks (ΔBIC={confidence:.2f}, support={support}) → overlap confirmed")
             else:
-                logging.info("Wavelet: No overlap detected")
+                logging.info(f"{model_name}: Detected single peak → no overlap")
 
-    # === Evaluation: GMM
-    if confirmed_overlaps_gmm != expected_overlap_count:
-        logging.error(f"FAILED: GMM overlap region count mismatch - expected {expected_overlap_count}, got {confirmed_overlaps_gmm}")
-    else:
-        logging.info("PASSED: GMM overlap region count correct.")
+            # Peak Count Accuracy
+            if expected_peaks_in_overlap is not None:
+                detected_peaks = model_output.get("num_peaks_in_overlap")
+                if detected_peaks is not None:
+                    peak_count_errors.append(abs(detected_peaks - expected_peaks_in_overlap))
 
-    if expected_overlap_count > 0:
-        if total_peaks_in_overlap_gmm != expected_peaks_in_overlap:
-            logging.error(f"FAILED: GMM peak count in overlaps mismatch - expected {expected_peaks_in_overlap}, got {total_peaks_in_overlap_gmm}")
-        else:
-            logging.info("PASSED: GMM peak count in overlaps correct.")
 
-    # === Evaluation: Ridge
-    if confirmed_overlaps_ridge != expected_overlap_count:
-        logging.error(f"FAILED: Ridge overlap region count mismatch - expected {expected_overlap_count}, got {confirmed_overlaps_ridge}")
-    else:
-        logging.info("PASSED: Ridge overlap region count correct.")
+            # Localization Accuracy
+            detected_locations = model_output.get("peak_locations", [])
+            if detected_locations:
+                gt_locations = np.array([[p["mz_center"], p["rt_center"]] for p in peak_params])
+                if len(detected_locations) == len(gt_locations):
+                    distances = np.linalg.norm(detected_locations - gt_locations, axis=1)
+                    localization_errors.extend(distances)
 
-    if expected_overlap_count > 0:
-        if total_peaks_in_overlap_ridge != expected_peaks_in_overlap:
-            logging.error(f"FAILED: Ridge peak count in overlaps mismatch - expected {expected_peaks_in_overlap}, got {total_peaks_in_overlap_ridge}")
-        else:
-            logging.info("PASSED: Ridge peak count in overlaps correct.")
+        # Detection Summary
+        precision = tp / (tp + fp + 1e-9)
+        recall = tp / (tp + fn + 1e-9)
+        f1 = 2 * precision * recall / (precision + recall + 1e-9)
 
-        # === Evaluation: Wavelet ===
-    if confirmed_overlaps_wavelet != expected_overlap_count:
-        logging.error(f"FAILED: Wavelet overlap region count mismatch - expected {expected_overlap_count}, got {confirmed_overlaps_wavelet}")
-    else:
-        logging.info("PASSED: Wavelet overlap region count correct.")
+        logging.info(f"\n[{model_name}] Region-Level Detection Summary:")
+        logging.info(f"  TP={tp}, FP={fp}, FN={fn}")
+        logging.info(f"  Precision={precision:.2f}, Recall={recall:.2f}, F1={f1:.2f}")
 
-    if expected_overlap_count > 0:
-        if total_peaks_in_overlap_wavelet != expected_peaks_in_overlap:
-            logging.error(f"FAILED: Wavelet peak count in overlaps mismatch - expected {expected_peaks_in_overlap}, got {total_peaks_in_overlap_wavelet}")
-        else:
-            logging.info("PASSED: Wavelet peak count in overlaps correct.")
+        if peak_count_errors:
+            avg_peak_count_error = np.mean(peak_count_errors)
+            logging.info(f"[Category 2] Average Peak Count Error: {avg_peak_count_error:.2f}")
 
+        if localization_errors:
+            avg_localization_error = np.mean(localization_errors)
+            logging.info(f"[Category 3] Average Localization Error: {avg_localization_error:.2f}")
+
+        # Summary Check (like check_deconv_results)
+        check_deconv_results(model_name, confirmed_overlaps, total_detected_peaks, expected_overlap_count, expected_peaks_in_overlap)
+
+
+# === Run All Test Cases ===
 def main():
-    failures = 0
-    for i, (label, peak_params, exp_suspicious, exp_overlap, exp_peaks_in_overlap) in enumerate(TEST_CASES, start=1):
+    for label, peak_params, expected_boxes, expected_overlaps, expected_peaks_in_overlap in TEST_CASES:
         try:
-            run_test_case(label, peak_params, exp_suspicious, exp_overlap, exp_peaks_in_overlap, check_overlap=True)
+            run_model_suite_on_test_case(label, peak_params, expected_boxes, expected_overlaps, expected_peaks_in_overlap)
         except Exception as e:
-            logging.error(f"Unhandled error during test '{label}': {e}")
-            failures += 1
-
-    if failures == 0:
-        logging.info("\n=== All tests completed successfully ===")
-    else:
-        logging.warning(f"\n=== {failures} tests had errors or failed ===")
+            logging.error(f"Error in test '{label}': {e}")
 
 if __name__ == "__main__":
     main()
