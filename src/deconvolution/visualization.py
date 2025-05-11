@@ -6,13 +6,27 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 
-def plot_horizontal_gmm(grid, mz_axis, rt_axis, gmm, scaler, region_idx, mz_boost):
-    from matplotlib.patches import Ellipse
+import matplotlib.pyplot as plt
+from matplotlib.patches import Ellipse
+import numpy as np
 
+def plot_horizontal_gmm(grid, mz_axis, rt_axis, gmm, scaler, region_idx, mz_shrink):
+    """
+    Plot GMM ellipses on top of intensity heatmap, undoing scaling and anisotropy.
+    
+    Args:
+        grid (ndarray): 2D intensity grid (m/z x RT).
+        mz_axis (ndarray): m/z axis values.
+        rt_axis (ndarray): RT axis values.
+        gmm (GaussianMixture): Fitted GMM model.
+        scaler (StandardScaler): Used to unscale GMM means and covariances.
+        region_idx (int): Index of the region for title.
+        mz_shrink (float): Anisotropy scaling factor applied to m/z.
+    """
     grid = np.array(grid, dtype=float)
     plt.figure(figsize=(8, 6))
     extent = [rt_axis[0], rt_axis[-1], mz_axis[0], mz_axis[-1]]
-    
+
     plt.imshow(grid, extent=extent, origin='lower', aspect='auto', cmap='viridis')
     plt.title(f"Region {region_idx} – GMM Overlay ({gmm.n_components} component(s))")
     plt.xlabel("RT")
@@ -20,23 +34,31 @@ def plot_horizontal_gmm(grid, mz_axis, rt_axis, gmm, scaler, region_idx, mz_boos
     plt.colorbar(label='Intensity')
 
     for mean, cov in zip(gmm.means_, gmm.covariances_):
-        mean_orig = scaler.inverse_transform(mean.reshape(1, -1))[0]
-        mean_orig[0] /= mz_boost  # ← UNDO dynamic anisotropy
+        # Undo standardization
+        mean_unscaled = scaler.inverse_transform(mean.reshape(1, -1))[0]
+        cov_unscaled = cov * (scaler.scale_ ** 2)
 
-        # Ellipse parameters from cov
-        v, w = np.linalg.eigh(cov)
-        v = 2.0 * np.sqrt(v)  # stddev scaling
-        angle = np.degrees(np.arctan2(w[1, 0], w[0, 0]))
+        # Undo anisotropy scaling on m/z
+        mean_unscaled[0] *= mz_shrink
+        cov_unscaled[0, :] *= mz_shrink
+        cov_unscaled[:, 0] *= mz_shrink
 
-        # Undo anisotropy scaling
-        v[0] /= mz_boost  # ← UNDO here too
 
-        # Convert to ellipse width/height in original units
-        width = v[1] * scaler.scale_[1]  # RT
-        height = v[0] * scaler.scale_[0]  # m/z
+        # Eigen decomposition for ellipse shape
+        vals, vecs = np.linalg.eigh(cov_unscaled)
+        order = vals.argsort()[::-1]
+        vals = vals[order]
+        vecs = vecs[:, order]
+
+        angle = np.degrees(np.arctan2(*vecs[:, 0][::-1]))
+
+        # Correct width/height: match to RT (x-axis) and m/z (y-axis)
+        width = 2 * np.sqrt(vals[1])  # RT
+        height = 2 * np.sqrt(vals[0])  # m/z
+
 
         ell = Ellipse(
-            xy=(mean_orig[1], mean_orig[0]),  # (RT, m/z)
+            xy=(mean_unscaled[1], mean_unscaled[0]),  # (RT, m/z)
             width=width,
             height=height,
             angle=angle,
@@ -48,6 +70,7 @@ def plot_horizontal_gmm(grid, mz_axis, rt_axis, gmm, scaler, region_idx, mz_boos
 
     plt.tight_layout()
     plt.show()
+
 
 
 
