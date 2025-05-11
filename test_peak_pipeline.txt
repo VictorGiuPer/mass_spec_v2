@@ -1,155 +1,162 @@
-2025-05-11 16:42:44,009 - INFO - 
+2025-05-11 22:24:47,570 - INFO - 
 === Running Test: Two clearly separated peaks ===
-2025-05-11 16:42:44,009 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 158.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
-2025-05-11 16:42:44,009 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-11 16:42:44,031 - INFO - Detected boxes: 2
-2025-05-11 16:42:44,031 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:44,031 - INFO - 
+2025-05-11 22:24:47,570 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 158.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-11 22:24:47,570 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-11 22:24:47,591 - INFO - Detected boxes: 2
+2025-05-11 22:24:47,596 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:44,240 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:44,240 - INFO - Ridge: 5 ridges tracked, no overlaps detected
-2025-05-11 16:42:44,255 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:44,255 - INFO - 
+2025-05-11 22:24:47,854 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:47,854 - INFO - Ridge: 5 ridges tracked, no overlaps detected
+2025-05-11 22:24:47,867 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:47,867 - INFO - 
 --- Region 2 ---
-2025-05-11 16:42:44,305 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:44,309 - INFO - Ridge: 6 ridges tracked, no overlaps detected
-2025-05-11 16:42:44,322 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:44,322 - INFO - PASSED: GMM overlap region count correct.
-2025-05-11 16:42:44,323 - INFO - PASSED: Ridge overlap region count correct.
-2025-05-11 16:42:44,323 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 0, got 2
-2025-05-11 16:42:44,324 - INFO - 
+2025-05-11 22:24:47,942 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:47,942 - INFO - Ridge: 6 ridges tracked, no overlaps detected
+2025-05-11 22:24:47,955 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:47,955 - INFO - 
+=== Test Summary: Two clearly separated peaks ===
+2025-05-11 22:24:47,955 - INFO - PASSED: GMM overlap region count correct.
+2025-05-11 22:24:47,955 - INFO - PASSED: Ridge overlap region count correct.
+2025-05-11 22:24:47,955 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-11 22:24:47,955 - INFO - 
 === Running Test: Strong overlap between two peaks ===
-2025-05-11 16:42:44,324 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.1, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 45000}]
-2025-05-11 16:42:44,324 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-11 16:42:44,340 - INFO - Detected boxes: 1
-2025-05-11 16:42:44,340 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:44,340 - INFO - 
+2025-05-11 22:24:47,955 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.1, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 45000}]
+2025-05-11 22:24:47,955 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-11 22:24:47,999 - INFO - Detected boxes: 1
+2025-05-11 22:24:47,999 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:44,408 - INFO - GMM: Detected 3 peaks (\u0394BIC=26.55, support=very strong) \u2192 overlap confirmed
-2025-05-11 16:42:44,415 - INFO - Ridge: Detected overlap involving 2 peaks (from 7 ridges, 1 event)
-2025-05-11 16:42:44,433 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:44,433 - INFO - PASSED: GMM overlap region count correct.
-2025-05-11 16:42:44,433 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 3
-2025-05-11 16:42:44,433 - INFO - PASSED: Ridge overlap region count correct.
-2025-05-11 16:42:44,433 - INFO - PASSED: Ridge peak count in overlaps correct.
-2025-05-11 16:42:44,433 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-11 16:42:44,433 - INFO - PASSED: Wavelet peak count in overlaps correct.
-2025-05-11 16:42:44,434 - INFO - 
+2025-05-11 22:24:48,110 - INFO - GMM: Detected 3 peaks (ΔBIC=26.55, support=very strong) → overlap confirmed
+2025-05-11 22:24:48,118 - INFO - Ridge: Detected overlap involving 2 peaks (from 7 ridges, 1 event)
+2025-05-11 22:24:48,130 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:48,130 - INFO - 
+=== Test Summary: Strong overlap between two peaks ===
+2025-05-11 22:24:48,130 - INFO - PASSED: GMM overlap region count correct.
+2025-05-11 22:24:48,130 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 3
+2025-05-11 22:24:48,130 - INFO - PASSED: Ridge overlap region count correct.
+2025-05-11 22:24:48,130 - INFO - PASSED: Ridge peak count in overlaps correct.
+2025-05-11 22:24:48,130 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-11 22:24:48,130 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-11 22:24:48,131 - INFO - 
 === Running Test: Four peaks: 2 overlap, 2 isolated ===
-2025-05-11 16:42:44,434 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18000}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.5, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 159.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
-2025-05-11 16:42:44,434 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-11 16:42:44,470 - INFO - Detected boxes: 3
-2025-05-11 16:42:44,470 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:44,470 - INFO - 
+2025-05-11 22:24:48,132 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18000}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.5, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 159.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-11 22:24:48,132 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-11 22:24:48,170 - INFO - Detected boxes: 3
+2025-05-11 22:24:48,170 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:44,541 - INFO - GMM: Detected 2 peaks (\u0394BIC=15.10, support=very strong) \u2192 overlap confirmed
-2025-05-11 16:42:44,563 - INFO - Ridge: Detected overlap involving 3 peaks (from 11 ridges, 20 events)
-2025-05-11 16:42:44,569 - INFO - Wavelet: Detected 4 peaks \u2192 overlap confirmed
-2025-05-11 16:42:44,569 - INFO - 
+2025-05-11 22:24:48,274 - INFO - GMM: Detected 2 peaks (ΔBIC=15.10, support=very strong) → overlap confirmed
+2025-05-11 22:24:48,301 - INFO - Ridge: Detected overlap involving 3 peaks (from 11 ridges, 20 events)
+2025-05-11 22:24:48,317 - INFO - Wavelet: Detected 2 peaks → overlap confirmed
+2025-05-11 22:24:48,322 - INFO - 
 --- Region 2 ---
-2025-05-11 16:42:44,642 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:44,645 - INFO - Ridge: 6 ridges tracked, no overlaps detected
-2025-05-11 16:42:44,669 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:44,669 - INFO - 
+2025-05-11 22:24:48,413 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:48,415 - INFO - Ridge: 6 ridges tracked, no overlaps detected
+2025-05-11 22:24:48,425 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:48,425 - INFO - 
 --- Region 3 ---
-2025-05-11 16:42:44,743 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:44,751 - INFO - Ridge: 6 ridges tracked, no overlaps detected
-2025-05-11 16:42:44,761 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:44,761 - INFO - PASSED: GMM overlap region count correct.
-2025-05-11 16:42:44,761 - INFO - PASSED: GMM peak count in overlaps correct.
-2025-05-11 16:42:44,761 - INFO - PASSED: Ridge overlap region count correct.
-2025-05-11 16:42:44,761 - ERROR - FAILED: Ridge peak count in overlaps mismatch - expected 2, got 3
-2025-05-11 16:42:44,761 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 3
-2025-05-11 16:42:44,761 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 9
-2025-05-11 16:42:44,768 - INFO - 
+2025-05-11 22:24:48,500 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:48,502 - INFO - Ridge: 6 ridges tracked, no overlaps detected
+2025-05-11 22:24:48,511 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:48,511 - INFO - 
+=== Test Summary: Four peaks: 2 overlap, 2 isolated ===
+2025-05-11 22:24:48,511 - INFO - PASSED: GMM overlap region count correct.
+2025-05-11 22:24:48,511 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-11 22:24:48,514 - INFO - PASSED: Ridge overlap region count correct.
+2025-05-11 22:24:48,514 - ERROR - FAILED: Ridge peak count in overlaps mismatch - expected 2, got 3
+2025-05-11 22:24:48,514 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-11 22:24:48,514 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-11 22:24:48,516 - INFO - 
 === Running Test: Cluster of 3 overlapping peaks ===
-2025-05-11 16:42:44,768 - INFO - Input peak parameters: [{'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}]
-2025-05-11 16:42:44,768 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
-2025-05-11 16:42:44,786 - INFO - Detected boxes: 1
-2025-05-11 16:42:44,786 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:44,786 - INFO - 
+2025-05-11 22:24:48,516 - INFO - Input peak parameters: [{'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}]
+2025-05-11 22:24:48,516 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
+2025-05-11 22:24:48,550 - INFO - Detected boxes: 1
+2025-05-11 22:24:48,551 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:44,908 - INFO - GMM: Detected 3 peaks (\u0394BIC=86.49, support=very strong) \u2192 overlap confirmed
-2025-05-11 16:42:44,999 - INFO - Ridge: Detected overlap involving 3 peaks (from 23 ridges, 113 events)
-2025-05-11 16:42:45,019 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,019 - INFO - PASSED: GMM overlap region count correct.
-2025-05-11 16:42:45,019 - INFO - PASSED: GMM peak count in overlaps correct.
-2025-05-11 16:42:45,019 - INFO - PASSED: Ridge overlap region count correct.
-2025-05-11 16:42:45,019 - INFO - PASSED: Ridge peak count in overlaps correct.
-2025-05-11 16:42:45,019 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-11 16:42:45,019 - INFO - PASSED: Wavelet peak count in overlaps correct.
-2025-05-11 16:42:45,019 - INFO - 
+2025-05-11 22:24:48,684 - INFO - GMM: Detected 3 peaks (ΔBIC=86.49, support=very strong) → overlap confirmed
+2025-05-11 22:24:48,770 - INFO - Ridge: Detected overlap involving 3 peaks (from 23 ridges, 113 events)
+2025-05-11 22:24:48,784 - INFO - Wavelet: Detected 3 peaks → overlap confirmed
+2025-05-11 22:24:48,784 - INFO - 
+=== Test Summary: Cluster of 3 overlapping peaks ===
+2025-05-11 22:24:48,784 - INFO - PASSED: GMM overlap region count correct.
+2025-05-11 22:24:48,784 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-11 22:24:48,784 - INFO - PASSED: Ridge overlap region count correct.
+2025-05-11 22:24:48,784 - INFO - PASSED: Ridge peak count in overlaps correct.
+2025-05-11 22:24:48,784 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-11 22:24:48,784 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-11 22:24:48,788 - INFO - 
 === Running Test: Close but not overlapping peaks ===
-2025-05-11 16:42:45,019 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10000}, {'rt_center': 13.4, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9500}]
-2025-05-11 16:42:45,019 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-11 16:42:45,041 - INFO - Detected boxes: 2
-2025-05-11 16:42:45,041 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:45,041 - INFO - 
+2025-05-11 22:24:48,788 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10000}, {'rt_center': 13.4, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9500}]
+2025-05-11 22:24:48,788 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-11 22:24:48,811 - INFO - Detected boxes: 2
+2025-05-11 22:24:48,811 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:45,097 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,100 - INFO - Ridge: 5 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,118 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,119 - INFO - 
+2025-05-11 22:24:48,871 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:48,871 - INFO - Ridge: 5 ridges tracked, no overlaps detected
+2025-05-11 22:24:48,879 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:48,879 - INFO - 
 --- Region 2 ---
-2025-05-11 16:42:45,168 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,169 - INFO - Ridge: 5 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,186 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,186 - INFO - PASSED: GMM overlap region count correct.
-2025-05-11 16:42:45,186 - INFO - PASSED: Ridge overlap region count correct.
-2025-05-11 16:42:45,186 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 0, got 2
-2025-05-11 16:42:45,186 - INFO - 
+2025-05-11 22:24:48,933 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:48,934 - INFO - Ridge: 5 ridges tracked, no overlaps detected
+2025-05-11 22:24:48,940 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:48,940 - INFO - 
+=== Test Summary: Close but not overlapping peaks ===
+2025-05-11 22:24:48,942 - INFO - PASSED: GMM overlap region count correct.
+2025-05-11 22:24:48,942 - INFO - PASSED: Ridge overlap region count correct.
+2025-05-11 22:24:48,942 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-11 22:24:48,942 - INFO - 
 === Running Test: Intense + weak overlap ===
-2025-05-11 16:42:45,186 - INFO - Input peak parameters: [{'rt_center': 12.5, 'mz_center': 152.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 30000}, {'rt_center': 12.6, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6000}, {'rt_center': 14.5, 'mz_center': 158.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32000}]
-2025-05-11 16:42:45,186 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-11 16:42:45,220 - INFO - Detected boxes: 2
-2025-05-11 16:42:45,220 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:45,220 - INFO - 
+2025-05-11 22:24:48,942 - INFO - Input peak parameters: [{'rt_center': 12.5, 'mz_center': 152.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 30000}, {'rt_center': 12.6, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6000}, {'rt_center': 14.5, 'mz_center': 158.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32000}]
+2025-05-11 22:24:48,942 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-11 22:24:48,979 - INFO - Detected boxes: 2
+2025-05-11 22:24:48,979 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:45,301 - INFO - GMM: Detected 3 peaks (\u0394BIC=13.60, support=very strong) \u2192 overlap confirmed
-2025-05-11 16:42:45,302 - INFO - Ridge: 6 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,321 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,321 - INFO - 
+2025-05-11 22:24:49,069 - INFO - GMM: Detected 3 peaks (ΔBIC=13.60, support=very strong) → overlap confirmed
+2025-05-11 22:24:49,069 - INFO - Ridge: 6 ridges tracked, no overlaps detected
+2025-05-11 22:24:49,074 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:49,081 - INFO - 
 --- Region 2 ---
-2025-05-11 16:42:45,400 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,400 - INFO - Ridge: 6 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,404 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,404 - INFO - PASSED: GMM overlap region count correct.
-2025-05-11 16:42:45,404 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 3
-2025-05-11 16:42:45,404 - ERROR - FAILED: Ridge overlap region count mismatch - expected 1, got 0
-2025-05-11 16:42:45,404 - ERROR - FAILED: Ridge peak count in overlaps mismatch - expected 2, got 0
-2025-05-11 16:42:45,404 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 2
-2025-05-11 16:42:45,404 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 5
-2025-05-11 16:42:45,416 - INFO - 
+2025-05-11 22:24:49,168 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:49,168 - INFO - Ridge: 6 ridges tracked, no overlaps detected
+2025-05-11 22:24:49,183 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:49,183 - INFO - 
+=== Test Summary: Intense + weak overlap ===
+2025-05-11 22:24:49,183 - INFO - PASSED: GMM overlap region count correct.
+2025-05-11 22:24:49,183 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 3
+2025-05-11 22:24:49,183 - ERROR - FAILED: Ridge overlap region count mismatch - expected 1, got 0
+2025-05-11 22:24:49,183 - ERROR - FAILED: Ridge peak count in overlaps mismatch - expected 2, got 0
+2025-05-11 22:24:49,183 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-11 22:24:49,183 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-11 22:24:49,183 - INFO - 
 === Running Test: Five peaks: 3 spaced, 2 overlapping ===
-2025-05-11 16:42:45,416 - INFO - Input peak parameters: [{'rt_center': 10.5, 'mz_center': 150.5, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.5, 'mz_center': 151.5, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 13.0, 'mz_center': 154.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.05, 'mz_center': 154.05, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}]
-2025-05-11 16:42:45,416 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-11 16:42:45,452 - INFO - Detected boxes: 4
-2025-05-11 16:42:45,452 - INFO - PASSED: Box test passed.
-2025-05-11 16:42:45,452 - INFO - 
+2025-05-11 22:24:49,183 - INFO - Input peak parameters: [{'rt_center': 10.5, 'mz_center': 150.5, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.5, 'mz_center': 151.5, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 13.0, 'mz_center': 154.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.1, 'mz_center': 154.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}]
+2025-05-11 22:24:49,183 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-11 22:24:49,221 - INFO - Detected boxes: 4
+2025-05-11 22:24:49,221 - INFO - 
 --- Region 1 ---
-2025-05-11 16:42:45,488 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,488 - INFO - Ridge: 4 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,502 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,502 - INFO - 
+2025-05-11 22:24:49,272 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:49,274 - INFO - Ridge: 4 ridges tracked, no overlaps detected
+2025-05-11 22:24:49,278 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:49,278 - INFO - 
 --- Region 2 ---
-2025-05-11 16:42:45,553 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,555 - INFO - Ridge: 4 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,563 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,563 - INFO - 
+2025-05-11 22:24:49,329 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:49,331 - INFO - Ridge: 4 ridges tracked, no overlaps detected
+2025-05-11 22:24:49,336 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:49,336 - INFO - 
 --- Region 3 ---
-2025-05-11 16:42:45,614 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,614 - INFO - Ridge: 4 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,621 - INFO - Wavelet: Detected 3 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,621 - INFO - 
+2025-05-11 22:24:49,388 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:49,390 - INFO - Ridge: 4 ridges tracked, no overlaps detected
+2025-05-11 22:24:49,390 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:49,390 - INFO - 
 --- Region 4 ---
-2025-05-11 16:42:45,701 - INFO - GMM: Detected single peak \u2192 no overlap
-2025-05-11 16:42:45,704 - INFO - Ridge: 6 ridges tracked, no overlaps detected
-2025-05-11 16:42:45,719 - INFO - Wavelet: Detected 2 peaks \u2192 overlap confirmed
-2025-05-11 16:42:45,719 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
-2025-05-11 16:42:45,719 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
-2025-05-11 16:42:45,721 - ERROR - FAILED: Ridge overlap region count mismatch - expected 1, got 0
-2025-05-11 16:42:45,721 - ERROR - FAILED: Ridge peak count in overlaps mismatch - expected 2, got 0
-2025-05-11 16:42:45,721 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 4
-2025-05-11 16:42:45,721 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 11
-2025-05-11 16:42:45,721 - INFO - 
+2025-05-11 22:24:49,475 - INFO - GMM: Detected single peak → no overlap
+2025-05-11 22:24:49,477 - INFO - Ridge: 6 ridges tracked, no overlaps detected
+2025-05-11 22:24:49,486 - INFO - Wavelet: Detected None peak(s), not enough for overlap
+2025-05-11 22:24:49,486 - INFO - 
+=== Test Summary: Five peaks: 3 spaced, 2 overlapping ===
+2025-05-11 22:24:49,486 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-11 22:24:49,486 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-11 22:24:49,486 - ERROR - FAILED: Ridge overlap region count mismatch - expected 1, got 0
+2025-05-11 22:24:49,486 - ERROR - FAILED: Ridge peak count in overlaps mismatch - expected 2, got 0
+2025-05-11 22:24:49,486 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-11 22:24:49,486 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-11 22:24:49,486 - INFO - 
 === All tests completed successfully ===

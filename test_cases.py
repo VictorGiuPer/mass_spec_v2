@@ -60,7 +60,7 @@ TEST_CASES = [
             {"rt_center": 11.0, "mz_center": 151.0, "rt_sigma": 0.15, "mz_sigma": 0.03, "amplitude": 10000},
             {"rt_center": 11.5, "mz_center": 151.5, "rt_sigma": 0.15, "mz_sigma": 0.03, "amplitude": 10000},
             {"rt_center": 13.0, "mz_center": 154.0, "rt_sigma": 0.2, "mz_sigma": 0.03, "amplitude": 22000},
-            {"rt_center": 13.05, "mz_center": 154.05, "rt_sigma": 0.2, "mz_sigma": 0.03, "amplitude": 21000}
+            {"rt_center": 13.1, "mz_center": 154.1, "rt_sigma": 0.2, "mz_sigma": 0.03, "amplitude": 21000}
         ],
         4, 1, 2  # Last two overlap, others are spaced
     )

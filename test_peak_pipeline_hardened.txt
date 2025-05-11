@@ -1,0 +1,38 @@
+2025-05-12 00:07:56,465 - INFO - 
+=== Running Test: Two clearly separated peaks ===
+2025-05-12 00:07:56,465 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 158.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-12 00:07:56,465 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 00:07:56,489 - INFO - Suspicious boxes detected: 2
+2025-05-12 00:07:56,489 - INFO - PASSED: Box test passed.
+2025-05-12 00:08:01,030 - INFO - 
+--- Region 1 ---
+2025-05-12 00:08:01,030 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 00:08:01,030 - INFO - 
+--- Region 2 ---
+2025-05-12 00:08:01,030 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 00:08:01,030 - INFO - 
+[GMM] Region-Level Detection Summary:
+2025-05-12 00:08:01,030 - INFO -   TP=0, FP=0, FN=0
+2025-05-12 00:08:01,030 - INFO -   Precision=0.00, Recall=0.00, F1=0.00
+2025-05-12 00:08:01,030 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 00:08:01,030 - INFO - 
+=== Running Test: Strong overlap between two peaks ===
+2025-05-12 00:08:01,030 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.1, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 45000}]
+2025-05-12 00:08:01,030 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 00:08:01,054 - INFO - Suspicious boxes detected: 1
+2025-05-12 00:08:01,056 - INFO - PASSED: Box test passed.
+2025-05-12 00:08:06,620 - INFO - 
+--- Region 1 ---
+2025-05-12 00:08:06,620 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 00:08:06,620 - INFO - 
+[GMM] Region-Level Detection Summary:
+2025-05-12 00:08:06,620 - INFO -   TP=0, FP=0, FN=1
+2025-05-12 00:08:06,620 - INFO -   Precision=0.00, Recall=0.00, F1=0.00
+2025-05-12 00:08:06,620 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 00:08:06,620 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 00:08:06,624 - INFO - 
+=== Running Test: Four peaks: 2 overlap, 2 isolated ===
+2025-05-12 00:08:06,624 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18000}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 13.5, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 14.0, 'mz_center': 159.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-12 00:08:06,624 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 00:08:06,676 - INFO - Suspicious boxes detected: 3
+2025-05-12 00:08:06,678 - INFO - PASSED: Box test passed.
