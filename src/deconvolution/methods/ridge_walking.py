@@ -2,14 +2,14 @@ import numpy as np
 from sklearn.cluster import DBSCAN
 
 class RidgeWalker:
-    def __init__(self, min_intensity=2e4, min_slope=0.1, fusion_threshold=0.3,
+    def __init__(self, min_intensity=3e4, min_slope=0.2, fusion_threshold=0.45,
                  fork_sep=2, fork_width=3, weights=None):
         self.min_intensity = min_intensity
         self.min_slope = min_slope
         self.fusion_threshold = fusion_threshold
         self.fork_sep = fork_sep
         self.fork_width = fork_width
-        self.weights = weights if weights else {"width": 0.3, "smoothness": 0.3, "fork": 0.4}
+        self.weights = weights if weights else {"width": 0.2, "smoothness": 0.3, "fork": 0.5}
 
     def fit(self, grid, d_rt, dd_rt):
         self.grid = grid
@@ -76,6 +76,17 @@ class RidgeWalker:
     def _track_single_ridge(self, mz, rt):
         backward = self._extend_ridge_one_direction(mz, rt, -1)[::-1]
         forward = self._extend_ridge_one_direction(mz, rt, 1)
+        ridge = backward + [(mz, rt)] + forward
+
+        # Early contrast check to skip flat ridges
+        if len(ridge) >= 3:
+            intensities = [self.grid[mz, rt] for mz, rt in ridge]
+            contrast = (max(intensities) - min(intensities)) / (max(intensities) + 1e-9)
+            if contrast < 0.02:
+                return []
+
+        return ridge
+
         return backward + [(mz, rt)] + forward
 
     def _track_all_ridges(self):
@@ -99,8 +110,9 @@ class RidgeWalker:
                     if len(path) < 3:
                         continue
                     mz_jump = [abs(path[i + 1][0] - path[i][0]) for i in range(len(path) - 1)]
-                    if max(mz_jump) > 2:  # Too jumpy
+                    if np.percentile(mz_jump, 90) > 1:
                         continue
+
 
                     if len(path) > 1:
                         ridge_paths.append(path)
@@ -220,6 +232,52 @@ class RidgeWalker:
 
             ridge_scores.append((i, ridge))
 
+        def is_mid_saddle(ridge_i, other_ridges):
+            """Check if a ridge lies between two stronger ridges and is likely a saddle."""
+            rt_i = [rt for _, rt in ridge_i]
+            mz_i = [mz for mz, _ in ridge_i]
+            mean_rt_i = np.mean(rt_i)
+            mean_mz_i = np.mean(mz_i)
+            max_i = max(self.grid[mz, rt] for mz, rt in ridge_i)
+
+            # Nearby ridges in RT
+            neighbors = []
+            for ridge_j in other_ridges:
+                rt_j = [rt for _, rt in ridge_j]
+                if abs(np.mean(rt_j) - mean_rt_i) < 1.0:
+                    neighbors.append(ridge_j)
+
+            # Stronger ridges
+            stronger_neighbors = sorted(
+                [r for r in neighbors if max(self.grid[mz, rt] for mz, rt in r) > 1.5 * max_i],
+                key=lambda r: max(self.grid[mz, rt] for mz, rt in r),
+                reverse=True
+            )
+
+            if len(stronger_neighbors) >= 2:
+                r1, r2 = stronger_neighbors[0], stronger_neighbors[1]
+                mz_r1 = np.mean([mz for mz, _ in r1])
+                mz_r2 = np.mean([mz for mz, _ in r2])
+
+                if min(mz_r1, mz_r2) < mean_mz_i < max(mz_r1, mz_r2):
+                    valley_info = self._valley_score_between_ridges(r1, r2)
+                    if valley_info is None or valley_info["confidence"] < 0.3:
+                        return True  # weak valley between strong flanks = likely a saddle
+
+            return False
+
+
+        filtered_scores = []
+        for idx, ridge in ridge_scores:
+            others = [r for j, r in ridge_scores if j != idx]
+            if is_mid_saddle(ridge, others):
+                print(f"[FILTER] Ridge {idx} is likely a saddle between two strong peaks — ignored.")
+                continue
+            filtered_scores.append((idx, ridge))
+
+        ridge_scores = filtered_scores
+
+
         overlaps = []
         for idx1, r1 in ridge_scores:
             for idx2, r2 in ridge_scores:
@@ -247,14 +305,37 @@ class RidgeWalker:
             for o in overlaps:
                 involved_ridge_indices.update(o["ridge_pair"])
 
-            # Estimate number of peaks by clustering ridges by RT center
-            num_peaks = 0
-            if len(involved_ridge_indices) >= 2:
-                rt_centers = [np.mean([rt for _, rt in self.ridges[i]]) for i in involved_ridge_indices]
-                rt_centers = np.array(rt_centers).reshape(-1, 1)
-                db = DBSCAN(eps=2.0, min_samples=1).fit(rt_centers)
-                unique_clusters = len(set(db.labels_))
-                num_peaks = max(unique_clusters, 2)  # Force minimum of 2 if overlap was detected
+            # === Deduplicate ridges based on proximity (same RT/mz center) ===
+            deduped_indices = []
+            used = set()
+
+            ridge_centers = {
+                i: (np.median([mz for mz, _ in self.ridges[i]]), np.median([rt for _, rt in self.ridges[i]]))
+                for i in involved_ridge_indices
+            }
+
+            for i in ridge_centers:
+                if i in used:
+                    continue
+                mz_i, rt_i = ridge_centers[i]
+                cluster = [i]
+                for j in ridge_centers:
+                    if j == i or j in used:
+                        continue
+                    mz_j, rt_j = ridge_centers[j]
+                    if abs(rt_i - rt_j) < 0.2 and abs(mz_i - mz_j) < 0.05:
+                        cluster.append(j)
+                        used.add(j)
+                used.add(i)
+                deduped_indices.append(i)
+
+            # Estimate number of peaks from deduplicated set
+            rt_centers = [np.mean([rt for _, rt in self.ridges[i]]) for i in deduped_indices]
+            rt_centers = np.array(rt_centers).reshape(-1, 1)
+            db = DBSCAN(eps=1.0, min_samples=1).fit(rt_centers)
+            unique_clusters = len(set(db.labels_))
+            num_peaks = max(unique_clusters, 2)  # Force minimum of 2 if overlap was detected
+
 
             return {
                 "overlap_detected": len(overlaps) > 0,
