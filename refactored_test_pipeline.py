@@ -8,6 +8,7 @@ from src.detection.localization import Localizer
 from src.detection.suspicion import SuspicionDetector
 from src.detection.utils import mark_box
 from src.deconvolution.peak_deconvolver import PeakDeconvolver
+from src.deconvolution.visualization import plot_horizontal_gmm, plot_ridges_on_grid
 from test_cases import TEST_CASES
 
 # === Setup Logging ===
@@ -21,13 +22,13 @@ logging.basicConfig(
 
 # === File mapping ===
 FILE_MAP = {
-    "Two clearly separated peaks": "TEST_CASE.npz",
-    "Strong overlap between two peaks": "TEST_CASE_1.npz",
-    "Four peaks: 2 overlap, 2 isolated": "TEST_CASE_2.npz",
-    "Cluster of 3 overlapping peaks": "TEST_CASE_3.npz",
-    "Close but not overlapping peaks": "TEST_CASE_4.npz",
-    "Intense + weak overlap": "TEST_CASE_5.npz",
-    "Five peaks: 3 spaced, 2 overlapping": "TEST_CASE_6.npz",
+    "Variant - Two clearly separated peaks 1": "TEST_CASE.npz",
+    "Variant - Strong overlap between two peaks 1": "TEST_CASE_1.npz",
+    "Variant - Four peaks: 2 overlap, 2 isolated 1": "TEST_CASE_2.npz",
+    "Variant - Cluster of 3 overlapping peaks 1": "TEST_CASE_3.npz",
+    "Variant - Close but not overlapping peaks 1": "TEST_CASE_4.npz",
+    "Variant - Intense + weak overlap 1": "TEST_CASE_5.npz",
+    "Variant - Five peaks: 3 spaced, 2 overlapping ": "TEST_CASE_6.npz",
 }
 
 def check_deconv_results(method, found_regions, found_peaks, expected_regions, expected_peaks):
@@ -116,6 +117,7 @@ def run_test_case(label, peak_params, expected_box_count, expected_overlap_count
 
         # === Ridge ===
         ridge_result = ridge.model.fit(grid, d_rt, dd_rt)
+        plot_ridges_on_grid(grid, mz, rt, ridge.model.ridges)
         if ridge_result is None:
             logging.info("Ridge: Analysis failed (no output)")
         elif ridge_result.get("overlap_detected", False):
