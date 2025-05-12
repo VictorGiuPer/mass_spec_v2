@@ -5,8 +5,8 @@ from scipy.ndimage import gaussian_filter
 from src.generation import GridGenerator, GaussianGenerator
 from src.generation.splatting import splatting_pipeline, splatted_grid_to_npy
 
-# Create test_splatted directory if it doesn't exist
-os.makedirs("test_splatted", exist_ok=True)
+# Create directory if it doesn't exist
+os.makedirs("test_ext", exist_ok=True)
 
 # Test cases from test_cases.py
 from test_cases import TEST_CASES
@@ -27,7 +27,7 @@ grid_gen = GridGenerator()
 gauss_gen = GaussianGenerator()
 
 # Generate grid files for each test case
-for label, peak_params, _, _ in TEST_CASES:
+for label, peak_params, _, _, _ in TEST_CASES:
     print(f"Generating grid for: {label}")
     
     # Generate base grid
@@ -50,14 +50,14 @@ for label, peak_params, _, _ in TEST_CASES:
     )
 
     # Apply 2D smoothing
-    grid = gaussian_filter(grid, sigma=1.0)
+    grid = gaussian_filter(grid, sigma=(0.6, 1.2))
 
-    # Save to file
-    filename = FILE_MAP.get(label)
-    if not filename:
-        print(f"Warning: No file mapping found for test label: '{label}'")
-        continue
+    # Clean label to use as filename
+    safe_label = label.lower().replace(" ", "_").replace(":", "").replace("-", "").replace("__", "_")
+    filename = f"{safe_label}.npz"
 
-    output_path = os.path.join("test_splatted_smooth", filename)
+    # Save to new test_ext folder
+    output_path = os.path.join("test_ext", filename)
     np.savez(output_path, grid=grid, rt_axis=rt_axis, mz_axis=mz_axis)
     print(f"Saved to: {output_path}")
+
