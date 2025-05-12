@@ -1,9 +1,11 @@
 import numpy as np
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
+from scipy.ndimage import maximum_filter, label, find_objects
+
 
 class GMMDeconvolver:
-    def __init__(self, min_intensity=5e4, max_components=4, saturation=20.0):
+    def __init__(self, min_intensity=2e4, max_components=3, saturation=20.0):
         """
         Args:
             min_intensity (float): Minimum intensity threshold to consider a point.
@@ -59,7 +61,6 @@ class GMMDeconvolver:
                 "detection_reason": f"fit_failed: {str(e)}"
             }
 
-
     def _prepare_coordinates(self):
         # Convert grid to a flat list of (mz, rt) coordinates with corresponding intensities
         mz_coords, rt_coords = np.meshgrid(self.mz_axis, self.rt_axis, indexing='ij')
@@ -84,7 +85,6 @@ class GMMDeconvolver:
         self.X_aniso = self.X_filtered.copy()
         self.X_aniso[:, 0] /= self.mz_shrink
 
-
     def _scale_features(self):
         self.scaler = StandardScaler()
         self.X_scaled = self.scaler.fit_transform(self.X_aniso)
@@ -103,6 +103,9 @@ class GMMDeconvolver:
                 gmm.fit(self.X_scaled)
 
                 bic = gmm.bic(self.X_scaled)
+                penalty = self._coverage_penalty(gmm)
+                bic += 2 * penalty  # or tune this multiplier
+
                 self.gmms.append(gmm)
                 self.bics.append(bic)
 
@@ -128,9 +131,24 @@ class GMMDeconvolver:
         valid_bics = [bic if gmm is not None else np.inf for gmm, bic in zip(self.gmms, self.bics)]
         self.best_k = int(np.argmin(valid_bics)) + 1
         self.best_gmm = self.gmms[self.best_k - 1]
+        self._align_means_to_local_maxima(self.best_gmm)
         self.confidence = self.bics[0] - self.bics[self.best_k - 1]
         self.bic_label = self._bic_support_label(self.confidence)
         self.confidence_pct_raw = min(1.0, self.confidence / self.saturation) * 100
+
+        # Override if 2 or more strong local maxima exist and best_k == 1
+        if self.best_k == 1 and getattr(self, "strong_peak_count", 0) >= 2:
+            print(f"[GMM] Overriding best_k=1 due to {self.strong_peak_count} strong local maxima.")
+            self.best_k = 2
+            self.best_gmm = self.gmms[1]  # index 1 = 2 components
+            self._align_means_to_local_maxima(self.best_gmm)
+            self.confidence = self.bics[0] - self.bics[1]
+            self.bic_label = self._bic_support_label(self.confidence)
+            self.confidence_pct_raw = min(1.0, self.confidence / self.saturation) * 100
+            
+        # Suppress oversplitting if BIC curve is flat
+        if self.best_k > 1:
+            bic_deltas = np.diff(self.bics[:self.best_k])
 
         if self.best_k > 1:
             self.separation_score = self._cluster_separation_score(self.best_gmm)
@@ -149,13 +167,13 @@ class GMMDeconvolver:
         dists = [np.linalg.norm(means[i] - means[j]) for i in range(len(means)) for j in range(i + 1, len(means))]
 
         reasons = []
-        if self.confidence < 4:
+        if self.confidence < 3:
             reasons.append("low_BIC")
         if self.separation_score is not None and self.separation_score < 0.5:
             reasons.append("low_sep")
         if weights.min() < 0.01:
             reasons.append("low_weight")
-        if dists and min(dists) < 0.25:
+        if dists and min(dists) < 0.1:
             reasons.append("close_centers")
 
         # Special case: allow overlapping peaks if they are balanced and moderately close
@@ -176,7 +194,6 @@ class GMMDeconvolver:
             self.separation_score = None
         else:
             print(f"[GMM] Accepted best_k={self.best_k} (ΔBIC={self.confidence:.2f}, support={self.bic_label}, sep={self.separation_score:.2f})")
-
 
     def _bic_support_label(self, delta_bic):
             if delta_bic < 2:
@@ -209,38 +226,133 @@ class GMMDeconvolver:
 
         return min(1.0, min_dist / 3.0) if min_dist < float("inf") else 0
 
-    def _smart_initialization(self, k):
-        # KMeans++-like initialization with spatial + intensity awareness
-        if k == 1:
-            max_idx = np.argmax(self.intensity_filtered)
-            return np.array([self.X_scaled[max_idx]])
+    def _align_means_to_local_maxima(self, gmm):
+        """
+        Adjusts GMM means by snapping them to the nearest local maximum if nearby.
+        Operates in scaled space (post-standardization).
+        """
+        if not hasattr(self, "local_maxima_scaled"):
+            return  # Skip if local maxima are not defined
 
-        selected = []
-        max_idx = np.argmax(self.intensity_filtered)
-        selected.append(max_idx)
+        new_means = gmm.means_.copy()
+        for i, mean in enumerate(gmm.means_):
+            best_pt = None
+            best_dist = float("inf")
 
-        while len(selected) < k:
-            scores = []
-            for i in range(len(self.X_scaled)):
-                if i in selected:
+            for pt in self.local_maxima_scaled:
+                diff = pt - mean
+                try:
+                    inv_cov = np.linalg.inv(gmm.covariances_[i])
+                    dist = np.sqrt(diff.T @ inv_cov @ diff)
+                except np.linalg.LinAlgError:
                     continue
-                # Compute distance to nearest selected center
-                min_dist = min(np.linalg.norm(self.X_scaled[i] - self.X_scaled[j]) for j in selected)
-                # Use normalized intensity
-                intensity_weight = self.intensity_filtered[i] / np.max(self.intensity_filtered)
-                # Combine spatial spread + weighted intensity
-                score = min_dist + 0.3 * intensity_weight  # Tune 0.3 based on overlap resolution needs
-                scores.append((i, score))
 
-            if not scores:
-                selected.append(selected[-1])
+                if dist < best_dist:
+                    best_dist = dist
+                    best_pt = pt
+
+            if best_dist < 1.5:  # Only snap if Mahalanobis distance is close
+                print(f"[GMM] Snapping mean {i} to nearby local max (Mahalanobis dist={best_dist:.2f})")
+                new_means[i] = best_pt
+
+        gmm.means_ = new_means
+    
+    def _smart_initialization(self, k):
+        """
+        Peak-based initialization using local maxima detection in the intensity grid.
+        Picks the top-k local maxima as starting points for GMM means.
+        """
+        # Reshape to 2D grid
+        intensity_2d = self.grid.copy()
+
+        # === Step 1: Find local maxima ===
+        neighborhood_size = 3
+        local_max = (maximum_filter(intensity_2d, size=neighborhood_size) == intensity_2d)
+        labeled, _ = label(local_max)
+        slices = find_objects(labeled)
+
+        peaks = []
+        for dy, dx in slices:
+            if dy is None or dx is None:
                 continue
+            i = (dy.start + dy.stop - 1) // 2
+            j = (dx.start + dx.stop - 1) // 2
+            intensity = intensity_2d[i, j]
+            mz = self.mz_axis[i]
+            rt = self.rt_axis[j]
+            peaks.append(((mz, rt), intensity))
 
-            next_idx = max(scores, key=lambda x: x[1])[0]
-            selected.append(next_idx)
+        # === Step 2: Sort and pick top-k peaks ===
+        peaks.sort(key=lambda x: -x[1])  # descending intensity
+        top_peaks = peaks[:k]
 
-        return np.array([self.X_scaled[i] for i in selected])
+        # === Step 3: Transform to scaled coordinate system ===
+        coords = np.array([[mz / self.mz_shrink, rt] for (mz, rt), _ in top_peaks])
+        X_scaled = self.scaler.transform(coords)
 
+        self.strong_peak_count = len([p for p in top_peaks if p[1] > self.min_intensity * 1.5])
+
+        return X_scaled
+
+
+    def _coverage_penalty(self, gmm):
+        """ Penalizes GMM components that cover low-intensity (near-zero) areas. """
+        from matplotlib.patches import Ellipse
+
+        penalty = 0
+        mz_coords, rt_coords = np.meshgrid(self.mz_axis, self.rt_axis, indexing='ij')
+        coords = np.column_stack([mz_coords.ravel(), rt_coords.ravel()])
+        intensities = self.grid.ravel()
+
+        for i, (mean, cov) in enumerate(zip(gmm.means_, gmm.covariances_)):
+            # Scale back to unshrunken space
+            mean_unscaled = self.scaler.inverse_transform([mean])[0]
+            cov_unscaled = self._unscale_covariance(cov)
+
+            # Ellipse radius ≈ 1 standard deviation (~68% coverage)
+            vals, vecs = np.linalg.eigh(cov_unscaled)
+            angle = np.degrees(np.arctan2(*vecs[:, 0][::-1]))
+            width, height = 2 * np.sqrt(vals)
+
+            ell = Ellipse(xy=mean_unscaled, width=width, height=height, angle=angle)
+            inside = np.array([ell.contains_point(xy) for xy in coords])
+            if inside.any():
+                avg_intensity = np.mean(intensities[inside])
+                penalty += max(0, 1.0 - (avg_intensity / np.max(self.grid)))  # lower avg = higher penalty
+            else:
+                penalty += 1.0  # nothing inside = full penalty
+
+        return penalty
+
+    def _unscale_covariance(self, cov_scaled):
+        """ Undo StandardScaler and m/z shrink on a covariance matrix. """
+        scale_factors = self.scaler.scale_
+        cov_unscaled = cov_scaled * np.outer(scale_factors, scale_factors)
+        cov_unscaled[0, :] *= self.mz_shrink
+        cov_unscaled[:, 0] *= self.mz_shrink
+        return cov_unscaled
+
+
+    def _find_local_maxima(self):
+        # Apply a local max filter over the intensity grid
+        footprint = np.ones((3, 3))
+        local_max = (self.grid == maximum_filter(self.grid, footprint=footprint))
+
+        # Filter by intensity threshold
+        coords = np.column_stack(np.where(local_max))
+        coords = [tuple(c) for c in coords if self.grid[c] > self.min_intensity]
+
+        # Convert (mz_idx, rt_idx) to scaled coordinates
+        max_points = []
+        for mz_idx, rt_idx in coords:
+            mz = self.mz_axis[mz_idx]
+            rt = self.rt_axis[rt_idx]
+            pt = np.array([mz, rt])
+            pt[0] /= self.mz_shrink
+            pt_scaled = self.scaler.transform([pt])[0]
+            max_points.append(pt_scaled)
+
+        return max_points
 
 
 
