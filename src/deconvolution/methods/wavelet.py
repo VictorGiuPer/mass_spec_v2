@@ -2,6 +2,9 @@ import numpy as np
 from scipy.signal import cwt, morlet2
 from sklearn.cluster import DBSCAN
 import matplotlib.pyplot as plt
+from skimage.feature import blob_log
+
+print(blob_log)
 
 class WaveletDeconvolver:
     def __init__(self, min_intensity=5e4, scale_range=(1, 5), overlap_threshold=2, wavelet_func=None, pad_grid=False):
@@ -26,36 +29,56 @@ class WaveletDeconvolver:
         else:
             rt_offset = 0
 
-        scales = np.arange(*self.scale_range)
-        transformed_grid = np.zeros((len(scales), mz_len, grid.shape[1]))
+        # Compute wavelet response
+        scales = np.geomspace(self.scale_range[0],
+                              self.scale_range[1], num=30)
+        response_map = self._wavelet_transform_2d(grid, scales)
 
-        for i in range(mz_len):
-            cwt_result = cwt(grid[i, :], self.wavelet_func, scales)
-            transformed_grid[:, i, :] = np.abs(cwt_result)
-
-        max_response = np.max(transformed_grid, axis=0)
-
+        # Trim padding if applied
         if self.pad_grid:
-            max_response = max_response[:, rt_offset:-rt_offset]
+            response_map = response_map[:, rt_offset:-rt_offset]
 
-        peaks = self._detect_peaks(max_response)
-        clusters = self._cluster_peaks(peaks)
+        # Peak detection
+        peaks = self._detect_blobs(response_map)
 
-        num_clusters = len(set(clusters[clusters >= 0])) if len(peaks) > 0 and len(clusters) > 0 else 0
+        # Optional: determine if overlap likely based on number of peaks
+        num_peaks = len(peaks)
+        overlap_detected = num_peaks >= self.overlap_threshold
 
-        cropped_grid = grid if not self.pad_grid else grid[:, rt_offset:-rt_offset]
-        max_intensity = np.max(cropped_grid)
-        min_required_intensity = 1e5
-
-        overlap_detected = (num_clusters >= 2 and max_intensity >= min_required_intensity)
+        # Dummy clusters for compatibility with plot function
+        clusters = np.arange(num_peaks)
 
         return {
             "overlap_detected": overlap_detected,
-            "num_peaks_in_overlap": num_clusters if overlap_detected else None,
-            "transformed_grid": max_response,
+            "num_peaks_in_overlap": num_peaks if overlap_detected else None,
+            "transformed_grid": response_map,
             "peaks": peaks,
             "clusters": clusters
         }
+
+
+
+    def _wavelet_transform_2d(self, grid, scales):
+        mz_len, rt_len = grid.shape
+        wmz = np.zeros((len(scales), mz_len, rt_len))
+        wrt = np.zeros((len(scales), mz_len, rt_len))
+
+        # Apply 1D CWT along RT (axis 1)
+        for i in range(mz_len):
+            wrt[:, i, :] = np.abs(cwt(grid[i, :], self.wavelet_func, scales))
+
+        # Apply 1D CWT along MZ (axis 0)
+        for j in range(rt_len):
+            wmz[:, :, j] = np.abs(cwt(grid[:, j], self.wavelet_func, scales))
+
+        combined = (wrt + wmz) / 2  # Or np.sqrt(wrt * wmz)
+        return np.max(combined, axis=0)  # 2D response map
+    
+    def _detect_blobs(self, response_map):
+        blobs = blob_log(response_map, min_sigma=1, max_sigma=5, threshold=0.02)
+        peaks = [(int(b[0]), int(b[1])) for b in blobs]
+        return peaks
+
 
     def _pad_rt_axis_and_grid(self, grid, rt_axis, pad=10):
         padded_grid = np.pad(grid, pad_width=((0, 0), (pad, pad)), mode='reflect')
@@ -67,29 +90,6 @@ class WaveletDeconvolver:
 
         return padded_grid, padded_rt_axis, pad
 
-    def _detect_peaks(self, transformed_grid):
-        peaks = []
-        mz_len, rt_len = transformed_grid.shape
-
-        for i in range(1, mz_len - 1):
-            for j in range(1, rt_len - 1):
-                neighborhood = transformed_grid[i - 1:i + 2, j - 1:j + 2]
-                if transformed_grid[i, j] > self.min_intensity and transformed_grid[i, j] == np.max(neighborhood):
-                    peaks.append((i, j))
-
-        return peaks
-
-    def _cluster_peaks(self, peaks):
-        if not peaks:
-            return np.array([])
-
-        peak_array = np.array(peaks)
-        if len(peak_array) > 1:
-            db = DBSCAN(eps=3.0, min_samples=1).fit(peak_array)
-            return db.labels_
-        else:
-            return np.array([0])
-        
     @staticmethod
     def plot_wavelet_result(grid, transformed, peaks, clusters, title=""):
         fig, axs = plt.subplots(1, 2, figsize=(14, 5))

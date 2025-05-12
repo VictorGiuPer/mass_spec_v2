@@ -1,288 +1,1590 @@
-2025-05-12 22:00:49,906 - INFO - 
+2025-05-12 23:24:43,928 - INFO - 
 === Running Test: Variant - Two clearly separated peaks 1 ===
-2025-05-12 22:00:49,906 - INFO - Input peak parameters: [{'rt_center': 10.8, 'mz_center': 150.8, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 21000}, {'rt_center': 14.2, 'mz_center': 158.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24000}]
-2025-05-12 22:00:49,906 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-12 22:00:49,961 - INFO - Suspicious boxes detected: 2
-2025-05-12 22:00:49,961 - INFO - PASSED: Box test passed.
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:43,928 - INFO - Input peak parameters: [{'rt_center': 10.8, 'mz_center': 150.8, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 21000}, {'rt_center': 14.2, 'mz_center': 158.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24000}]
+2025-05-12 23:24:43,928 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:43,996 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:43,996 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:44,462 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:54,431 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,463 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:44,463 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:54,431 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,463 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:44,463 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:00:54,431 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:54,431 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:54,431 - INFO - PASSED: GMM overlap region count correct.
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,463 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:44,463 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:44,463 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:44,464 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:54,431 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,464 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:44,464 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:54,431 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,464 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:44,464 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:00:54,431 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:54,431 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:54,431 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,464 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:44,464 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:44,464 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:44,464 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:54,431 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,464 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:44,464 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:54,431 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,464 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:44,464 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:00:54,431 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:54,431 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:54,431 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,464 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:44,464 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:44,464 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:44,466 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:00:54,431 - INFO - 
+2025-05-12 23:24:44,466 - INFO - 
 === Running Test: Variant - Two clearly separated peaks 2 ===
-2025-05-12 22:00:54,431 - INFO - Input peak parameters: [{'rt_center': 11.1, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 13.9, 'mz_center': 157.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25500}]
-2025-05-12 22:00:54,431 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-12 22:00:54,516 - INFO - Suspicious boxes detected: 2
-2025-05-12 22:00:54,517 - INFO - PASSED: Box test passed.
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,466 - INFO - Input peak parameters: [{'rt_center': 11.1, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 13.9, 'mz_center': 157.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25500}]
+2025-05-12 23:24:44,466 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:44,548 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:44,548 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:44,847 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:56,643 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:44,847 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:56,643 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:44,847 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:00:56,643 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:56,643 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:56,643 - INFO - PASSED: GMM overlap region count correct.
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:44,847 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:44,847 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:44,847 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:56,643 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:44,847 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:56,643 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:44,847 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:00:56,643 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:56,643 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:56,643 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:44,847 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:44,847 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:44,847 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:56,643 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:44,847 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:56,643 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:44,847 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:00:56,643 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:56,643 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:56,643 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,847 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:44,849 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:44,849 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:44,849 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:00:56,643 - INFO - 
+2025-05-12 23:24:44,849 - INFO - 
 === Running Test: Variant - Two clearly separated peaks 3 ===
-2025-05-12 22:00:56,643 - INFO - Input peak parameters: [{'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20500}, {'rt_center': 14.1, 'mz_center': 158.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
-2025-05-12 22:00:56,643 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-12 22:00:56,721 - INFO - Suspicious boxes detected: 2
-2025-05-12 22:00:56,721 - INFO - PASSED: Box test passed.
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:44,849 - INFO - Input peak parameters: [{'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20500}, {'rt_center': 14.1, 'mz_center': 158.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-12 23:24:44,849 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:44,908 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:44,908 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:45,184 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:58,351 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,184 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:45,184 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:58,351 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,184 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:45,184 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:00:58,351 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:58,351 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:58,351 - INFO - PASSED: GMM overlap region count correct.
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,184 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,184 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,184 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:45,184 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:58,351 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,184 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:45,184 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:58,351 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,184 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:45,184 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:00:58,351 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:58,351 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:58,351 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,184 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,184 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,184 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:45,184 - INFO - 
 --- Region 1 ---
-2025-05-12 22:00:58,351 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,186 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:45,186 - INFO - 
 --- Region 2 ---
-2025-05-12 22:00:58,351 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,186 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:45,186 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:00:58,351 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:00:58,351 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:00:58,351 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,186 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,186 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,186 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:45,186 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:00:58,351 - INFO - 
+2025-05-12 23:24:45,186 - INFO - 
 === Running Test: Variant - Two clearly separated peaks 4 ===
-2025-05-12 22:00:58,351 - INFO - Input peak parameters: [{'rt_center': 11.3, 'mz_center': 151.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 13.7, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24500}]
-2025-05-12 22:00:58,351 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-12 22:00:58,416 - INFO - Suspicious boxes detected: 2
-2025-05-12 22:00:58,416 - INFO - PASSED: Box test passed.
-2025-05-12 22:01:00,319 - INFO - 
+2025-05-12 23:24:45,186 - INFO - Input peak parameters: [{'rt_center': 11.3, 'mz_center': 151.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 13.7, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24500}]
+2025-05-12 23:24:45,186 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:45,243 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:45,243 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:45,542 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:00,319 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:01:00,319 - INFO - 
+2025-05-12 23:24:45,542 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:45,542 - INFO - 
 --- Region 2 ---
-2025-05-12 22:01:00,319 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:01:00,319 - INFO - 
+2025-05-12 23:24:45,542 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:45,542 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:01:00,319 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:01:00,319 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:01:00,319 - INFO - PASSED: GMM overlap region count correct.
-2025-05-12 22:01:00,319 - INFO - 
+2025-05-12 23:24:45,542 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,542 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,547 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:45,547 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:00,319 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:01:00,319 - INFO - 
+2025-05-12 23:24:45,547 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:45,547 - INFO - 
 --- Region 2 ---
-2025-05-12 22:01:00,319 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:01:00,319 - INFO - 
+2025-05-12 23:24:45,547 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:45,547 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:01:00,319 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:01:00,321 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:01:00,321 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:01:00,321 - INFO - 
+2025-05-12 23:24:45,547 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,547 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,547 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:45,547 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:00,321 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:01:00,321 - INFO - 
+2025-05-12 23:24:45,547 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:45,547 - INFO - 
 --- Region 2 ---
-2025-05-12 22:01:00,321 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:01:00,321 - INFO - 
+2025-05-12 23:24:45,547 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:45,547 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:01:00,321 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:01:00,321 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:01:00,321 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-12 22:01:00,321 - INFO - 
+2025-05-12 23:24:45,547 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,547 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,547 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:45,547 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:01:00,321 - INFO - 
+2025-05-12 23:24:45,547 - INFO - 
 === Running Test: Variant - Two clearly separated peaks 5 ===
-2025-05-12 22:01:00,321 - INFO - Input peak parameters: [{'rt_center': 10.7, 'mz_center': 150.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19500}, {'rt_center': 14.3, 'mz_center': 158.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24800}]
-2025-05-12 22:01:00,321 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
-2025-05-12 22:01:00,391 - INFO - Suspicious boxes detected: 2
-2025-05-12 22:01:00,391 - INFO - PASSED: Box test passed.
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,547 - INFO - Input peak parameters: [{'rt_center': 10.7, 'mz_center': 150.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19500}, {'rt_center': 14.3, 'mz_center': 158.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24800}]
+2025-05-12 23:24:45,547 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:45,611 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:45,611 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:45,931 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:02,257 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,931 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:45,931 - INFO - 
 --- Region 2 ---
-2025-05-12 22:01:02,257 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:45,932 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:01:02,257 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:01:02,257 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:01:02,257 - INFO - PASSED: GMM overlap region count correct.
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,932 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,932 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:45,932 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:02,257 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:45,932 - INFO - 
 --- Region 2 ---
-2025-05-12 22:01:02,257 - INFO - RidgeWalker: Detected single peak → no overlap
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:45,932 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:01:02,257 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:01:02,257 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:01:02,257 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,932 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,932 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:45,932 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:02,257 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:45,932 - INFO - 
 --- Region 2 ---
-2025-05-12 22:01:02,257 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:01:02,257 - INFO - 
+2025-05-12 23:24:45,932 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:45,932 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:01:02,257 - INFO -   TP=0, FP=0, FN=0, TN=1
-2025-05-12 22:01:02,257 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
-2025-05-12 22:01:02,257 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-12 22:01:02,261 - INFO - 
+2025-05-12 23:24:45,932 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:45,932 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:45,933 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:45,934 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:01:02,261 - INFO - 
+2025-05-12 23:24:45,934 - INFO - 
 === Running Test: Variant - Strong overlap between two peaks 1 ===
-2025-05-12 22:01:02,261 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 17000}, {'rt_center': 13.05, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 46000}]
-2025-05-12 22:01:02,261 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-12 22:01:02,314 - INFO - Suspicious boxes detected: 1
-2025-05-12 22:01:02,314 - INFO - PASSED: Box test passed.
-2025-05-12 22:01:19,483 - INFO - 
+2025-05-12 23:24:45,934 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 17000}, {'rt_center': 13.05, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 46000}]
+2025-05-12 23:24:45,934 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:45,997 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:45,999 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:46,190 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:19,483 - INFO - GMM: Detected single peak → no overlap
-2025-05-12 22:01:19,483 - INFO - 
+2025-05-12 23:24:46,190 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:46,190 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:01:19,483 - INFO -   TP=0, FP=0, FN=1, TN=0
-2025-05-12 22:01:19,483 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
-2025-05-12 22:01:19,483 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
-2025-05-12 22:01:19,483 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
-2025-05-12 22:01:19,483 - INFO - 
+2025-05-12 23:24:46,190 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:46,190 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:46,190 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:46,190 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:46,190 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:19,483 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
-2025-05-12 22:01:19,483 - INFO - 
+2025-05-12 23:24:46,190 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:46,190 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:01:19,483 - INFO -   TP=1, FP=0, FN=0, TN=0
-2025-05-12 22:01:19,483 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
-2025-05-12 22:01:19,483 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:01:19,483 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
-2025-05-12 22:01:19,483 - INFO - 
+2025-05-12 23:24:46,190 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:46,190 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:46,191 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:46,191 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:46,191 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:19,483 - INFO - Wavelet: Detected single peak → no overlap
-2025-05-12 22:01:19,483 - INFO - 
+2025-05-12 23:24:46,191 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:46,191 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:01:19,483 - INFO -   TP=0, FP=0, FN=1, TN=0
-2025-05-12 22:01:19,486 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
-2025-05-12 22:01:19,486 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
-2025-05-12 22:01:19,486 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
-2025-05-12 22:01:19,487 - INFO - 
+2025-05-12 23:24:46,191 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:46,191 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:46,191 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:46,191 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:46,192 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:01:19,487 - INFO - 
+2025-05-12 23:24:46,192 - INFO - 
 === Running Test: Variant - Strong overlap between two peaks 2 ===
-2025-05-12 22:01:19,487 - INFO - Input peak parameters: [{'rt_center': 13.2, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 13.3, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 44000}]
-2025-05-12 22:01:19,487 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-12 22:01:19,635 - INFO - Suspicious boxes detected: 1
-2025-05-12 22:01:19,635 - INFO - PASSED: Box test passed.
-2025-05-12 22:01:22,710 - INFO - 
+2025-05-12 23:24:46,192 - INFO - Input peak parameters: [{'rt_center': 13.2, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 13.3, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 44000}]
+2025-05-12 23:24:46,192 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:46,247 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:46,247 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:46,552 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:22,710 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
-2025-05-12 22:01:22,710 - INFO - 
+2025-05-12 23:24:46,552 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:46,552 - INFO - 
 [GMM] Detection Summary (aggregate):
-2025-05-12 22:01:22,710 - INFO -   TP=1, FP=0, FN=0, TN=0
-2025-05-12 22:01:22,710 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
-2025-05-12 22:01:22,710 - INFO - PASSED: GMM overlap region count correct.
-2025-05-12 22:01:22,710 - INFO - PASSED: GMM peak count in overlaps correct.
-2025-05-12 22:01:22,710 - INFO - 
+2025-05-12 23:24:46,552 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:46,552 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:46,552 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:46,552 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:46,552 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:22,710 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
-2025-05-12 22:01:22,710 - INFO - 
+2025-05-12 23:24:46,552 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:46,552 - INFO - 
 [RidgeWalker] Detection Summary (aggregate):
-2025-05-12 22:01:22,710 - INFO -   TP=1, FP=0, FN=0, TN=0
-2025-05-12 22:01:22,710 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
-2025-05-12 22:01:22,710 - INFO - PASSED: RidgeWalker overlap region count correct.
-2025-05-12 22:01:22,710 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
-2025-05-12 22:01:22,710 - INFO - 
+2025-05-12 23:24:46,552 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:46,552 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:46,552 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:46,552 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:46,552 - INFO - 
 --- Region 1 ---
-2025-05-12 22:01:22,710 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
-2025-05-12 22:01:22,710 - INFO - 
+2025-05-12 23:24:46,552 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:46,552 - INFO - 
 [Wavelet] Detection Summary (aggregate):
-2025-05-12 22:01:22,710 - INFO -   TP=1, FP=0, FN=0, TN=0
-2025-05-12 22:01:22,710 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
-2025-05-12 22:01:22,710 - INFO - PASSED: Wavelet overlap region count correct.
-2025-05-12 22:01:22,710 - INFO - PASSED: Wavelet peak count in overlaps correct.
-2025-05-12 22:01:22,713 - INFO - 
+2025-05-12 23:24:46,552 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:46,552 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:46,552 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:46,552 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:46,552 - INFO - 
 
 === NEW TEST ===
-2025-05-12 22:01:22,713 - INFO - 
+2025-05-12 23:24:46,552 - INFO - 
 === Running Test: Variant - Strong overlap between two peaks 3 ===
-2025-05-12 22:01:22,713 - INFO - Input peak parameters: [{'rt_center': 12.9, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.0, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 46000}]
-2025-05-12 22:01:22,713 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
-2025-05-12 22:01:22,771 - INFO - Suspicious boxes detected: 1
-2025-05-12 22:01:22,771 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:46,552 - INFO - Input peak parameters: [{'rt_center': 12.9, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.0, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 46000}]
+2025-05-12 23:24:46,552 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:46,632 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:46,632 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:46,925 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:46,925 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:46,925 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:46,927 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:46,927 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:46,927 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:46,927 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:46,927 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:46,927 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:46,927 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:46,927 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:46,927 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:46,927 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:46,927 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:46,927 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:46,927 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:46,927 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:46,927 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:46,927 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:46,927 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:46,927 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:46,929 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:46,930 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 4 ===
+2025-05-12 23:24:46,930 - INFO - Input peak parameters: [{'rt_center': 13.1, 'mz_center': 154.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 13.2, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 43000}]
+2025-05-12 23:24:46,930 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:46,988 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:46,988 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:47,268 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:47,268 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:47,268 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:47,268 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:47,268 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:47,268 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:47,268 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:47,268 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:47,268 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:47,268 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:47,268 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:47,268 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:47,268 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:47,268 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:47,268 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:47,268 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:47,268 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:47,268 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:47,268 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:47,268 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:47,269 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:47,270 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:47,270 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 5 ===
+2025-05-12 23:24:47,270 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18500}, {'rt_center': 13.15, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 47000}]
+2025-05-12 23:24:47,270 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:47,332 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:47,333 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:47,587 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:47,587 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:47,587 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:47,587 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:47,587 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:47,587 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:47,587 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:47,588 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:47,588 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:47,588 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:47,588 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:47,588 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:47,588 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:47,588 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:47,588 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:47,588 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:47,588 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:47,588 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:47,588 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:47,588 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:47,588 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:47,590 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:47,590 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 1 ===
+2025-05-12 23:24:47,590 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 17500}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22500}, {'rt_center': 13.6, 'mz_center': 157.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20500}, {'rt_center': 14.1, 'mz_center': 159.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24000}]
+2025-05-12 23:24:47,590 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:47,708 - INFO - Suspicious boxes detected: 3
+2025-05-12 23:24:47,708 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:48,420 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:48,420 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:48,420 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:48,420 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:48,420 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:48,421 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:48,421 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:48,421 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:48,421 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:48,421 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:48,421 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:48,421 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:48,421 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:48,421 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:48,421 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:48,421 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:48,421 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:48,421 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:48,422 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:48,422 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:48,422 - ERROR - FAILED: RidgeWalker overlap region count mismatch - expected 1, got 2
+2025-05-12 23:24:48,422 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 4
+2025-05-12 23:24:48,422 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:48,422 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:48,422 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:48,422 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:48,422 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:48,422 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:48,422 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:48,422 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:48,422 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:48,422 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:48,422 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:48,423 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:48,423 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 2 ===
+2025-05-12 23:24:48,423 - INFO - Input peak parameters: [{'rt_center': 11.2, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18000}, {'rt_center': 11.3, 'mz_center': 151.3, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}, {'rt_center': 13.4, 'mz_center': 157.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 14.0, 'mz_center': 158.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25500}]
+2025-05-12 23:24:48,423 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:48,529 - INFO - Suspicious boxes detected: 3
+2025-05-12 23:24:48,529 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:49,015 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:49,015 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,015 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:49,015 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:49,015 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:49,015 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:49,015 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:49,015 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:49,015 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:49,015 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:49,015 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:49,015 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:49,015 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,015 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:49,015 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:49,015 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:49,015 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,015 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:49,015 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:49,018 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:49,018 - ERROR - FAILED: RidgeWalker overlap region count mismatch - expected 1, got 2
+2025-05-12 23:24:49,018 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 5
+2025-05-12 23:24:49,018 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:49,018 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,018 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:49,018 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:49,018 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:49,018 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:49,018 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:49,018 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:49,018 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:49,018 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:49,018 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:49,018 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:49,018 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 3 ===
+2025-05-12 23:24:49,018 - INFO - Input peak parameters: [{'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18500}, {'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 13.5, 'mz_center': 157.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19500}, {'rt_center': 14.2, 'mz_center': 159.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-05-12 23:24:49,018 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:49,107 - INFO - Suspicious boxes detected: 3
+2025-05-12 23:24:49,107 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:49,669 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:49,669 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,669 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:49,669 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:49,669 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:49,669 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,669 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:49,669 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:49,669 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:49,669 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 2
+2025-05-12 23:24:49,669 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 4
+2025-05-12 23:24:49,670 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:49,670 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,670 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:49,670 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:49,670 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:49,670 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:49,670 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:49,670 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:49,670 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:49,670 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:49,670 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:49,670 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:49,670 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,670 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:49,670 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:49,670 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:49,670 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:49,670 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:49,670 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:49,670 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:49,670 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 2
+2025-05-12 23:24:49,670 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 4
+2025-05-12 23:24:49,672 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:49,672 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 4 ===
+2025-05-12 23:24:49,672 - INFO - Input peak parameters: [{'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 19000}, {'rt_center': 11.2, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 23000}, {'rt_center': 13.6, 'mz_center': 157.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19800}, {'rt_center': 14.3, 'mz_center': 159.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24500}]
+2025-05-12 23:24:49,672 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:49,788 - INFO - Suspicious boxes detected: 3
+2025-05-12 23:24:49,788 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:50,320 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:50,320 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:50,320 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:50,320 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:50,320 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:50,320 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:50,320 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:50,320 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:50,320 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:50,320 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:50,320 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:50,320 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:50,320 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:50,322 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:50,322 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:50,322 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:50,322 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:50,322 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:50,322 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:50,322 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:50,322 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:50,322 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:50,322 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:50,322 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:50,322 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:50,322 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:50,322 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:50,322 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:50,322 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:50,322 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:50,322 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:50,322 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:50,322 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:50,323 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:50,323 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 5 ===
+2025-05-12 23:24:50,323 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 17000}, {'rt_center': 11.15, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 13.7, 'mz_center': 157.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 21000}, {'rt_center': 14.4, 'mz_center': 159.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 26000}]
+2025-05-12 23:24:50,323 - INFO - Expected: 3 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:50,427 - INFO - Suspicious boxes detected: 3
+2025-05-12 23:24:50,427 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:51,002 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:51,002 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:51,002 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:51,002 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:51,002 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:51,002 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:51,002 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:51,002 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:51,002 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:51,002 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:51,002 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:51,002 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:51,002 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:51,002 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:51,002 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:51,002 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:51,002 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:51,002 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:51,003 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:51,003 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:51,003 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:51,003 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:51,003 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:51,003 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:51,003 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:51,003 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:51,003 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:51,003 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:51,003 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:51,003 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:51,003 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:51,003 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:51,003 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:51,004 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:51,004 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 1 ===
+2025-05-12 23:24:51,004 - INFO - Input peak parameters: [{'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20500}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22500}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21500}]
+2025-05-12 23:24:51,004 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
+2025-05-12 23:24:51,088 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:51,089 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:51,533 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:51,533 - INFO - GMM: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:51,533 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:51,533 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:51,533 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:51,533 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:51,533 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:51,534 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:51,534 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:51,534 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:51,534 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:51,534 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:51,534 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:51,534 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:51,534 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:51,534 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:51,534 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:51,534 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:51,534 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:51,534 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:51,535 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:51,535 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:51,535 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 2 ===
+2025-05-12 23:24:51,535 - INFO - Input peak parameters: [{'rt_center': 11.9, 'mz_center': 152.9, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}, {'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 23000}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}]
+2025-05-12 23:24:51,535 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
+2025-05-12 23:24:51,609 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:51,609 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:52,006 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,006 - INFO - GMM: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,006 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:52,006 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,006 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,006 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:52,006 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:52,006 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,006 - INFO - RidgeWalker: Detected 6 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,006 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:52,006 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,006 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,006 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:52,006 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 3, got 6
+2025-05-12 23:24:52,006 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,006 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,006 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:52,006 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,006 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,006 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:52,006 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:52,008 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:52,008 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 3 ===
+2025-05-12 23:24:52,008 - INFO - Input peak parameters: [{'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 12.3, 'mz_center': 153.3, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22500}]
+2025-05-12 23:24:52,008 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
+2025-05-12 23:24:52,081 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:52,081 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:52,482 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,482 - INFO - GMM: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,482 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:52,482 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,482 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,482 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:52,482 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:52,482 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,482 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,482 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:52,482 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,482 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,482 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:52,482 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:52,482 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,482 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,482 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:52,482 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,482 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,482 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:52,482 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:52,486 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:52,486 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 4 ===
+2025-05-12 23:24:52,486 - INFO - Input peak parameters: [{'rt_center': 11.95, 'mz_center': 152.95, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 19500}, {'rt_center': 12.05, 'mz_center': 153.05, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}, {'rt_center': 12.15, 'mz_center': 153.15, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20500}]
+2025-05-12 23:24:52,486 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
+2025-05-12 23:24:52,562 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:52,563 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:52,952 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,952 - INFO - GMM: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,952 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:52,952 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,952 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,952 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:52,952 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:52,952 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,952 - INFO - RidgeWalker: Detected 4 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,952 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:52,952 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,952 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,952 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:52,952 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 3, got 4
+2025-05-12 23:24:52,952 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:52,952 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:52,952 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:52,952 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:52,952 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:52,952 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:52,952 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:52,956 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:52,956 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 5 ===
+2025-05-12 23:24:52,956 - INFO - Input peak parameters: [{'rt_center': 12.05, 'mz_center': 153.05, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 12.15, 'mz_center': 153.15, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 12.25, 'mz_center': 153.25, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}]
+2025-05-12 23:24:52,956 - INFO - Expected: 1 suspicious boxes, 1 overlaps, 3 peaks in overlaps
+2025-05-12 23:24:53,029 - INFO - Suspicious boxes detected: 1
+2025-05-12 23:24:53,030 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:53,392 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:53,392 - INFO - GMM: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:53,392 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:53,392 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:53,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:53,392 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:53,392 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:53,392 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:53,392 - INFO - RidgeWalker: Detected 5 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:53,392 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:53,392 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:53,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:53,392 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:53,392 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 3, got 5
+2025-05-12 23:24:53,392 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:53,392 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:53,392 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:53,392 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:53,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:53,392 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:53,392 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:53,398 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:53,398 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 1 ===
+2025-05-12 23:24:53,398 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10500}, {'rt_center': 13.5, 'mz_center': 155.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9800}]
+2025-05-12 23:24:53,398 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:53,453 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:53,454 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:53,707 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:53,707 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:53,707 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:53,707 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:53,707 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:53,707 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:53,707 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:53,707 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:53,707 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:53,707 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:53,707 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:53,707 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:53,707 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:53,707 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:53,707 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:53,707 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:53,707 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:53,707 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:53,707 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:53,707 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:53,707 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:53,707 - INFO -   TP=0, FP=1, FN=0, TN=0
+2025-05-12 23:24:53,707 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:53,707 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 0, got 1
+2025-05-12 23:24:53,709 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:53,709 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 2 ===
+2025-05-12 23:24:53,709 - INFO - Input peak parameters: [{'rt_center': 13.1, 'mz_center': 155.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10200}, {'rt_center': 13.6, 'mz_center': 155.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9600}]
+2025-05-12 23:24:53,709 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:53,765 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:53,765 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:54,018 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,018 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,018 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,018 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,018 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:54,019 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,019 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,019 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:54,019 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,019 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,019 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,019 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,019 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:54,019 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,019 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,019 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:54,019 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,019 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,019 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,019 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,019 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:54,019 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,019 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,019 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:54,020 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:54,020 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 3 ===
+2025-05-12 23:24:54,020 - INFO - Input peak parameters: [{'rt_center': 12.9, 'mz_center': 154.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10000}, {'rt_center': 13.4, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9400}]
+2025-05-12 23:24:54,020 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:54,082 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:54,082 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:54,342 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,342 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,342 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,342 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,342 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:54,342 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,342 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,342 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:54,342 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,342 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,342 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,342 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,342 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:54,342 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,342 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,342 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:54,342 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,342 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,342 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,342 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,342 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:54,342 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,342 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,342 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:54,347 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:54,347 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 4 ===
+2025-05-12 23:24:54,347 - INFO - Input peak parameters: [{'rt_center': 13.2, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 11000}, {'rt_center': 13.7, 'mz_center': 155.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9200}]
+2025-05-12 23:24:54,347 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:54,407 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:54,407 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:54,680 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,680 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,680 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,680 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,680 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:54,680 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,680 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,680 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:54,680 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,680 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,680 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,680 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,680 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:54,680 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,681 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,681 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:54,681 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,681 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,681 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,681 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,681 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:54,681 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,681 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,681 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:54,682 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:54,682 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 5 ===
+2025-05-12 23:24:54,682 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9700}, {'rt_center': 13.6, 'mz_center': 155.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9900}]
+2025-05-12 23:24:54,682 - INFO - Expected: 2 suspicious boxes, 0 overlaps, None peaks in overlaps
+2025-05-12 23:24:54,740 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:54,740 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:54,992 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,992 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,992 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,992 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:54,992 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:54,992 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,992 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,992 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:54,992 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,992 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,992 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,992 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:54,992 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:54,992 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,992 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,992 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:54,992 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:54,992 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,992 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:54,992 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:54,992 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:54,992 - INFO -   TP=0, FP=0, FN=0, TN=1
+2025-05-12 23:24:54,992 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=1.00
+2025-05-12 23:24:54,992 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:54,998 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:54,998 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 1 ===
+2025-05-12 23:24:54,998 - INFO - Input peak parameters: [{'rt_center': 12.4, 'mz_center': 152.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31000}, {'rt_center': 12.5, 'mz_center': 152.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 7000}, {'rt_center': 14.6, 'mz_center': 158.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31500}]
+2025-05-12 23:24:54,998 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:55,065 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:55,066 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:55,386 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:55,386 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:55,386 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:55,386 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:55,386 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:55,386 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:55,386 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:55,386 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:55,386 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:55,386 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:55,386 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:55,386 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:55,386 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:55,386 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:55,386 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:55,386 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:55,386 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:55,386 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:55,386 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:55,386 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:55,387 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:55,387 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:55,387 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:55,387 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:55,387 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:55,387 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:55,387 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:55,389 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:55,389 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 2 ===
+2025-05-12 23:24:55,389 - INFO - Input peak parameters: [{'rt_center': 12.6, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 29500}, {'rt_center': 12.7, 'mz_center': 152.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6500}, {'rt_center': 14.4, 'mz_center': 158.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 33000}]
+2025-05-12 23:24:55,389 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:55,451 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:55,451 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:55,723 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:55,723 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:55,723 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:55,723 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:55,723 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:55,723 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:55,723 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:55,723 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:55,723 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:55,723 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:55,723 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:55,723 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:55,723 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:55,723 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:55,723 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:55,723 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:55,723 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:55,723 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:55,724 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:55,724 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:55,724 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:55,724 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:55,724 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:55,724 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:55,724 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:55,724 - ERROR - FAILED: Wavelet overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:55,724 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:55,725 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:55,725 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 3 ===
+2025-05-12 23:24:55,725 - INFO - Input peak parameters: [{'rt_center': 12.5, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32000}, {'rt_center': 12.6, 'mz_center': 152.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 5500}, {'rt_center': 14.7, 'mz_center': 158.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31000}]
+2025-05-12 23:24:55,725 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:55,786 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:55,786 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:56,057 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,057 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:56,057 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,057 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:56,057 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:56,057 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:56,057 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:56,057 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:56,057 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:56,057 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,057 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:56,057 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,057 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:56,057 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:56,057 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:56,057 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:56,057 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:56,057 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:56,057 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,057 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:56,057 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,057 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:56,057 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:56,057 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:56,058 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:56,058 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:56,058 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:56,058 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:56,058 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 4 ===
+2025-05-12 23:24:56,058 - INFO - Input peak parameters: [{'rt_center': 12.45, 'mz_center': 152.45, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 30500}, {'rt_center': 12.55, 'mz_center': 152.55, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6000}, {'rt_center': 14.55, 'mz_center': 158.55, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32500}]
+2025-05-12 23:24:56,058 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:56,117 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:56,117 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:56,392 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,392 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:56,392 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,392 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:56,392 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:56,392 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:56,392 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:56,392 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:56,392 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:56,392 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,392 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:56,392 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,392 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:56,392 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:56,392 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:56,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:56,392 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:56,392 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:56,392 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,392 - INFO - Wavelet: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:56,392 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,392 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:56,392 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:56,392 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:56,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:56,392 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:56,396 - ERROR - FAILED: Wavelet peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:56,396 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:56,396 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 5 ===
+2025-05-12 23:24:56,396 - INFO - Input peak parameters: [{'rt_center': 12.55, 'mz_center': 152.55, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 29800}, {'rt_center': 12.65, 'mz_center': 152.65, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 5800}, {'rt_center': 14.45, 'mz_center': 158.45, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31800}]
+2025-05-12 23:24:56,396 - INFO - Expected: 2 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:56,457 - INFO - Suspicious boxes detected: 2
+2025-05-12 23:24:56,457 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:56,727 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,727 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:56,727 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,727 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:56,727 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:56,727 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:56,727 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:56,727 - ERROR - FAILED: GMM overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:56,727 - ERROR - FAILED: GMM peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:56,727 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,727 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:56,727 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,727 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:56,727 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:56,727 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-05-12 23:24:56,727 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-05-12 23:24:56,732 - ERROR - FAILED: RidgeWalker overlap region count mismatch - expected 1, got 0
+2025-05-12 23:24:56,732 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 0
+2025-05-12 23:24:56,732 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:56,732 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:56,732 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:56,732 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:56,732 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:56,732 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:56,732 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:56,732 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:56,732 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:56,733 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:56,733 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 1 ===
+2025-05-12 23:24:56,733 - INFO - Input peak parameters: [{'rt_center': 10.6, 'mz_center': 150.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9500}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10200}, {'rt_center': 11.6, 'mz_center': 151.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10800}, {'rt_center': 13.1, 'mz_center': 154.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 23000}, {'rt_center': 13.2, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}]
+2025-05-12 23:24:56,733 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:56,818 - INFO - Suspicious boxes detected: 4
+2025-05-12 23:24:56,818 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:57,357 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:57,357 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:57,357 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:57,357 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:57,357 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:57,357 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:57,357 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:57,357 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:57,357 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:57,357 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:57,357 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:57,357 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:57,357 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:57,357 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:57,360 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:57,360 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:57,360 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:57,360 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:57,360 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:57,360 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:57,360 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:57,360 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:57,360 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:57,360 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:57,360 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:57,360 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:57,360 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:57,360 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:57,360 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:57,360 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:57,360 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:57,360 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:57,360 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:57,360 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:57,360 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 2 ===
+2025-05-12 23:24:57,360 - INFO - Input peak parameters: [{'rt_center': 10.4, 'mz_center': 150.4, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9800}, {'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10300}, {'rt_center': 11.4, 'mz_center': 151.4, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10700}, {'rt_center': 13.3, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22500}, {'rt_center': 13.4, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21500}]
+2025-05-12 23:24:57,360 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:57,445 - INFO - Suspicious boxes detected: 4
+2025-05-12 23:24:57,445 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:58,002 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:58,002 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:58,002 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:58,002 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:58,002 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:58,002 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:58,002 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:58,002 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:58,002 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:58,002 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:58,002 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:58,002 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:58,002 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:58,002 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:58,002 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:58,002 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:58,002 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:58,002 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:58,002 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:58,002 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:58,002 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:58,002 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:58,002 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:58,002 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:58,002 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:58,002 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:58,002 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:58,002 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:58,005 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:58,005 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 3 ===
+2025-05-12 23:24:58,005 - INFO - Input peak parameters: [{'rt_center': 10.7, 'mz_center': 150.7, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10100}, {'rt_center': 11.2, 'mz_center': 151.2, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9900}, {'rt_center': 11.7, 'mz_center': 151.7, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10500}, {'rt_center': 13.2, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21800}, {'rt_center': 13.3, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 20500}]
+2025-05-12 23:24:58,005 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:58,083 - INFO - Suspicious boxes detected: 4
+2025-05-12 23:24:58,083 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:58,624 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:58,624 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:58,624 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:58,624 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:58,624 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:58,624 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:58,624 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:58,624 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:58,624 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:58,624 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:58,624 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:58,624 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:58,624 - INFO - RidgeWalker: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:58,624 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:58,624 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:58,624 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:58,624 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:58,624 - INFO - PASSED: RidgeWalker peak count in overlaps correct.
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:58,624 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:58,624 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:58,624 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:58,624 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:58,624 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:58,624 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:58,624 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:58,624 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:58,624 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:58,624 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:58,624 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:58,624 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 4 ===
+2025-05-12 23:24:58,624 - INFO - Input peak parameters: [{'rt_center': 10.5, 'mz_center': 150.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9500}, {'rt_center': 11.0, 'mz_center': 151.1, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9700}, {'rt_center': 11.5, 'mz_center': 151.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9800}, {'rt_center': 13.0, 'mz_center': 154.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 23500}, {'rt_center': 13.1, 'mz_center': 154.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22500}]
+2025-05-12 23:24:58,624 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:58,710 - INFO - Suspicious boxes detected: 4
+2025-05-12 23:24:58,710 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:59,252 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:59,252 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:59,252 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:59,252 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:59,252 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:59,252 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:59,252 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:59,252 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:59,252 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:59,252 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:59,252 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:59,252 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:59,252 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:59,252 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:59,252 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:59,252 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:59,252 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:59,252 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:59,252 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:59,252 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:59,252 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:59,252 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:59,252 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:59,252 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:59,252 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:59,252 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:59,252 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:59,252 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:59,252 - INFO - 
+
+=== NEW TEST ===
+2025-05-12 23:24:59,252 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 5 ===
+2025-05-12 23:24:59,252 - INFO - Input peak parameters: [{'rt_center': 10.8, 'mz_center': 150.8, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.3, 'mz_center': 151.3, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9800}, {'rt_center': 11.8, 'mz_center': 151.8, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10200}, {'rt_center': 13.5, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 13.6, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}]
+2025-05-12 23:24:59,252 - INFO - Expected: 4 suspicious boxes, 1 overlaps, 2 peaks in overlaps
+2025-05-12 23:24:59,335 - INFO - Suspicious boxes detected: 4
+2025-05-12 23:24:59,335 - INFO - PASSED: Box test passed.
+2025-05-12 23:24:59,904 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:59,905 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:59,905 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:59,905 - INFO - GMM: Detected single peak → no overlap
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:59,905 - INFO - GMM: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:59,905 - INFO - 
+[GMM] Detection Summary (aggregate):
+2025-05-12 23:24:59,905 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:59,905 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:59,905 - INFO - PASSED: GMM overlap region count correct.
+2025-05-12 23:24:59,905 - INFO - PASSED: GMM peak count in overlaps correct.
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:59,905 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:59,905 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:59,905 - INFO - RidgeWalker: Detected single peak → no overlap
+2025-05-12 23:24:59,905 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:59,905 - INFO - RidgeWalker: Detected 3 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:59,905 - INFO - 
+[RidgeWalker] Detection Summary (aggregate):
+2025-05-12 23:24:59,906 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:59,906 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:59,906 - INFO - PASSED: RidgeWalker overlap region count correct.
+2025-05-12 23:24:59,906 - ERROR - FAILED: RidgeWalker peak count in overlaps mismatch - expected 2, got 3
+2025-05-12 23:24:59,906 - INFO - 
+--- Region 1 ---
+2025-05-12 23:24:59,906 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:59,906 - INFO - 
+--- Region 2 ---
+2025-05-12 23:24:59,906 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:59,906 - INFO - 
+--- Region 3 ---
+2025-05-12 23:24:59,906 - INFO - Wavelet: Detected single peak → no overlap
+2025-05-12 23:24:59,906 - INFO - 
+--- Region 4 ---
+2025-05-12 23:24:59,906 - INFO - Wavelet: Detected 2 peaks (ΔBIC=0.00, support=N/A) → overlap confirmed
+2025-05-12 23:24:59,906 - INFO - 
+[Wavelet] Detection Summary (aggregate):
+2025-05-12 23:24:59,906 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-05-12 23:24:59,906 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-05-12 23:24:59,906 - INFO - PASSED: Wavelet overlap region count correct.
+2025-05-12 23:24:59,906 - INFO - PASSED: Wavelet peak count in overlaps correct.
+2025-05-12 23:24:59,907 - INFO - 
+
+=== NEW TEST ===

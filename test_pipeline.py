@@ -113,7 +113,8 @@ def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expecte
     ridge_walk = PeakDeconvolver(method="ridge_walk")
     wavelet = PeakDeconvolver(method="wavelet", pad_grid=True)
 
-    for region_idx, (raw_grid, mz, rt, d_rt, dd_rt) in enumerate(cropped_regions):        
+    for region_idx, (raw_grid, mz, rt, d_rt, dd_rt) in enumerate(cropped_regions):
+           
         # GMM
         gmm_result = gmm.model.fit(raw_grid, mz, rt, region_index=region_idx)#, plot_func=plot_horizontal_gmm)
         model_outputs["GMM"].append({
@@ -136,10 +137,11 @@ def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expecte
             "num_peaks": ridge_result.get("num_peaks_in_overlap", 0) if ridge_result else 0,
             "peak_locations": ridge_result.get("peak_locations", []) if ridge_result else []
         })
-
+        
         # Wavelet
         wavelet_result = wavelet.model.fit(raw_grid, mz, rt)
-        wavelet.model.plot_wavelet_result(raw_grid, wavelet_result["transformed_grid"], wavelet_result["peaks"], wavelet_result["clusters"], title=f"{label} - Region {region_idx + 1}")
+        print("WAVELET RESULT")
+        # wavelet.model.plot_wavelet_result(raw_grid, wavelet_result["transformed_grid"], wavelet_result["peaks"], wavelet_result["clusters"], title=f"{label} - Region {region_idx + 1}")
         model_outputs["Wavelet"].append({
             "region_index": region_idx,
             "result": wavelet_result,
