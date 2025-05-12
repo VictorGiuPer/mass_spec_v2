@@ -37,7 +37,7 @@ class Localizer:
 
         start_mz_idx, start_rt_idx = found[0]
         mz_min_idx, mz_max_idx, rt_min_idx, rt_max_idx = self._grow_box_from_start(
-            active_mask, start_mz_idx, start_rt_idx, max_gap=1, min_local_drop=1.2
+            active_mask, start_mz_idx, start_rt_idx, max_gap=5, min_local_drop=0.01
         )
 
         mz_min_idx = max(mz_min_idx - local_margin, 0)
@@ -60,7 +60,7 @@ class Localizer:
 
         return box
 
-    def _grow_box_from_start(self, active_mask, start_mz_idx, start_rt_idx, max_gap=1, min_local_drop=0.3):
+    def _grow_box_from_start(self, active_mask, start_mz_idx, start_rt_idx, max_gap=2, min_local_drop=0.1):
         """
         Flood-fill algorithm with stricter separation rules.
         Only grows into neighbors whose intensity hasn't dropped too much from the seed.
