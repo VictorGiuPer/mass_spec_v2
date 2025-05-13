@@ -3,13 +3,24 @@ import numpy as np
 import os
 from collections import defaultdict
 
-from src.generation import GridGenerator, GaussianGenerator
+from src.detection.localization import Localizer
+from src.detection.suspicion import SuspicionDetector
+from src.detection.utils import mark_box
+from src.deconvolution.peak_deconvolver import PeakDeconvolver
+
+import logging
+import numpy as np
+import os
+from collections import defaultdict
+
 from src.detection.localization import Localizer
 from src.detection.suspicion import SuspicionDetector
 from src.detection.utils import mark_box
 from src.deconvolution.peak_deconvolver import PeakDeconvolver
 from src.deconvolution.visualization import plot_horizontal_gmm, plot_ridges_on_grid
 from test_cases import TEST_CASES
+from scipy.optimize import linear_sum_assignment
+
 
 # === Logging setup ===
 logging.basicConfig(
@@ -20,8 +31,9 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# === Utilities ===
+# UTILITY
 def check_deconv_results(method, found_regions, found_peaks, expected_regions, expected_peaks):
+    """Log pass/fail status for region and peak count matches."""
     if found_regions != expected_regions:
         logging.error(f"FAILED: {method} overlap region count mismatch - expected {expected_regions}, got {found_regions}")
     else:
@@ -33,26 +45,9 @@ def check_deconv_results(method, found_regions, found_peaks, expected_regions, e
         else:
             logging.info(f"PASSED: {method} peak count in overlaps correct.")
 
-
-def normalize_intensity(grid, mode="zscore"):
-    if mode == "zscore":
-        mean = np.mean(grid)
-        std = np.std(grid)
-        return (grid - mean) / std if std > 0 else grid
-    elif mode == "log":
-        return np.log1p(grid)
-    else:
-        raise ValueError(f"Unsupported normalization mode: {mode}")
-
-def get_dynamic_threshold(grid, method="percentile", value=95):
-    if method == "percentile":
-        return np.percentile(grid, value)
-    elif method == "fraction":
-        return np.max(grid) * value
-    else:
-        raise ValueError(f"Unsupported thresholding method: {method}")
-
+# I/O HELPER
 def load_grid(label, smoothed=True):
+    """Load a test grid and its axes from disk."""
     # Generate safe filename from label
     safe_label = label.lower().replace(" ", "_").replace(":", "").replace("-", "").replace("__", "_")
     filename = f"{safe_label}.npz"
@@ -65,14 +60,15 @@ def load_grid(label, smoothed=True):
     with np.load(path) as data:
         return data["grid"], data["rt_axis"], data["mz_axis"]
 
-
+# TRUTH LABEL HELPER
 def get_region_truth(expected_num_boxes, expected_overlap_count):
+    """Generate a list of expected overlap labels for evaluation."""
     return [True] * expected_overlap_count + [False] * (expected_num_boxes - expected_overlap_count)
 
-# === Main Testing Function ===
+# MAIN TESTING FUNCTION
 def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expected_overlap_count,
-                                  expected_peaks_in_overlap=None,
-                                  normalization="zscore", threshold_mode="percentile"):
+                                  expected_peaks_in_overlap=None):
+    """Run detection and deconvolution models on a test case label."""
     logging.info(f"\n=== Running Test: {label} ===")
     logging.info(f"Input peak parameters: {peak_params}")
     logging.info(f"Expected: {expected_num_boxes} suspicious boxes, {expected_overlap_count} overlaps, {expected_peaks_in_overlap} peaks in overlaps")
@@ -122,13 +118,14 @@ def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expecte
             "result": gmm_result,
             "overlap_detected": gmm_result.get("overlap_detected", False) if gmm_result else False,
             "num_peaks": gmm_result.get("num_peaks_in_overlap", 0) if gmm_result else 0,
-            "peak_locations": gmm_result.get("means", []) if gmm_result else []
+            "peak_locations": gmm_result.get("peak_locations", []) if gmm_result else []
         })
-
+        # print(model_outputs["GMM"][-1]["peak_locations"])
+        
         # Ridge Walk
-        ridge_result = ridge_walk.model.fit(raw_grid, d_rt, dd_rt)
+        ridge_result = ridge_walk.model.fit(raw_grid, d_rt, dd_rt, mz, rt)
         # Optional: visualize ridges
-        # plot_ridges_on_grid(raw_grid, mz, rt, ridge_walk.model.ridges)
+        # plot_ridges_on_grid(raw_grid, mz, rt, ridge_walk.model.ridges, title=f"{label} - Region {region_idx + 1}")
 
         model_outputs["RidgeWalker"].append({
             "region_index": region_idx,
@@ -137,10 +134,11 @@ def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expecte
             "num_peaks": ridge_result.get("num_peaks_in_overlap", 0) if ridge_result else 0,
             "peak_locations": ridge_result.get("peak_locations", []) if ridge_result else []
         })
-        
+
+        # print(model_outputs["RidgeWalker"][-1]["peak_locations"])
+ 
         # Wavelet
         wavelet_result = wavelet.model.fit(raw_grid, mz, rt)
-        print("WAVELET RESULT")
         # wavelet.model.plot_wavelet_result(raw_grid, wavelet_result["transformed_grid"], wavelet_result["peaks"], wavelet_result["clusters"], title=f"{label} - Region {region_idx + 1}")
         model_outputs["Wavelet"].append({
             "region_index": region_idx,
@@ -149,89 +147,85 @@ def run_model_suite_on_test_case(label, peak_params, expected_num_boxes, expecte
             "num_peaks": wavelet_result.get("num_peaks_in_overlap", 0) if wavelet_result else 0,
             "peak_locations": wavelet_result.get("peak_locations", []) if wavelet_result else []
         })
+        # print(model_outputs["Wavelet"][-1]["peak_locations"])
 
-
-    # === Evaluation Metrics Per Model ===
     for model_name, outputs in model_outputs.items():
-        peak_count_errors = []
-        localization_errors = []
+        evaluate_model_outputs(outputs, model_name, peak_params, expected_overlap_count, expected_peaks_in_overlap)
 
-        # Aggregate evaluation: assume we can't reliably map regions to overlap ground truth
-        overlap_detected_anywhere = any(output["overlap_detected"] for output in outputs)
-        overlap_expected = expected_overlap_count > 0
+# EVALUATION
+def evaluate_model_outputs(model_outputs, model_name, peak_params, expected_overlap_count, expected_peaks_in_overlap):
+    """Evaluate deconvolution results against ground truth."""
+    peak_count_errors = []
+    localization_errors = []
 
-        # Initialize counts
-        tp = fp = fn = tn = 0
+    overlap_detected_anywhere = any(output["overlap_detected"] for output in model_outputs)
+    overlap_expected = expected_overlap_count > 0
 
-        if overlap_detected_anywhere and overlap_expected:
-            tp = 1
-        elif overlap_detected_anywhere and not overlap_expected:
-            fp = 1
-        elif not overlap_detected_anywhere and overlap_expected:
-            fn = 1
-        elif not overlap_detected_anywhere and not overlap_expected:
-            tn = 1
+    tp = fp = fn = tn = 0
+    if overlap_detected_anywhere and overlap_expected:
+        tp = 1
+    elif overlap_detected_anywhere and not overlap_expected:
+        fp = 1
+    elif not overlap_detected_anywhere and overlap_expected:
+        fn = 1
+    else:
+        tn = 1
 
-        confirmed_overlaps = sum(1 for output in outputs if output["overlap_detected"])
-        total_detected_peaks = sum(output.get("num_peaks", 0) for output in outputs if output["overlap_detected"])
+    confirmed_overlaps = sum(1 for output in model_outputs if output["overlap_detected"])
+    total_detected_peaks = sum(output.get("num_peaks", 0) for output in model_outputs if output["overlap_detected"])
 
-        # Per-region logging
-        for i, model_output in enumerate(outputs):
-            logging.info(f"\n--- Region {i + 1} ---")
-            detected = model_output["overlap_detected"]
+    for i, model_output in enumerate(model_outputs):
+        logging.info(f"\n--- Region {i + 1} ---")
+        detected = model_output["overlap_detected"]
+        num_peaks = model_output.get("num_peaks", 0)
+        confidence = model_output.get("confidence", 0)
+        support = model_output.get("bic_support", "N/A")
 
-            if detected:
-                num_peaks = model_output.get("num_peaks", 0)
-                confidence = model_output.get("confidence", 0)
-                support = model_output.get("bic_support", "N/A")
-                logging.info(f"{model_name}: Detected {num_peaks} peaks (ΔBIC={confidence:.2f}, support={support}) → overlap confirmed")
-            else:
-                logging.info(f"{model_name}: Detected single peak → no overlap")
+        if detected:
+            logging.info(f"{model_name}: Detected {num_peaks} peaks (ΔBIC={confidence:.2f}, support={support}) → overlap confirmed")
+        else:
+            logging.info(f"{model_name}: Detected single peak → no overlap")
 
-            # Peak Count Accuracy
-            if expected_peaks_in_overlap is not None:
-                detected_peaks = model_output.get("num_peaks_in_overlap")
-                if detected_peaks is not None:
-                    peak_count_errors.append(abs(detected_peaks - expected_peaks_in_overlap))
+        if expected_peaks_in_overlap is not None and detected:
+            detected_peaks = model_output.get("num_peaks_in_overlap", 0)
+            peak_count_errors.append(abs(detected_peaks - expected_peaks_in_overlap))
 
-            # Localization Accuracy
-            detected_locations = model_output.get("peak_locations", [])
-            if detected_locations:
-                gt_locations = np.array([[p["mz_center"], p["rt_center"]] for p in peak_params])
-                if len(detected_locations) == len(gt_locations):
-                    distances = np.linalg.norm(detected_locations - gt_locations, axis=1)
-                    localization_errors.extend(distances)
+            detected_locations = np.array(model_output.get("peak_locations", []))
+            gt_locations = np.array([[p["mz_center"], p["rt_center"]] for p in peak_params])
 
-        # Detection Summary
-        precision = tp / (tp + fp + 1e-9)
-        recall = tp / (tp + fn + 1e-9)
-        f1 = 2 * precision * recall / (precision + recall + 1e-9)
-        accuracy = (tp + tn) / (tp + fp + fn + tn + 1e-9)
+            if detected_locations.size and gt_locations.size:
+                cost_matrix = np.linalg.norm(
+                    detected_locations[:, None, :] - gt_locations[None, :, :], axis=2
+                )
+                row_ind, col_ind = linear_sum_assignment(cost_matrix)
+                localization_errors.extend(cost_matrix[row_ind, col_ind])
 
-        logging.info(f"\n[{model_name}] Detection Summary (aggregate):")
-        logging.info(f"  TP={tp}, FP={fp}, FN={fn}, TN={tn}")
-        logging.info(f"  Precision={precision:.2f}, Recall={recall:.2f}, F1={f1:.2f}, Accuracy={accuracy:.2f}")
+    precision = tp / (tp + fp + 1e-9)
+    recall = tp / (tp + fn + 1e-9)
+    f1 = 2 * precision * recall / (precision + recall + 1e-9)
+    accuracy = (tp + tn) / (tp + fp + fn + tn + 1e-9)
 
-        if peak_count_errors:
-            avg_peak_count_error = np.mean(peak_count_errors)
-            logging.info(f"[Category 2] Average Peak Count Error: {avg_peak_count_error:.2f}")
+    logging.info(f"\n[{model_name}] Detection Summary (aggregate):")
+    logging.info(f"  TP={tp}, FP={fp}, FN={fn}, TN={tn}")
+    logging.info(f"  Precision={precision:.2f}, Recall={recall:.2f}, F1={f1:.2f}, Accuracy={accuracy:.2f}")
 
-        if localization_errors:
-            avg_localization_error = np.mean(localization_errors)
-            logging.info(f"[Category 3] Average Localization Error: {avg_localization_error:.2f}")
+    if peak_count_errors:
+        logging.info(f"[Category 2] Average Peak Count Error: {np.mean(peak_count_errors):.2f}")
 
-        # Optional: still run your original deconv check if you trust the counts
-        check_deconv_results(
-            model_name,
-            confirmed_overlaps,
-            total_detected_peaks,
-            expected_overlap_count,
-            expected_peaks_in_overlap
-        )
+    if localization_errors:
+        logging.info(f"[Category 3] Average Localization Error: {np.mean(localization_errors):.2f}")
 
+    check_deconv_results(
+        model_name,
+        confirmed_overlaps,
+        total_detected_peaks,
+        expected_overlap_count,
+        expected_peaks_in_overlap
+    )
 
-# === Run All Test Cases ===
+# ENTRY POINT
 def main():
+    """Loop through all test cases and run the full evaluation suite."""
     for label, peak_params, expected_boxes, expected_overlaps, expected_peaks_in_overlap in TEST_CASES:
         try:
             run_model_suite_on_test_case(label, peak_params, expected_boxes, expected_overlaps, expected_peaks_in_overlap)
@@ -241,3 +235,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+### UNUSED (TRIED IMPLEMENTATION BUT COUNTERPRODUCTIVE ###
+def normalize_intensity(grid, mode="zscore"):
+    if mode == "zscore":
+        mean = np.mean(grid)
+        std = np.std(grid)
+        return (grid - mean) / std if std > 0 else grid
+    elif mode == "log":
+        return np.log1p(grid)
+    else:
+        raise ValueError(f"Unsupported normalization mode: {mode}")
+
+def get_dynamic_threshold(grid, method="percentile", value=95):
+    if method == "percentile":
+        return np.percentile(grid, value)
+    elif method == "fraction":
+        return np.max(grid) * value
+    else:
+        raise ValueError(f"Unsupported thresholding method: {method}")
