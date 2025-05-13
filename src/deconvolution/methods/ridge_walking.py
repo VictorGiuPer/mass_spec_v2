@@ -2,27 +2,132 @@ import numpy as np
 from sklearn.cluster import DBSCAN
 
 class RidgeWalker:
-    def __init__(self, min_intensity=3e4, min_slope=0.2, fusion_threshold=0.45,
-                 fork_sep=2, fork_width=3, weights=None):
+
+
+    # PUBLIC INTERFACE
+    def __init__(self, min_intensity=3e4, min_slope=0.2, fusion_threshold=0.45, weights=None):
+        """
+        Initialize RidgeWalker with thresholds and scoring weights.
+
+        Args:
+            min_intensity (float): Minimum signal level to consider in ridge tracking.
+            min_slope (float): Minimum d/dt slope required to extend a ridge.
+            fusion_threshold (float): Threshold to confirm overlap between ridges.
+            weights (dict): Weighting for overlap scoring components.
+        """
         self.min_intensity = min_intensity
         self.min_slope = min_slope
         self.fusion_threshold = fusion_threshold
-        self.fork_sep = fork_sep
-        self.fork_width = fork_width
         self.weights = weights if weights else {"width": 0.2, "smoothness": 0.3, "fork": 0.5}
 
-    def fit(self, grid, d_rt, dd_rt):
+    def fit(self, grid, d_rt, dd_rt, mz_axis=None, rt_axis=None):
+        """
+        Run ridge detection and overlap analysis on a given grid.
+
+        Args:
+            grid (2D array): Intensity grid.
+            d_rt (2D array): First derivative w.r.t. RT.
+            dd_rt (2D array): Second derivative w.r.t. RT.
+            mz_axis (1D array): m/z values for rows.
+            rt_axis (1D array): RT values for columns.
+
+        Returns:
+            dict: Result summary containing peaks and overlap info.
+        """
         self.grid = grid
         self.d_rt = d_rt
         self.dd_rt = dd_rt
+        self.mz_axis = np.array(mz_axis)
+        self.rt_axis = np.array(rt_axis)
         self.ridges = self._track_all_ridges()
-        overlap_summary = self._analyze_ridge_pairs()
-        self.overlap_summary = overlap_summary
-
+        self.overlap_summary = self._analyze_ridge_pairs()
         return self._build_result()
+    
+    def get_peak_maxima_from_ridges(self, ridge_indices, n_peaks=1):
+        """
+        Return top N peak maxima from selected ridges.
+
+        Args:
+            ridge_indices (list[int]): Indices of ridges to analyze.
+            n_peaks (int): Number of peak maxima to return.
+
+        Returns:
+            list: Top N (mz, rt) peak coordinates sorted by intensity.
+        """
+        peaks = []
+
+        for i in ridge_indices:
+            ridge = self.ridges[i]
+            if not ridge:
+                continue
+
+            max_point = max(ridge, key=lambda pt: self.grid[pt[0], pt[1]])
+            mz_idx, rt_idx = max_point
+            intensity = self.grid[mz_idx, rt_idx]
+            mz = self.mz_axis[mz_idx]
+            rt = self.rt_axis[rt_idx]
+            peaks.append(((mz, rt), intensity))
+
+        # Sort by intensity and keep top N
+        peaks.sort(key=lambda x: -x[1])
+        return [pt for pt, _ in peaks[:n_peaks]]
+
+    def _build_result(self):
+        """
+        Assemble final result dictionary using overlap analysis and ridge maxima.
+
+        Returns:
+            dict: Summary with peaks, overlaps, and ridge metadata.
+        """
+        summary = self.overlap_summary
+        peak_locations = []
+
+        # Use ridges from overlaps if any
+        peak_ridge_indices = set()
+        if summary and summary.get("overlap_details"):
+            for overlap in summary["overlap_details"]:
+                peak_ridge_indices.update(overlap["ridge_pair"])
+
+        # If no overlaps or none detected, fall back to top ridges
+        if not peak_ridge_indices:
+            for i, ridge in enumerate(self.ridges):
+                if len(ridge) >= 3:
+                    intensities = [self.grid[mz, rt] for mz, rt in ridge]
+                    if max(intensities) >= self.min_intensity:
+                        peak_ridge_indices.add(i)
+
+        # Extract max point per ridge
+        for i in peak_ridge_indices:
+            ridge = self.ridges[i]
+            if not ridge:
+                continue
+            max_mz, max_rt = max(ridge, key=lambda pt: self.grid[pt[0], pt[1]])
+            peak_locations.append((float(self.mz_axis[max_mz]), float(self.rt_axis[max_rt])))
+
+        peak_locations = list(set(peak_locations))
+
+        return {
+            "overlap_detected": summary.get("overlap_detected", False) if summary else False,
+            "num_overlap_events": summary.get("num_overlap_events", 0) if summary else 0,
+            "num_peaks_in_overlap": len(peak_locations),
+            "num_ridges_tracked": len(self.ridges),
+            "ridge_pairs_analyzed": summary.get("num_overlap_events", 0) if summary else 0,
+            "overlap_details": summary.get("overlap_details", []) if summary else [],
+            "peak_locations": peak_locations
+        }
 
 
+    # RIDGE DETECTION CORE
     def _find_local_maxima(self, column):
+        """
+        Find local maxima in a 1D column (e.g., m/z slice at fixed RT).
+
+        Args:
+            column (1D array): Intensity values.
+
+        Returns:
+            list[int]: Indices of local maxima above min_intensity.
+        """
         maxima = set()
 
         # First pass: top to bottom
@@ -37,8 +142,42 @@ class RidgeWalker:
 
         return list(maxima)
 
+    def _track_single_ridge(self, mz, rt):
+        """
+        Track a single ridge from a local maximum in both directions.
+
+        Args:
+            mz (int): Starting m/z index.
+            rt (int): Starting RT index.
+
+        Returns:
+            list[(int, int)]: List of (mz, rt) points along the ridge.
+        """
+        backward = self._extend_ridge_one_direction(mz, rt, -1)[::-1]
+        forward = self._extend_ridge_one_direction(mz, rt, 1)
+        ridge = backward + [(mz, rt)] + forward
+
+        # Early contrast check to skip flat ridges
+        if len(ridge) >= 3:
+            intensities = [self.grid[mz, rt] for mz, rt in ridge]
+            contrast = (max(intensities) - min(intensities)) / (max(intensities) + 1e-9)
+            if contrast < 0.02:
+                return []
+
+        return ridge
 
     def _extend_ridge_one_direction(self, mz, rt, direction):
+        """
+        Extend a ridge path in the specified RT direction.
+
+        Args:
+            mz (int): Starting m/z.
+            rt (int): Starting RT.
+            direction (int): +1 for forward, -1 for backward.
+
+        Returns:
+            list[(int, int)]: Path of ridge in the given direction.
+        """
         path = []
         mz_len, rt_len = self.grid.shape
         current_mz, current_rt = mz, rt
@@ -72,24 +211,13 @@ class RidgeWalker:
 
         return path
 
-
-    def _track_single_ridge(self, mz, rt):
-        backward = self._extend_ridge_one_direction(mz, rt, -1)[::-1]
-        forward = self._extend_ridge_one_direction(mz, rt, 1)
-        ridge = backward + [(mz, rt)] + forward
-
-        # Early contrast check to skip flat ridges
-        if len(ridge) >= 3:
-            intensities = [self.grid[mz, rt] for mz, rt in ridge]
-            contrast = (max(intensities) - min(intensities)) / (max(intensities) + 1e-9)
-            if contrast < 0.02:
-                return []
-
-        return ridge
-
-        return backward + [(mz, rt)] + forward
-
     def _track_all_ridges(self):
+        """
+        Track all local maxima across RT and build candidate ridges.
+
+        Returns:
+            list[list[(int, int)]]: All accepted ridge paths.
+        """
         ridge_paths = []
         visited = np.zeros_like(self.grid, dtype=bool)
         mz_len, rt_len = self.grid.shape
@@ -126,8 +254,17 @@ class RidgeWalker:
 
         return ridge_paths
 
-
+    # RIDGE FEATURE EXTRACTION
     def _ridge_width(self, ridge):
+        """
+        Estimate the width of a ridge at half max intensity.
+
+        Args:
+            ridge (list): Sequence of (mz, rt) points.
+
+        Returns:
+            float: Median width of the ridge in m/z index units.
+        """
         widths = []
         for mz, rt in ridge:
             intensity = self.grid[mz, rt]
@@ -141,10 +278,28 @@ class RidgeWalker:
         return np.median(widths)
 
     def _intensity_smoothness(self, ridge):
+        """
+        Compute intensity smoothness based on std dev of differences.
+
+        Args:
+            ridge (list): Ridge path.
+
+        Returns:
+            float: Standard deviation of first differences in intensity.
+        """
         intensities = [self.grid[mz, rt] for mz, rt in ridge]
         return np.std(np.diff(intensities))
 
     def _fork_sharpness(self, ridge1, ridge2):
+        """
+        Evaluate second derivative difference between overlapping ridge sections.
+
+        Args:
+            ridge1, ridge2 (list): Two ridge paths.
+
+        Returns:
+            float: Sharpness score based on dd_rt differences and directional contrast.
+        """
         overlap = set(rt for _, rt in ridge1) & set(rt for _, rt in ridge2)
         sharp_diffs = []
         consistent_signs = 0
@@ -162,8 +317,16 @@ class RidgeWalker:
         direction_bonus = consistent_signs / len(overlap) if overlap else 0
         return sharp_score * (1 + direction_bonus)
 
-
     def _valley_score_between_ridges(self, ridge1, ridge2):
+        """
+        Evaluate valley depth and asymmetry between two ridges.
+
+        Args:
+            ridge1, ridge2 (list): Two ridge paths.
+
+        Returns:
+            dict | None: Valley score metrics, or None if comparison is invalid.
+        """
         r1, r2 = {rt: mz for mz, rt in ridge1}, {rt: mz for mz, rt in ridge2}
         overlap_rts = sorted(set(r1) & set(r2))
         if len(overlap_rts) < 3:
@@ -197,7 +360,20 @@ class RidgeWalker:
             "confidence": confidence
         }
 
+
+    # OVERLAP ANALYSIS
     def _fusion_score(self, width_diff, smooth_diff, fork_sharp):
+        """
+        Compute a composite score for overlap likelihood between two ridges.
+
+        Args:
+            width_diff (float): Absolute width difference.
+            smooth_diff (float): Absolute smoothness difference.
+            fork_sharp (float): Fork sharpness score.
+
+        Returns:
+            float: Weighted fusion score.
+        """
         w = self.weights
         norm_width = 1 / (1 + width_diff)
         norm_smooth = 1 / (1 + smooth_diff)
@@ -206,8 +382,13 @@ class RidgeWalker:
                 w["smoothness"] * norm_smooth +
                 w["fork"] * norm_fork)
 
-
     def _analyze_ridge_pairs(self):
+        """
+        Analyze all pairs of ridges for potential overlap.
+
+        Returns:
+            dict: Summary of overlaps and deduplicated peak estimates.
+        """
         labels = []
         ridge_scores = []
         for i in range(len(self.ridges)):
@@ -344,24 +525,4 @@ class RidgeWalker:
                 "num_ridges_tracked": len(self.ridges),
                 "overlap_details": overlaps
             }
-    
-    def _build_result(self):
-        summary = self.overlap_summary
-        if not summary or not isinstance(summary, dict):
-            return {
-                "overlap_detected": False,
-                "num_overlap_events": 0,
-                "num_peaks_in_overlap": None,
-                "num_ridges_tracked": len(self.ridges) if self.ridges else 0,
-                "ridge_pairs_analyzed": 0,
-                "overlap_details": []
-            }
 
-        return {
-            "overlap_detected": summary.get("overlap_detected", False),
-            "num_overlap_events": summary.get("num_overlap_events", 0),
-            "num_peaks_in_overlap": summary.get("num_peaks_in_overlap"),
-            "num_ridges_tracked": summary.get("num_ridges_tracked", len(self.ridges)),
-            "ridge_pairs_analyzed": summary.get("num_overlap_events", 0),
-            "overlap_details": summary.get("overlap_details", [])
-        }
