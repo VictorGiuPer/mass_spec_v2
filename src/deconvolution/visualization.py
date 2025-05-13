@@ -119,12 +119,12 @@ def plot_residual_heatmap(grid, mz_axis, rt_axis, gmm, scaler, region_idx):
     plt.show()
 
 
-def plot_ridges_on_grid(grid, mz_axis, rt_axis, ridges):
+def plot_ridges_on_grid(grid, mz_axis, rt_axis, ridges, title="Ridge Overlay"):
     grid = np.array(grid, dtype=float)
     plt.figure(figsize=(8, 6))
     extent = [rt_axis[0], rt_axis[-1], mz_axis[0], mz_axis[-1]]
     plt.imshow(grid, extent=extent, origin='lower', aspect='auto', cmap='viridis')
-    plt.title("Ridge Overlay")
+    plt.title(title)
     plt.xlabel("RT")
     plt.ylabel("m/z")
     plt.colorbar(label='Intensity')
