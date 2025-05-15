@@ -1,0 +1,226 @@
+group,label,model,region_idx,overlap_true,overlap_pred,count_error,mean_loc_error,confidence
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 1,GMM,0,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 1,GMM,1,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 1,RidgeWalker,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 1,RidgeWalker,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 1,Wavelet,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 1,Wavelet,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 2,GMM,0,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 2,GMM,1,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 2,RidgeWalker,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 2,RidgeWalker,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 2,Wavelet,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 2,Wavelet,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 3,GMM,0,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 3,GMM,1,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 3,RidgeWalker,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 3,RidgeWalker,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 3,Wavelet,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 3,Wavelet,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 4,GMM,0,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 4,GMM,1,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 4,RidgeWalker,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 4,RidgeWalker,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 4,Wavelet,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 4,Wavelet,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 5,GMM,0,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 5,GMM,1,False,False,,,0.0
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 5,RidgeWalker,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 5,RidgeWalker,1,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 5,Wavelet,0,False,False,,,
+Variant - Two clearly separated peaks,Variant - Two clearly separated peaks 5,Wavelet,1,False,False,,,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 1,GMM,0,True,False,,,0.0
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 1,RidgeWalker,0,True,True,0,0.019969969969963586,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 1,Wavelet,0,True,False,,,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 2,GMM,0,True,True,0,0.012815986905053478,22.518927048649402
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 2,RidgeWalker,0,True,True,0,0.009959959959957132,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 2,Wavelet,0,True,False,,,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 3,GMM,0,True,False,,,0.0
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 3,RidgeWalker,0,True,True,0,0.009959959959971343,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 3,Wavelet,0,True,False,,,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 4,GMM,0,True,True,0,0.013696246280176183,23.426799610755097
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 4,RidgeWalker,0,True,True,1,0.01496496496497457,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 4,Wavelet,0,True,True,0,0.019969969969977797,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 5,GMM,0,True,False,,,0.0
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 5,RidgeWalker,0,True,True,1,0.004954954954953905,
+Variant - Strong overlap between two peaks,Variant - Strong overlap between two peaks 5,Wavelet,0,True,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",GMM,0,True,True,0,0.006170657240247124,25.952842435245202
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",GMM,1,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",GMM,2,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",RidgeWalker,0,True,True,0,0.001051051051064178,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",RidgeWalker,1,False,True,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",RidgeWalker,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",Wavelet,0,True,True,0,0.001051051051064178,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",Wavelet,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 1",Wavelet,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",GMM,0,True,True,0,0.005660157318388315,22.693826586575597
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",GMM,1,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",GMM,2,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",RidgeWalker,0,True,True,0,0.001251251251247254,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",RidgeWalker,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",RidgeWalker,2,False,True,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",Wavelet,0,True,True,0,0.001251251251247254,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",Wavelet,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 2",Wavelet,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",GMM,0,True,True,0,0.006234612306556642,24.277510420355156
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",GMM,1,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",GMM,2,False,True,,,-5.913140779057812
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",RidgeWalker,0,True,True,0,0.0009509509509513236,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",RidgeWalker,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",RidgeWalker,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",Wavelet,0,True,True,0,0.0009509509509513236,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",Wavelet,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 3",Wavelet,2,False,True,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",GMM,0,True,True,0,0.005885410202026264,21.935731543482234
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",GMM,1,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",GMM,2,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",RidgeWalker,0,True,True,0,0.0011511511511628214,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",RidgeWalker,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",RidgeWalker,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",Wavelet,0,True,True,0,0.0011511511511628214,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",Wavelet,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 4",Wavelet,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",GMM,0,True,True,0,0.005329592035835162,26.542038148222673
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",GMM,1,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",GMM,2,False,False,,,0.0
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",RidgeWalker,0,True,True,0,0.0009509509509513236,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",RidgeWalker,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",RidgeWalker,2,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",Wavelet,0,True,True,0,0.0009509509509513236,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",Wavelet,1,False,False,,,
+"Variant - Four peaks: 2 overlap, 2 isolated","Variant - Four peaks: 2 overlap, 2 isolated 5",Wavelet,2,False,False,,,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 1,GMM,0,True,True,0,0.010661205242087135,92.82049343991275
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 1,RidgeWalker,0,True,True,0,0.0031031031031147904,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 1,Wavelet,0,True,True,0,0.006439773106450275,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 2,GMM,0,True,True,0,0.006755807365768381,93.34396724596263
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 2,RidgeWalker,0,True,True,0,0.005605605605599824,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 2,Wavelet,0,True,True,0,0.006339673006342157,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 3,GMM,0,True,True,0,0.010022110928161965,94.2730470792867
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 3,RidgeWalker,0,True,True,0,0.00320320320320396,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 3,Wavelet,0,True,True,0,0.00987654320987493,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 4,GMM,0,True,True,0,0.00809258389521498,94.18702279593526
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 4,RidgeWalker,0,True,True,1,0.0030530530530465208,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 4,Wavelet,0,True,True,0,0.0076242909576270295,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 5,GMM,0,True,True,0,0.008665168820868985,100.10781774114275
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 5,RidgeWalker,0,True,True,1,0.003153153153145164,
+Variant - Cluster of 3 overlapping peaks,Variant - Cluster of 3 overlapping peaks 5,Wavelet,0,True,True,0,0.007791124457791436,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 1,GMM,0,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 1,GMM,1,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 1,RidgeWalker,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 1,RidgeWalker,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 1,Wavelet,0,False,True,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 1,Wavelet,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 2,GMM,0,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 2,GMM,1,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 2,RidgeWalker,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 2,RidgeWalker,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 2,Wavelet,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 2,Wavelet,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 3,GMM,0,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 3,GMM,1,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 3,RidgeWalker,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 3,RidgeWalker,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 3,Wavelet,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 3,Wavelet,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 4,GMM,0,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 4,GMM,1,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 4,RidgeWalker,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 4,RidgeWalker,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 4,Wavelet,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 4,Wavelet,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 5,GMM,0,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 5,GMM,1,False,False,,,0.0
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 5,RidgeWalker,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 5,RidgeWalker,1,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 5,Wavelet,0,False,False,,,
+Variant - Close but not overlapping peaks,Variant - Close but not overlapping peaks 5,Wavelet,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 1,GMM,0,True,True,0,0.025697225140035584,4.411274258871799
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 1,GMM,1,False,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 1,RidgeWalker,0,True,True,1,2.0975975975975985,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 1,RidgeWalker,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 1,Wavelet,0,True,True,0,0.007457457457448413,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 1,Wavelet,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 2,GMM,0,True,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 2,GMM,1,False,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 2,RidgeWalker,0,True,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 2,RidgeWalker,1,False,True,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 2,Wavelet,0,True,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 2,Wavelet,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 3,GMM,0,True,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 3,GMM,1,False,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 3,RidgeWalker,0,True,True,0,0.05240240240239302,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 3,RidgeWalker,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 3,Wavelet,0,True,True,0,0.007657657657674122,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 3,Wavelet,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 4,GMM,0,True,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 4,GMM,1,False,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 4,RidgeWalker,0,True,True,1,0.002452452452473608,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 4,RidgeWalker,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 4,Wavelet,0,True,True,1,2.0508675342008664,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 4,Wavelet,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 5,GMM,0,True,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 5,GMM,1,False,False,,,0.0
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 5,RidgeWalker,0,True,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 5,RidgeWalker,1,False,False,,,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 5,Wavelet,0,True,True,0,0.0026026026025931515,
+Variant - Intense + weak overlap,Variant - Intense + weak overlap 5,Wavelet,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",GMM,0,True,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",GMM,1,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",GMM,2,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",GMM,3,False,True,,,24.069515215062893
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",RidgeWalker,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",RidgeWalker,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",RidgeWalker,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",RidgeWalker,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",Wavelet,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",Wavelet,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",Wavelet,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 1",Wavelet,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",GMM,0,True,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",GMM,1,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",GMM,2,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",GMM,3,False,True,,,23.729561057316005
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",RidgeWalker,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",RidgeWalker,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",RidgeWalker,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",RidgeWalker,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",Wavelet,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",Wavelet,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",Wavelet,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 2",Wavelet,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",GMM,0,True,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",GMM,1,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",GMM,2,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",GMM,3,False,True,,,21.317273587580985
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",RidgeWalker,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",RidgeWalker,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",RidgeWalker,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",RidgeWalker,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",Wavelet,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",Wavelet,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",Wavelet,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 3",Wavelet,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",GMM,0,True,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",GMM,1,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",GMM,2,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",GMM,3,False,True,,,25.190069347392637
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",RidgeWalker,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",RidgeWalker,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",RidgeWalker,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",RidgeWalker,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",Wavelet,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",Wavelet,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",Wavelet,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 4",Wavelet,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",GMM,0,True,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",GMM,1,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",GMM,2,False,False,,,0.0
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",GMM,3,False,True,,,24.670345758745498
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",RidgeWalker,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",RidgeWalker,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",RidgeWalker,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",RidgeWalker,3,False,True,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",Wavelet,0,True,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",Wavelet,1,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",Wavelet,2,False,False,,,
+"Variant - Five peaks: 3 spaced, 2 overlapping","Variant - Five peaks: 3 spaced, 2 overlapping 5",Wavelet,3,False,True,,,

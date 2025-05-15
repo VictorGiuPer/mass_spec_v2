@@ -1,0 +1,22 @@
+model,group,tp,fp,fn,tn,precision,recall,f1,accuracy
+GMM,Variant - Two clearly separated peaks,0,0,0,10,1.0,1.0,1.0,1.0
+RidgeWalker,Variant - Two clearly separated peaks,0,0,0,10,1.0,1.0,1.0,1.0
+Wavelet,Variant - Two clearly separated peaks,0,0,0,10,1.0,1.0,1.0,1.0
+GMM,Variant - Strong overlap between two peaks,2,0,3,0,1.0,0.4,0.57,0.4
+RidgeWalker,Variant - Strong overlap between two peaks,5,0,0,0,1.0,1.0,1.0,1.0
+Wavelet,Variant - Strong overlap between two peaks,1,0,4,0,1.0,0.2,0.33,0.2
+GMM,"Variant - Four peaks: 2 overlap, 2 isolated",5,1,0,9,0.83,1.0,0.91,0.93
+RidgeWalker,"Variant - Four peaks: 2 overlap, 2 isolated",5,2,0,8,0.71,1.0,0.83,0.87
+Wavelet,"Variant - Four peaks: 2 overlap, 2 isolated",5,1,0,9,0.83,1.0,0.91,0.93
+GMM,Variant - Cluster of 3 overlapping peaks,5,0,0,0,1.0,1.0,1.0,1.0
+RidgeWalker,Variant - Cluster of 3 overlapping peaks,5,0,0,0,1.0,1.0,1.0,1.0
+Wavelet,Variant - Cluster of 3 overlapping peaks,5,0,0,0,1.0,1.0,1.0,1.0
+GMM,Variant - Close but not overlapping peaks,0,0,0,10,1.0,1.0,1.0,1.0
+RidgeWalker,Variant - Close but not overlapping peaks,0,0,0,10,1.0,1.0,1.0,1.0
+Wavelet,Variant - Close but not overlapping peaks,0,1,0,9,0.0,1.0,0.0,0.9
+GMM,Variant - Intense + weak overlap,1,0,4,5,1.0,0.2,0.33,0.6
+RidgeWalker,Variant - Intense + weak overlap,3,1,2,4,0.75,0.6,0.67,0.7
+Wavelet,Variant - Intense + weak overlap,4,0,1,5,1.0,0.8,0.89,0.9
+GMM,"Variant - Five peaks: 3 spaced, 2 overlapping",0,5,5,10,0.0,0.0,0.0,0.5
+RidgeWalker,"Variant - Five peaks: 3 spaced, 2 overlapping",0,5,5,10,0.0,0.0,0.0,0.5
+Wavelet,"Variant - Five peaks: 3 spaced, 2 overlapping",0,5,5,10,0.0,0.0,0.0,0.5

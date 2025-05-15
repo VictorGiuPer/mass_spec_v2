@@ -245,12 +245,9 @@ class GMMDeconvolver:
         reasons = []
         if self.confidence < 3:
             reasons.append("low_BIC")
-        if self.separation_score is not None and self.separation_score < 0.5:
-            reasons.append("low_sep")
         if weights.min() < 0.01:
             reasons.append("low_weight")
-        if dists and min(dists) < 0.1:
-            reasons.append("close_centers")
+
 
         # Special case: allow overlapping peaks if they are balanced and moderately close
         if len(means) == 2 and len(dists) == 1:
