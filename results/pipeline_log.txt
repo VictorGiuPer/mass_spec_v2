@@ -1,0 +1,959 @@
+2025-06-03 15:32:22,164 - INFO - 
+
+=== TEST SECTION: Variant - Two clearly separated peaks ===
+2025-06-03 15:32:22,164 - INFO - 
+=== Running Test: Variant - Two clearly separated peaks 1 ===
+2025-06-03 15:32:22,164 - INFO - Input peak parameters: [{'rt_center': 10.8, 'mz_center': 150.8, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 21000}, {'rt_center': 14.2, 'mz_center': 158.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24000}]
+2025-06-03 15:32:22,164 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:22,272 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:22,272 - INFO - PASSED box count.
+2025-06-03 15:32:22,783 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:22,783 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:22,783 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:22,783 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:22,783 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:22,783 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:22,783 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:22,783 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:22,783 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:22,783 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:22,783 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:22,783 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:22,783 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:22,783 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:22,783 - INFO - [Cat-4] Confidence Scores = [1.0, 0.9906]
+2025-06-03 15:32:22,783 - INFO - 
+=== Running Test: Variant - Two clearly separated peaks 2 ===
+2025-06-03 15:32:22,783 - INFO - Input peak parameters: [{'rt_center': 11.1, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 13.9, 'mz_center': 157.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25500}]
+2025-06-03 15:32:22,783 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:22,833 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:22,833 - INFO - PASSED box count.
+2025-06-03 15:32:23,139 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:23,139 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,139 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,139 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,139 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:23,139 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:23,139 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,139 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,139 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:23,139 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:23,139 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:23,139 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,139 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,139 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,139 - INFO - [Cat-4] Confidence Scores = [1.0, 0.9937]
+2025-06-03 15:32:23,139 - INFO - 
+=== Running Test: Variant - Two clearly separated peaks 3 ===
+2025-06-03 15:32:23,139 - INFO - Input peak parameters: [{'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20500}, {'rt_center': 14.1, 'mz_center': 158.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-06-03 15:32:23,139 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:23,204 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:23,204 - INFO - PASSED box count.
+2025-06-03 15:32:23,464 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:23,464 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,464 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,464 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,464 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:23,464 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:23,464 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,464 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,464 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,464 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:23,464 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:23,464 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,464 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,464 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,464 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0]
+2025-06-03 15:32:23,464 - INFO - 
+=== Running Test: Variant - Two clearly separated peaks 4 ===
+2025-06-03 15:32:23,464 - INFO - Input peak parameters: [{'rt_center': 11.3, 'mz_center': 151.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 13.7, 'mz_center': 157.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24500}]
+2025-06-03 15:32:23,464 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:23,516 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:23,516 - INFO - PASSED box count.
+2025-06-03 15:32:23,793 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:23,793 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,793 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,793 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,793 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:23,793 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:23,793 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,793 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,793 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,793 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:23,793 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:23,793 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:23,793 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:23,793 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:23,793 - INFO - [Cat-4] Confidence Scores = [1.0, 0.9973]
+2025-06-03 15:32:23,793 - INFO - 
+=== Running Test: Variant - Two clearly separated peaks 5 ===
+2025-06-03 15:32:23,801 - INFO - Input peak parameters: [{'rt_center': 10.7, 'mz_center': 150.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19500}, {'rt_center': 14.3, 'mz_center': 158.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24800}]
+2025-06-03 15:32:23,801 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:23,850 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:23,850 - INFO - PASSED box count.
+2025-06-03 15:32:24,131 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:24,131 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:24,131 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,131 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:24,131 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:24,131 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:24,131 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:24,131 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,131 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:24,131 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:24,131 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:24,131 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:24,131 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,131 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:24,131 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0]
+2025-06-03 15:32:24,131 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Two clearly separated peaks' ***
+2025-06-03 15:32:24,131 - INFO -   TP=0, FP=0, FN=0, TN=10
+2025-06-03 15:32:24,131 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,131 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Two clearly separated peaks' ***
+2025-06-03 15:32:24,131 - INFO -   TP=0, FP=0, FN=0, TN=10
+2025-06-03 15:32:24,131 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,131 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Two clearly separated peaks' ***
+2025-06-03 15:32:24,131 - INFO -   TP=0, FP=0, FN=0, TN=10
+2025-06-03 15:32:24,131 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,131 - INFO - 
+=== NEW TEST SECTION ===
+2025-06-03 15:32:24,131 - INFO - 
+
+=== TEST SECTION: Variant - Strong overlap between two peaks ===
+2025-06-03 15:32:24,131 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 1 ===
+2025-06-03 15:32:24,131 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 17000}, {'rt_center': 13.05, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 46000}]
+2025-06-03 15:32:24,131 - INFO - Expected: 1 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:24,179 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:24,179 - INFO - PASSED box count.
+2025-06-03 15:32:24,343 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:24,343 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:24,343 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:24,343 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:24,343 - INFO - [Cat-4] Confidence Scores = [0.0]
+2025-06-03 15:32:24,343 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:24,343 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:24,343 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,343 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:24,343 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:24,343 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:24,343 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:24,343 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:24,343 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:24,343 - INFO - [Cat-4] Confidence Scores = [0.988]
+2025-06-03 15:32:24,343 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 2 ===
+2025-06-03 15:32:24,343 - INFO - Input peak parameters: [{'rt_center': 13.2, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 13.3, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 44000}]
+2025-06-03 15:32:24,343 - INFO - Expected: 1 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:24,390 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:24,390 - INFO - PASSED box count.
+2025-06-03 15:32:24,600 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:24,600 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:24,600 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,600 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:24,600 - INFO - [Cat-4] Confidence Scores = [22.518927048649402]
+2025-06-03 15:32:24,600 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:24,600 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:24,600 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,600 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:24,600 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:24,600 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:24,600 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:24,600 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:24,600 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:24,600 - INFO - [Cat-4] Confidence Scores = [1.0]
+2025-06-03 15:32:24,600 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 3 ===
+2025-06-03 15:32:24,600 - INFO - Input peak parameters: [{'rt_center': 12.9, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18000}, {'rt_center': 13.0, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 46000}]
+2025-06-03 15:32:24,600 - INFO - Expected: 1 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:24,645 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:24,645 - INFO - PASSED box count.
+2025-06-03 15:32:24,802 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:24,802 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:24,802 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:24,802 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:24,802 - INFO - [Cat-4] Confidence Scores = [0.0]
+2025-06-03 15:32:24,802 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:24,802 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:24,802 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:24,802 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:24,802 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:24,802 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:24,802 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:24,802 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:24,802 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:24,802 - INFO - [Cat-4] Confidence Scores = [1.0]
+2025-06-03 15:32:24,802 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 4 ===
+2025-06-03 15:32:24,802 - INFO - Input peak parameters: [{'rt_center': 13.1, 'mz_center': 154.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20000}, {'rt_center': 13.2, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 43000}]
+2025-06-03 15:32:24,802 - INFO - Expected: 1 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:24,853 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:24,853 - INFO - PASSED box count.
+2025-06-03 15:32:25,048 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:25,048 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:25,048 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,048 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:25,048 - INFO - [Cat-4] Confidence Scores = [23.426799610755097]
+2025-06-03 15:32:25,048 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:25,048 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:25,048 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,048 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:25,048 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:25,048 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:25,048 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:25,048 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,048 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:25,048 - INFO - [Cat-4] Confidence Scores = [0.7767]
+2025-06-03 15:32:25,048 - INFO - 
+=== Running Test: Variant - Strong overlap between two peaks 5 ===
+2025-06-03 15:32:25,048 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 18500}, {'rt_center': 13.15, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 47000}]
+2025-06-03 15:32:25,048 - INFO - Expected: 1 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:25,096 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:25,096 - INFO - PASSED box count.
+2025-06-03 15:32:25,250 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:25,250 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:25,250 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:25,250 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:25,250 - INFO - [Cat-4] Confidence Scores = [0.0]
+2025-06-03 15:32:25,250 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:25,250 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:25,250 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,250 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:25,250 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:25,250 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:25,250 - INFO -   TP=0, FP=0, FN=1, TN=0
+2025-06-03 15:32:25,250 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:25,250 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:25,250 - INFO - [Cat-4] Confidence Scores = [1.0]
+2025-06-03 15:32:25,250 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Strong overlap between two peaks' ***
+2025-06-03 15:32:25,250 - INFO -   TP=2, FP=0, FN=3, TN=0
+2025-06-03 15:32:25,250 - INFO -   Precision=1.00, Recall=0.40, F1=0.57, Accuracy=0.40
+2025-06-03 15:32:25,250 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Strong overlap between two peaks' ***
+2025-06-03 15:32:25,250 - INFO -   TP=5, FP=0, FN=0, TN=0
+2025-06-03 15:32:25,250 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,250 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Strong overlap between two peaks' ***
+2025-06-03 15:32:25,250 - INFO -   TP=1, FP=0, FN=4, TN=0
+2025-06-03 15:32:25,250 - INFO -   Precision=1.00, Recall=0.20, F1=0.33, Accuracy=0.20
+2025-06-03 15:32:25,250 - INFO - 
+=== NEW TEST SECTION ===
+2025-06-03 15:32:25,250 - INFO - 
+
+=== TEST SECTION: Variant - Four peaks: 2 overlap, 2 isolated ===
+2025-06-03 15:32:25,250 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 1 ===
+2025-06-03 15:32:25,250 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 17500}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22500}, {'rt_center': 13.6, 'mz_center': 157.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 20500}, {'rt_center': 14.1, 'mz_center': 159.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24000}]
+2025-06-03 15:32:25,250 - INFO - Expected: 3 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:25,352 - INFO - Suspicious boxes detected: 3
+2025-06-03 15:32:25,352 - INFO - PASSED box count.
+2025-06-03 15:32:25,819 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:25,819 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:25,819 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,819 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:25,819 - INFO - [Cat-4] Confidence Scores = [25.952842435245202, 0.0, 0.0]
+2025-06-03 15:32:25,819 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:25,819 - INFO -   TP=1, FP=1, FN=0, TN=1
+2025-06-03 15:32:25,819 - INFO -   Precision=0.50, Recall=1.00, F1=0.67, Accuracy=0.67
+2025-06-03 15:32:25,819 - INFO - [Cat-2] Avg. Peak-Count Error = 0.33
+2025-06-03 15:32:25,819 - INFO - [Cat-4] Confidence Scores = [None, None, None]
+2025-06-03 15:32:25,819 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:25,819 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:25,819 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:25,819 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:25,819 - INFO - [Cat-4] Confidence Scores = [0.8965, 1.0, 1.0]
+2025-06-03 15:32:25,819 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 2 ===
+2025-06-03 15:32:25,819 - INFO - Input peak parameters: [{'rt_center': 11.2, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18000}, {'rt_center': 11.3, 'mz_center': 151.3, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}, {'rt_center': 13.4, 'mz_center': 157.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19000}, {'rt_center': 14.0, 'mz_center': 158.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25500}]
+2025-06-03 15:32:25,819 - INFO - Expected: 3 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:25,908 - INFO - Suspicious boxes detected: 3
+2025-06-03 15:32:25,908 - INFO - PASSED box count.
+2025-06-03 15:32:26,369 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:26,369 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:26,369 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:26,369 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:26,369 - INFO - [Cat-4] Confidence Scores = [22.693826586575597, 0.0, 0.0]
+2025-06-03 15:32:26,369 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:26,369 - INFO -   TP=1, FP=1, FN=0, TN=1
+2025-06-03 15:32:26,369 - INFO -   Precision=0.50, Recall=1.00, F1=0.67, Accuracy=0.67
+2025-06-03 15:32:26,369 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:26,369 - INFO - [Cat-4] Confidence Scores = [None, None, None]
+2025-06-03 15:32:26,369 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:26,369 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:26,369 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:26,369 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:26,369 - INFO - [Cat-4] Confidence Scores = [0.9343, 1.0, 1.0]
+2025-06-03 15:32:26,369 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 3 ===
+2025-06-03 15:32:26,369 - INFO - Input peak parameters: [{'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 18500}, {'rt_center': 11.0, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 13.5, 'mz_center': 157.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19500}, {'rt_center': 14.2, 'mz_center': 159.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 25000}]
+2025-06-03 15:32:26,369 - INFO - Expected: 3 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:26,478 - INFO - Suspicious boxes detected: 3
+2025-06-03 15:32:26,478 - INFO - PASSED box count.
+2025-06-03 15:32:27,014 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:27,014 - INFO -   TP=1, FP=1, FN=0, TN=1
+2025-06-03 15:32:27,014 - INFO -   Precision=0.50, Recall=1.00, F1=0.67, Accuracy=0.67
+2025-06-03 15:32:27,014 - INFO - [Cat-2] Avg. Peak-Count Error = 0.33
+2025-06-03 15:32:27,014 - INFO - [Cat-4] Confidence Scores = [24.277510420355156, 0.0, -5.913140779057812]
+2025-06-03 15:32:27,014 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:27,014 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:27,014 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:27,014 - INFO - [Cat-2] Avg. Peak-Count Error = 0.67
+2025-06-03 15:32:27,014 - INFO - [Cat-4] Confidence Scores = [None, None, None]
+2025-06-03 15:32:27,014 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:27,014 - INFO -   TP=1, FP=1, FN=0, TN=1
+2025-06-03 15:32:27,014 - INFO -   Precision=0.50, Recall=1.00, F1=0.67, Accuracy=0.67
+2025-06-03 15:32:27,014 - INFO - [Cat-2] Avg. Peak-Count Error = 0.33
+2025-06-03 15:32:27,014 - INFO - [Cat-4] Confidence Scores = [0.9283, 1.0, 0.5703]
+2025-06-03 15:32:27,014 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 4 ===
+2025-06-03 15:32:27,014 - INFO - Input peak parameters: [{'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 19000}, {'rt_center': 11.2, 'mz_center': 151.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 23000}, {'rt_center': 13.6, 'mz_center': 157.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 19800}, {'rt_center': 14.3, 'mz_center': 159.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 24500}]
+2025-06-03 15:32:27,014 - INFO - Expected: 3 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:27,098 - INFO - Suspicious boxes detected: 3
+2025-06-03 15:32:27,098 - INFO - PASSED box count.
+2025-06-03 15:32:27,545 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:27,545 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:27,545 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:27,545 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:27,545 - INFO - [Cat-4] Confidence Scores = [21.935731543482234, 0.0, 0.0]
+2025-06-03 15:32:27,545 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:27,545 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:27,545 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:27,545 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:27,545 - INFO - [Cat-4] Confidence Scores = [None, None, None]
+2025-06-03 15:32:27,545 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:27,545 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:27,545 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:27,545 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:27,545 - INFO - [Cat-4] Confidence Scores = [0.8736, 0.9991, 1.0]
+2025-06-03 15:32:27,545 - INFO - 
+=== Running Test: Variant - Four peaks: 2 overlap, 2 isolated 5 ===
+2025-06-03 15:32:27,545 - INFO - Input peak parameters: [{'rt_center': 11.0, 'mz_center': 150.9, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 17000}, {'rt_center': 11.15, 'mz_center': 151.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 13.7, 'mz_center': 157.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 21000}, {'rt_center': 14.4, 'mz_center': 159.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 26000}]
+2025-06-03 15:32:27,545 - INFO - Expected: 3 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:27,640 - INFO - Suspicious boxes detected: 3
+2025-06-03 15:32:27,640 - INFO - PASSED box count.
+2025-06-03 15:32:28,097 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:28,097 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:28,097 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:28,097 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:28,097 - INFO - [Cat-4] Confidence Scores = [26.542038148222673, 0.0, 0.0]
+2025-06-03 15:32:28,097 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:28,097 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:28,097 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:28,097 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:28,097 - INFO - [Cat-4] Confidence Scores = [None, None, None]
+2025-06-03 15:32:28,097 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:28,097 - INFO -   TP=1, FP=0, FN=0, TN=2
+2025-06-03 15:32:28,097 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:28,097 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:28,097 - INFO - [Cat-4] Confidence Scores = [0.9258, 1.0, 0.9711]
+2025-06-03 15:32:28,097 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Four peaks: 2 overlap, 2 isolated' ***
+2025-06-03 15:32:28,097 - INFO -   TP=5, FP=1, FN=0, TN=9
+2025-06-03 15:32:28,097 - INFO -   Precision=0.83, Recall=1.00, F1=0.91, Accuracy=0.93
+2025-06-03 15:32:28,097 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Four peaks: 2 overlap, 2 isolated' ***
+2025-06-03 15:32:28,097 - INFO -   TP=5, FP=2, FN=0, TN=8
+2025-06-03 15:32:28,097 - INFO -   Precision=0.71, Recall=1.00, F1=0.83, Accuracy=0.87
+2025-06-03 15:32:28,097 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Four peaks: 2 overlap, 2 isolated' ***
+2025-06-03 15:32:28,097 - INFO -   TP=5, FP=1, FN=0, TN=9
+2025-06-03 15:32:28,097 - INFO -   Precision=0.83, Recall=1.00, F1=0.91, Accuracy=0.93
+2025-06-03 15:32:28,097 - INFO - 
+=== NEW TEST SECTION ===
+2025-06-03 15:32:28,097 - INFO - 
+
+=== TEST SECTION: Variant - Cluster of 3 overlapping peaks ===
+2025-06-03 15:32:28,097 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 1 ===
+2025-06-03 15:32:28,097 - INFO - Input peak parameters: [{'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20500}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22500}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21500}]
+2025-06-03 15:32:28,097 - INFO - Expected: 1 boxes, 1 overlaps, 3 peaks in overlaps
+2025-06-03 15:32:28,177 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:28,177 - INFO - PASSED box count.
+2025-06-03 15:32:28,582 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:28,582 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:28,582 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:28,582 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:28,582 - INFO - [Cat-4] Confidence Scores = [92.82049343991275]
+2025-06-03 15:32:28,582 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:28,582 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:28,582 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:28,582 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:28,582 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:28,582 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:28,582 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:28,582 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:28,582 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:28,582 - INFO - [Cat-4] Confidence Scores = [0.8921]
+2025-06-03 15:32:28,582 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 2 ===
+2025-06-03 15:32:28,582 - INFO - Input peak parameters: [{'rt_center': 11.9, 'mz_center': 152.9, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}, {'rt_center': 12.0, 'mz_center': 153.0, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 23000}, {'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}]
+2025-06-03 15:32:28,582 - INFO - Expected: 1 boxes, 1 overlaps, 3 peaks in overlaps
+2025-06-03 15:32:28,671 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:28,671 - INFO - PASSED box count.
+2025-06-03 15:32:29,051 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:29,051 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,051 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,051 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,051 - INFO - [Cat-4] Confidence Scores = [93.34396724596263]
+2025-06-03 15:32:29,051 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:29,051 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,051 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,051 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,051 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:29,051 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:29,051 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,051 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,051 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,051 - INFO - [Cat-4] Confidence Scores = [0.9607]
+2025-06-03 15:32:29,053 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 3 ===
+2025-06-03 15:32:29,053 - INFO - Input peak parameters: [{'rt_center': 12.1, 'mz_center': 153.1, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}, {'rt_center': 12.2, 'mz_center': 153.2, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 12.3, 'mz_center': 153.3, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22500}]
+2025-06-03 15:32:29,053 - INFO - Expected: 1 boxes, 1 overlaps, 3 peaks in overlaps
+2025-06-03 15:32:29,135 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:29,135 - INFO - PASSED box count.
+2025-06-03 15:32:29,505 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:29,505 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,505 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,505 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,505 - INFO - [Cat-4] Confidence Scores = [94.2730470792867]
+2025-06-03 15:32:29,505 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:29,505 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,505 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,505 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,505 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:29,505 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:29,505 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,505 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,505 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,505 - INFO - [Cat-4] Confidence Scores = [0.934]
+2025-06-03 15:32:29,505 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 4 ===
+2025-06-03 15:32:29,505 - INFO - Input peak parameters: [{'rt_center': 11.95, 'mz_center': 152.95, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 19500}, {'rt_center': 12.05, 'mz_center': 153.05, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21000}, {'rt_center': 12.15, 'mz_center': 153.15, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20500}]
+2025-06-03 15:32:29,505 - INFO - Expected: 1 boxes, 1 overlaps, 3 peaks in overlaps
+2025-06-03 15:32:29,582 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:29,582 - INFO - PASSED box count.
+2025-06-03 15:32:29,969 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:29,969 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,969 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,969 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,969 - INFO - [Cat-4] Confidence Scores = [94.18702279593526]
+2025-06-03 15:32:29,969 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:29,969 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,969 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,969 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:29,969 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:29,969 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:29,969 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:29,969 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:29,969 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:29,969 - INFO - [Cat-4] Confidence Scores = [0.9272]
+2025-06-03 15:32:29,969 - INFO - 
+=== Running Test: Variant - Cluster of 3 overlapping peaks 5 ===
+2025-06-03 15:32:29,969 - INFO - Input peak parameters: [{'rt_center': 12.05, 'mz_center': 153.05, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 12.15, 'mz_center': 153.15, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 22000}, {'rt_center': 12.25, 'mz_center': 153.25, 'rt_sigma': 0.3, 'mz_sigma': 0.03, 'amplitude': 20000}]
+2025-06-03 15:32:29,969 - INFO - Expected: 1 boxes, 1 overlaps, 3 peaks in overlaps
+2025-06-03 15:32:30,034 - INFO - Suspicious boxes detected: 1
+2025-06-03 15:32:30,034 - INFO - PASSED box count.
+2025-06-03 15:32:30,405 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:30,405 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:30,405 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,405 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:30,405 - INFO - [Cat-4] Confidence Scores = [100.10781774114275]
+2025-06-03 15:32:30,405 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:30,405 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:30,405 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,405 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:30,405 - INFO - [Cat-4] Confidence Scores = [None]
+2025-06-03 15:32:30,405 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:30,421 - INFO -   TP=1, FP=0, FN=0, TN=0
+2025-06-03 15:32:30,421 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,421 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:30,421 - INFO - [Cat-4] Confidence Scores = [0.9222]
+2025-06-03 15:32:30,421 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Cluster of 3 overlapping peaks' ***
+2025-06-03 15:32:30,421 - INFO -   TP=5, FP=0, FN=0, TN=0
+2025-06-03 15:32:30,422 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,422 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Cluster of 3 overlapping peaks' ***
+2025-06-03 15:32:30,422 - INFO -   TP=5, FP=0, FN=0, TN=0
+2025-06-03 15:32:30,422 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,422 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Cluster of 3 overlapping peaks' ***
+2025-06-03 15:32:30,422 - INFO -   TP=5, FP=0, FN=0, TN=0
+2025-06-03 15:32:30,422 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,422 - INFO - 
+=== NEW TEST SECTION ===
+2025-06-03 15:32:30,422 - INFO - 
+
+=== TEST SECTION: Variant - Close but not overlapping peaks ===
+2025-06-03 15:32:30,422 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 1 ===
+2025-06-03 15:32:30,422 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.0, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10500}, {'rt_center': 13.5, 'mz_center': 155.3, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9800}]
+2025-06-03 15:32:30,422 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:30,479 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:30,479 - INFO - PASSED box count.
+2025-06-03 15:32:30,718 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:30,718 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:30,733 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,733 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:30,736 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:30,736 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:30,736 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:30,736 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:30,736 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:30,736 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:30,736 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:30,738 - INFO -   TP=0, FP=1, FN=0, TN=1
+2025-06-03 15:32:30,738 - INFO -   Precision=0.00, Recall=1.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:30,738 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:30,738 - INFO - [Cat-4] Confidence Scores = [0.4813, 0.987]
+2025-06-03 15:32:30,738 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 2 ===
+2025-06-03 15:32:30,738 - INFO - Input peak parameters: [{'rt_center': 13.1, 'mz_center': 155.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10200}, {'rt_center': 13.6, 'mz_center': 155.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9600}]
+2025-06-03 15:32:30,738 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:30,785 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:30,785 - INFO - PASSED box count.
+2025-06-03 15:32:31,053 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:31,053 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,053 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,053 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:31,053 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:31,053 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:31,053 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,053 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,053 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:31,053 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:31,053 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:31,053 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,053 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,053 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:31,053 - INFO - [Cat-4] Confidence Scores = [1.0, 0.9717]
+2025-06-03 15:32:31,053 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 3 ===
+2025-06-03 15:32:31,053 - INFO - Input peak parameters: [{'rt_center': 12.9, 'mz_center': 154.9, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 10000}, {'rt_center': 13.4, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9400}]
+2025-06-03 15:32:31,053 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:31,115 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:31,115 - INFO - PASSED box count.
+2025-06-03 15:32:31,373 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:31,373 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,373 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,373 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:31,373 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:31,373 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:31,373 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,373 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,373 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:31,373 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:31,373 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:31,373 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,373 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,373 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:31,373 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0]
+2025-06-03 15:32:31,373 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 4 ===
+2025-06-03 15:32:31,373 - INFO - Input peak parameters: [{'rt_center': 13.2, 'mz_center': 155.2, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 11000}, {'rt_center': 13.7, 'mz_center': 155.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9200}]
+2025-06-03 15:32:31,373 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:31,442 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:31,442 - INFO - PASSED box count.
+2025-06-03 15:32:31,702 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:31,702 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,702 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,702 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:31,702 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:31,702 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:31,702 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,702 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,702 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:31,702 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:31,702 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:31,702 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:31,702 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:31,702 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:31,702 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0]
+2025-06-03 15:32:31,702 - INFO - 
+=== Running Test: Variant - Close but not overlapping peaks 5 ===
+2025-06-03 15:32:31,702 - INFO - Input peak parameters: [{'rt_center': 13.0, 'mz_center': 155.1, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9700}, {'rt_center': 13.6, 'mz_center': 155.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 9900}]
+2025-06-03 15:32:31,702 - INFO - Expected: 2 boxes, 0 overlaps, None peaks in overlaps
+2025-06-03 15:32:31,765 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:31,765 - INFO - PASSED box count.
+2025-06-03 15:32:32,019 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:32,019 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:32,019 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,019 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:32,019 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:32,019 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:32,019 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:32,019 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,019 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:32,019 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:32,019 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:32,019 - INFO -   TP=0, FP=0, FN=0, TN=2
+2025-06-03 15:32:32,019 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,019 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:32,019 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0]
+2025-06-03 15:32:32,019 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Close but not overlapping peaks' ***
+2025-06-03 15:32:32,019 - INFO -   TP=0, FP=0, FN=0, TN=10
+2025-06-03 15:32:32,019 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,019 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Close but not overlapping peaks' ***
+2025-06-03 15:32:32,019 - INFO -   TP=0, FP=0, FN=0, TN=10
+2025-06-03 15:32:32,019 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,019 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Close but not overlapping peaks' ***
+2025-06-03 15:32:32,019 - INFO -   TP=0, FP=1, FN=0, TN=9
+2025-06-03 15:32:32,019 - INFO -   Precision=0.00, Recall=1.00, F1=0.00, Accuracy=0.90
+2025-06-03 15:32:32,019 - INFO - 
+=== NEW TEST SECTION ===
+2025-06-03 15:32:32,019 - INFO - 
+
+=== TEST SECTION: Variant - Intense + weak overlap ===
+2025-06-03 15:32:32,019 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 1 ===
+2025-06-03 15:32:32,019 - INFO - Input peak parameters: [{'rt_center': 12.4, 'mz_center': 152.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31000}, {'rt_center': 12.5, 'mz_center': 152.5, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 7000}, {'rt_center': 14.6, 'mz_center': 158.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31500}]
+2025-06-03 15:32:32,019 - INFO - Expected: 2 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:32,090 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:32,090 - INFO - PASSED box count.
+2025-06-03 15:32:32,399 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:32,399 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:32,399 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,399 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:32,399 - INFO - [Cat-4] Confidence Scores = [4.411274258871799, 0.0]
+2025-06-03 15:32:32,399 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:32,399 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:32,399 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,399 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:32,399 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:32,399 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:32,399 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:32,399 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:32,399 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:32,399 - INFO - [Cat-4] Confidence Scores = [0.5986, 1.0]
+2025-06-03 15:32:32,399 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 2 ===
+2025-06-03 15:32:32,399 - INFO - Input peak parameters: [{'rt_center': 12.6, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 29500}, {'rt_center': 12.7, 'mz_center': 152.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6500}, {'rt_center': 14.4, 'mz_center': 158.4, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 33000}]
+2025-06-03 15:32:32,399 - INFO - Expected: 2 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:32,467 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:32,467 - INFO - PASSED box count.
+2025-06-03 15:32:32,734 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:32,734 - INFO -   TP=0, FP=0, FN=1, TN=1
+2025-06-03 15:32:32,734 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:32,734 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:32,734 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:32,734 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:32,734 - INFO -   TP=0, FP=1, FN=1, TN=0
+2025-06-03 15:32:32,734 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.00
+2025-06-03 15:32:32,734 - INFO - [Cat-2] Avg. Peak-Count Error = 1.00
+2025-06-03 15:32:32,734 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:32,734 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:32,734 - INFO -   TP=0, FP=0, FN=1, TN=1
+2025-06-03 15:32:32,734 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:32,734 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:32,734 - INFO - [Cat-4] Confidence Scores = [0.9825, 1.0]
+2025-06-03 15:32:32,734 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 3 ===
+2025-06-03 15:32:32,734 - INFO - Input peak parameters: [{'rt_center': 12.5, 'mz_center': 152.6, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32000}, {'rt_center': 12.6, 'mz_center': 152.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 5500}, {'rt_center': 14.7, 'mz_center': 158.7, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31000}]
+2025-06-03 15:32:32,734 - INFO - Expected: 2 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:32,806 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:32,806 - INFO - PASSED box count.
+2025-06-03 15:32:33,054 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:33,054 - INFO -   TP=0, FP=0, FN=1, TN=1
+2025-06-03 15:32:33,054 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:33,054 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:33,054 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:33,069 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:33,069 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:33,069 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:33,069 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:33,069 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:33,069 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:33,069 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:33,069 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:33,069 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:33,069 - INFO - [Cat-4] Confidence Scores = [0.5994, 1.0]
+2025-06-03 15:32:33,069 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 4 ===
+2025-06-03 15:32:33,069 - INFO - Input peak parameters: [{'rt_center': 12.45, 'mz_center': 152.45, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 30500}, {'rt_center': 12.55, 'mz_center': 152.55, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 6000}, {'rt_center': 14.55, 'mz_center': 158.55, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 32500}]
+2025-06-03 15:32:33,069 - INFO - Expected: 2 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:33,135 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:33,135 - INFO - PASSED box count.
+2025-06-03 15:32:33,392 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:33,392 - INFO -   TP=0, FP=0, FN=1, TN=1
+2025-06-03 15:32:33,392 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:33,392 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:33,392 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:33,392 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:33,392 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:33,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:33,392 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:33,392 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:33,392 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:33,392 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:33,392 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:33,392 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:33,392 - INFO - [Cat-4] Confidence Scores = [0.477, 0.9998]
+2025-06-03 15:32:33,392 - INFO - 
+=== Running Test: Variant - Intense + weak overlap 5 ===
+2025-06-03 15:32:33,392 - INFO - Input peak parameters: [{'rt_center': 12.55, 'mz_center': 152.55, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 29800}, {'rt_center': 12.65, 'mz_center': 152.65, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 5800}, {'rt_center': 14.45, 'mz_center': 158.45, 'rt_sigma': 0.2, 'mz_sigma': 0.04, 'amplitude': 31800}]
+2025-06-03 15:32:33,392 - INFO - Expected: 2 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:33,467 - INFO - Suspicious boxes detected: 2
+2025-06-03 15:32:33,467 - INFO - PASSED box count.
+2025-06-03 15:32:33,735 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:33,735 - INFO -   TP=0, FP=0, FN=1, TN=1
+2025-06-03 15:32:33,735 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:33,735 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:33,735 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0]
+2025-06-03 15:32:33,735 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:33,737 - INFO -   TP=0, FP=0, FN=1, TN=1
+2025-06-03 15:32:33,737 - INFO -   Precision=1.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:33,737 - INFO - [Cat-2] Avg. Peak-Count Error = 0.50
+2025-06-03 15:32:33,737 - INFO - [Cat-4] Confidence Scores = [None, None]
+2025-06-03 15:32:33,737 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:33,737 - INFO -   TP=1, FP=0, FN=0, TN=1
+2025-06-03 15:32:33,737 - INFO -   Precision=1.00, Recall=1.00, F1=1.00, Accuracy=1.00
+2025-06-03 15:32:33,737 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:33,737 - INFO - [Cat-4] Confidence Scores = [0.617, 0.9958]
+2025-06-03 15:32:33,737 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Intense + weak overlap' ***
+2025-06-03 15:32:33,737 - INFO -   TP=1, FP=0, FN=4, TN=5
+2025-06-03 15:32:33,737 - INFO -   Precision=1.00, Recall=0.20, F1=0.33, Accuracy=0.60
+2025-06-03 15:32:33,737 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Intense + weak overlap' ***
+2025-06-03 15:32:33,737 - INFO -   TP=3, FP=1, FN=2, TN=4
+2025-06-03 15:32:33,737 - INFO -   Precision=0.75, Recall=0.60, F1=0.67, Accuracy=0.70
+2025-06-03 15:32:33,737 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Intense + weak overlap' ***
+2025-06-03 15:32:33,737 - INFO -   TP=4, FP=0, FN=1, TN=5
+2025-06-03 15:32:33,737 - INFO -   Precision=1.00, Recall=0.80, F1=0.89, Accuracy=0.90
+2025-06-03 15:32:33,737 - INFO - 
+=== NEW TEST SECTION ===
+2025-06-03 15:32:33,737 - INFO - 
+
+=== TEST SECTION: Variant - Five peaks: 3 spaced, 2 overlapping ===
+2025-06-03 15:32:33,737 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 1 ===
+2025-06-03 15:32:33,737 - INFO - Input peak parameters: [{'rt_center': 10.6, 'mz_center': 150.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9500}, {'rt_center': 11.1, 'mz_center': 151.1, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10200}, {'rt_center': 11.6, 'mz_center': 151.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10800}, {'rt_center': 13.1, 'mz_center': 154.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 23000}, {'rt_center': 13.2, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22000}]
+2025-06-03 15:32:33,737 - INFO - Expected: 4 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:33,820 - INFO - Suspicious boxes detected: 4
+2025-06-03 15:32:33,820 - INFO - PASSED box count.
+2025-06-03 15:32:34,375 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:34,375 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:34,375 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:34,375 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:34,375 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0, 0.0, 24.069515215062893]
+2025-06-03 15:32:34,375 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:34,375 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:34,375 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:34,375 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:34,375 - INFO - [Cat-4] Confidence Scores = [None, None, None, None]
+2025-06-03 15:32:34,375 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:34,375 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:34,375 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:34,375 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:34,375 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0, 1.0, 0.9063]
+2025-06-03 15:32:34,375 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 2 ===
+2025-06-03 15:32:34,375 - INFO - Input peak parameters: [{'rt_center': 10.4, 'mz_center': 150.4, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9800}, {'rt_center': 10.9, 'mz_center': 150.9, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10300}, {'rt_center': 11.4, 'mz_center': 151.4, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10700}, {'rt_center': 13.3, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22500}, {'rt_center': 13.4, 'mz_center': 154.4, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21500}]
+2025-06-03 15:32:34,375 - INFO - Expected: 4 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:34,455 - INFO - Suspicious boxes detected: 4
+2025-06-03 15:32:34,457 - INFO - PASSED box count.
+2025-06-03 15:32:34,980 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:34,980 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:34,980 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:34,980 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:34,980 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0, 0.0, 23.729561057316005]
+2025-06-03 15:32:34,980 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:34,980 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:34,980 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:34,980 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:34,980 - INFO - [Cat-4] Confidence Scores = [None, None, None, None]
+2025-06-03 15:32:34,980 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:34,980 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:34,980 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:34,980 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:34,980 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0, 1.0, 0.9861]
+2025-06-03 15:32:34,980 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 3 ===
+2025-06-03 15:32:34,980 - INFO - Input peak parameters: [{'rt_center': 10.7, 'mz_center': 150.7, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10100}, {'rt_center': 11.2, 'mz_center': 151.2, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9900}, {'rt_center': 11.7, 'mz_center': 151.7, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10500}, {'rt_center': 13.2, 'mz_center': 154.2, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21800}, {'rt_center': 13.3, 'mz_center': 154.3, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 20500}]
+2025-06-03 15:32:34,980 - INFO - Expected: 4 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:35,058 - INFO - Suspicious boxes detected: 4
+2025-06-03 15:32:35,058 - INFO - PASSED box count.
+2025-06-03 15:32:35,595 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:35,595 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:35,595 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:35,595 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:35,595 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0, 0.0, 21.317273587580985]
+2025-06-03 15:32:35,595 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:35,595 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:35,595 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:35,595 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:35,595 - INFO - [Cat-4] Confidence Scores = [None, None, None, None]
+2025-06-03 15:32:35,595 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:35,595 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:35,595 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:35,595 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:35,595 - INFO - [Cat-4] Confidence Scores = [0.9979, 1.0, 1.0, 0.952]
+2025-06-03 15:32:35,595 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 4 ===
+2025-06-03 15:32:35,595 - INFO - Input peak parameters: [{'rt_center': 10.5, 'mz_center': 150.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9500}, {'rt_center': 11.0, 'mz_center': 151.1, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9700}, {'rt_center': 11.5, 'mz_center': 151.6, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9800}, {'rt_center': 13.0, 'mz_center': 154.0, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 23500}, {'rt_center': 13.1, 'mz_center': 154.1, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 22500}]
+2025-06-03 15:32:35,595 - INFO - Expected: 4 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:35,680 - INFO - Suspicious boxes detected: 4
+2025-06-03 15:32:35,680 - INFO - PASSED box count.
+2025-06-03 15:32:36,255 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:36,255 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:36,255 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,255 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:36,255 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0, 0.0, 25.190069347392637]
+2025-06-03 15:32:36,255 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:36,255 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:36,255 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,255 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:36,255 - INFO - [Cat-4] Confidence Scores = [None, None, None, None]
+2025-06-03 15:32:36,255 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:36,255 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:36,255 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,255 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:36,255 - INFO - [Cat-4] Confidence Scores = [1.0, 1.0, 1.0, 0.9439]
+2025-06-03 15:32:36,255 - INFO - 
+=== Running Test: Variant - Five peaks: 3 spaced, 2 overlapping 5 ===
+2025-06-03 15:32:36,255 - INFO - Input peak parameters: [{'rt_center': 10.8, 'mz_center': 150.8, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10000}, {'rt_center': 11.3, 'mz_center': 151.3, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 9800}, {'rt_center': 11.8, 'mz_center': 151.8, 'rt_sigma': 0.15, 'mz_sigma': 0.03, 'amplitude': 10200}, {'rt_center': 13.5, 'mz_center': 154.5, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21500}, {'rt_center': 13.6, 'mz_center': 154.6, 'rt_sigma': 0.2, 'mz_sigma': 0.03, 'amplitude': 21000}]
+2025-06-03 15:32:36,255 - INFO - Expected: 4 boxes, 1 overlaps, 2 peaks in overlaps
+2025-06-03 15:32:36,354 - INFO - Suspicious boxes detected: 4
+2025-06-03 15:32:36,354 - INFO - PASSED box count.
+2025-06-03 15:32:36,920 - INFO - 
+[GMM] Detection Summary:
+2025-06-03 15:32:36,920 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:36,920 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,920 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:36,920 - INFO - [Cat-4] Confidence Scores = [0.0, 0.0, 0.0, 24.670345758745498]
+2025-06-03 15:32:36,922 - INFO - 
+[RidgeWalker] Detection Summary:
+2025-06-03 15:32:36,922 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:36,922 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,922 - INFO - [Cat-2] Avg. Peak-Count Error = 0.25
+2025-06-03 15:32:36,922 - INFO - [Cat-4] Confidence Scores = [None, None, None, None]
+2025-06-03 15:32:36,922 - INFO - 
+[Wavelet] Detection Summary:
+2025-06-03 15:32:36,922 - INFO -   TP=0, FP=1, FN=1, TN=2
+2025-06-03 15:32:36,922 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,922 - INFO - [Cat-2] Avg. Peak-Count Error = 0.00
+2025-06-03 15:32:36,922 - INFO - [Cat-4] Confidence Scores = [1.0, 0.9758, 1.0, 0.991]
+2025-06-03 15:32:36,926 - INFO - 
+*** AGGREGATED [GMM] for 'Variant - Five peaks: 3 spaced, 2 overlapping' ***
+2025-06-03 15:32:36,926 - INFO -   TP=0, FP=5, FN=5, TN=10
+2025-06-03 15:32:36,926 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,926 - INFO - 
+*** AGGREGATED [RidgeWalker] for 'Variant - Five peaks: 3 spaced, 2 overlapping' ***
+2025-06-03 15:32:36,926 - INFO -   TP=0, FP=5, FN=5, TN=10
+2025-06-03 15:32:36,926 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,926 - INFO - 
+*** AGGREGATED [Wavelet] for 'Variant - Five peaks: 3 spaced, 2 overlapping' ***
+2025-06-03 15:32:36,926 - INFO -   TP=0, FP=5, FN=5, TN=10
+2025-06-03 15:32:36,926 - INFO -   Precision=0.00, Recall=0.00, F1=0.00, Accuracy=0.50
+2025-06-03 15:32:36,926 - INFO - 
+=== NEW TEST SECTION ===
