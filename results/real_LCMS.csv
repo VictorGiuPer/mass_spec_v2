@@ -1,0 +1,7 @@
+filepath,region_idx,model,num_peaks,confidence,fusion_score,runtime
+C:\Users\\victo\VSCode Folder\UMCG Mass Spec\\3_2_extract_overlap_1.mzML,0,GMM,2,21.046559870825376,,2.2763025760650635
+C:\Users\\victo\VSCode Folder\UMCG Mass Spec\\3_2_extract_overlap_1.mzML,0,RidgeWalker,0,,,0.7018020153045654
+C:\Users\\victo\VSCode Folder\UMCG Mass Spec\\3_2_extract_overlap_1.mzML,0,Wavelet,161,,,3.4132773876190186
+C:\Users\\victo\VSCode Folder\UMCG Mass Spec\\3_2_extract_overlap_1.mzML,1,GMM,0,,,2.2763025760650635
+C:\Users\\victo\VSCode Folder\UMCG Mass Spec\\3_2_extract_overlap_1.mzML,1,RidgeWalker,0,,,3.452747344970703
+C:\Users\\victo\VSCode Folder\UMCG Mass Spec\\3_2_extract_overlap_1.mzML,1,Wavelet,1,,,4.7973785400390625
