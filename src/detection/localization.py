@@ -37,8 +37,8 @@ class Localizer:
 
         start_mz_idx, start_rt_idx = found[0]
         mz_min_idx, mz_max_idx, rt_min_idx, rt_max_idx = self._grow_box_from_start(
-            active_mask, start_mz_idx, start_rt_idx, max_gap=5, min_local_drop=0.01
-        )
+            active_mask, start_mz_idx, start_rt_idx, max_gap=12, min_local_drop=0.01
+        ) # max gap 5
 
         mz_min_idx = max(mz_min_idx - local_margin, 0)
         mz_max_idx = min(mz_max_idx + local_margin, mz_bins - 1)

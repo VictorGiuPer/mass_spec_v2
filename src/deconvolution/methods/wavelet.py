@@ -55,10 +55,18 @@ class WaveletDeconvolver:
         # Trim padding if applied
         if self.pad_grid:
             response_map = response_map[:, rt_offset:-rt_offset]
-
+            rt_axis = rt_axis[rt_offset:-rt_offset]
         # Peak detection
         peaks = self._detect_blobs(response_map)
 
+
+        max_response = np.max(response_map)
+        if peaks:
+            peak_responses = [response_map[int(mz), int(rt)] for mz, rt in peaks]
+            mean_peak_response = float(np.mean(peak_responses))
+            norm_mean_peak_response = mean_peak_response / (max_response + 1e-8)
+        else:
+            norm_mean_peak_response = 0.0
         # Optional: determine if overlap likely based on number of peaks
         num_peaks = len(peaks)
         overlap_detected = num_peaks >= self.overlap_threshold
@@ -75,7 +83,8 @@ class WaveletDeconvolver:
             "transformed_grid": response_map,
             "peaks": peaks,  # still raw indices
             "clusters": clusters,
-            "peak_locations": peak_locations  # ← added real-world coordinates
+            "peak_locations": peak_locations,
+            "mean_peak_response": norm_mean_peak_response
         }
 
     # WAVELET CORE
@@ -144,33 +153,30 @@ class WaveletDeconvolver:
 
     # VISUALIZATION
     @staticmethod
-    def plot_wavelet_result(grid, transformed, peaks, clusters, title=""):
+    def plot_wavelet_result(transformed, peaks, clusters=None, title=""):
         """
-        Plot the original grid and wavelet-transformed result with peak markers.
+        Plot the wavelet-transformed result with peak markers.
 
         Args:
-            grid (2D array): Original intensity matrix.
             transformed (2D array): Wavelet response map.
             peaks (list): Peak coordinates (mz_idx, rt_idx).
-            clusters (list): Cluster labels or dummy indices.
+            clusters (list or None): Cluster labels or dummy indices (optional).
             title (str): Plot title.
         """
-        fig, axs = plt.subplots(1, 2, figsize=(14, 5))
+        plt.figure(figsize=(8, 6))
+        plt.imshow(transformed, origin="lower", aspect="auto")
+        plt.title("Wavelet Transformed + Detected Peaks")
+        plt.xlabel("RT axis")
+        plt.ylabel("MZ axis")
 
-        axs[0].imshow(grid, origin="lower", aspect="auto")
-        axs[0].set_title("Original Intensity Grid")
-        axs[0].set_xlabel("RT axis")
-        axs[0].set_ylabel("MZ axis")
-
-        axs[1].imshow(transformed, origin="lower", aspect="auto")
-        axs[1].set_title("Wavelet Transformed + Detected Peaks")
-        axs[1].set_xlabel("RT axis")
-        axs[1].set_ylabel("MZ axis")
-
-        for idx, (mz_idx, rt_idx) in enumerate(peaks):
-            color = "red" if clusters[idx] >= 0 else "gray"
-            axs[1].plot(rt_idx, mz_idx, "o", color=color, markersize=5)
-
+        if peaks:
+            for idx, (mz_idx, rt_idx) in enumerate(peaks):
+                color = "red"
+                if clusters is not None and len(clusters) > idx and clusters[idx] >= 0:
+                    color = "red"
+                elif clusters is not None:
+                    color = "gray"
+                plt.plot(rt_idx, mz_idx, "o", color=color, markersize=5)
         plt.suptitle(title)
         plt.tight_layout()
         plt.show()

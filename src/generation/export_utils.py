@@ -56,7 +56,7 @@ def load_mzml(filepath):
     experiment = MSExperiment()
     MzMLFile().load(filepath, experiment)
     data_loaded = experiment.get_df()
-    print(data_loaded.head())
+    # print(data_loaded.head())
     return data_loaded
 
 def zoom_grid(df: pd.DataFrame) -> pd.DataFrame:
