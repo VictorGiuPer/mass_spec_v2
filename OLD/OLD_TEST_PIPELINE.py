@@ -18,7 +18,7 @@ from src.detection.suspicion import SuspicionDetector
 from src.detection.utils import mark_box
 from src.deconvolution.peak_deconvolver import PeakDeconvolver
 from src.deconvolution.visualization import plot_horizontal_gmm, plot_ridges_on_grid
-from test_cases import TEST_CASES
+from results.pipeline_test_cases import TEST_CASES
 from scipy.optimize import linear_sum_assignment
 
 
