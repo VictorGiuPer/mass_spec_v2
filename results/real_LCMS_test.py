@@ -1,11 +1,10 @@
-
-import logging
 import numpy as np
 import csv
-from collections import defaultdict
-from scipy.optimize import linear_sum_assignment
 import time
+import sys
+import os
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.detection.localization import Localizer
 from src.detection.suspicion import SuspicionDetector
 from src.detection.utils import mark_box
