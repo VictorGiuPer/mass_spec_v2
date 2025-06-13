@@ -5,7 +5,7 @@ import sys
 import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.detection.localization import Localizer
+from real_LCMS_localization import Localizer
 from src.detection.suspicion import SuspicionDetector
 from src.detection.utils import mark_box
 from src.deconvolution.peak_deconvolver import PeakDeconvolver
@@ -81,7 +81,7 @@ def run_real_data_case(filepath, output_csv="real_LCMS.csv"):
     print(data_loaded.head())
 
     grid, rt_axis, mz_axis = build_grid_from_dataframe(data_loaded)
-    plot_grid = grid_to_plot_df(grid=grid, rt_axis=rt_axis, mz_axis=mz_axis)
+    # plot_grid = grid_to_plot_df(grid=grid, rt_axis=rt_axis, mz_axis=mz_axis)
     # plot_gaussians_grid(plot_grid)
 
 
@@ -99,7 +99,7 @@ def run_real_data_case(filepath, output_csv="real_LCMS.csv"):
         sd = SuspicionDetector(sub, mzi, rti)
         is_susp, _ = sd.detect_suspicious(plot=False)
         mark_box(processed, box, 'processed')
-        # lzr.plot_box_on_grid(box, title="First detected region")
+        lzr.plot_box_on_grid(box, title="First detected region")
         if is_susp:
             cropped.append((sub, mzi, rti, sd.d_grid_rt, sd.dd_grid_rt))
 

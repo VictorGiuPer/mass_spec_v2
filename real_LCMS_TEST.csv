@@ -1,0 +1,4 @@
+region_idx,model,num_peaks,confidence,fusion_score,runtime
+0,GMM,2,117.55015856005139,,0.49262332916259766
+0,RidgeWalker,2,,,0.15566611289978027
+0,Wavelet,2,,,0.2661130428314209
